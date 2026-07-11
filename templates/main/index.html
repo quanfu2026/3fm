@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}智慧機器人工程系 有機電商 — 首頁{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>🌿 智慧機器人工程系 有機電商</h1>
+  <p>嚴選台灣在地有機農產品，新鮮直送到府</p>
+  <a href="{{ url_for('shop.index') }}" class="btn-primary">立即選購</a>
+</section>
+<section class="features">
+  <div class="feature-card">🔍<h3>AI 智能客服</h3><p>雙階段 RAG 架構，精準回答您的問題</p></div>
+  <div class="feature-card">🚚<h3>低溫配送</h3><p>全程冷鏈，確保生鮮品質</p></div>
+  <div class="feature-card">🌱<h3>有機認證</h3><p>嚴選通過認證之有機農產品</p></div>
+</section>
+{% endblock %}

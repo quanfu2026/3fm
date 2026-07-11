@@ -1,0 +1,7 @@
+{
+  "total_questions": 3,
+  "Hit@5": 1.0,
+  "MRR": 1.0,
+  "NDCG@5": 1.0,
+  "avg_latency_ms": 197.77
+}

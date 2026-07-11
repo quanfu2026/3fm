@@ -1,0 +1,131 @@
+/* ── 3fm 電商系統 主樣式表 ── */
+:root {
+  --green:   #0d9488;
+  --navy:    #1e2761;
+  --light:   #f0fdf4;
+  --gray:    #64748b;
+  --border:  #e2e8f0;
+  --white:   #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Arial", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ── 導覽列 ── */
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--navy); color: #fff;
+  padding: 0.75rem 2rem; position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.brand { color: #fff; text-decoration: none; font-size: 1.25rem; font-weight: 700; }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a { color: #cadcfc; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.user-name { color: #cadcfc; font-size: 0.9rem; }
+.badge {
+  background: var(--green); color: #fff;
+  border-radius: 99px; padding: 1px 7px; font-size: 0.75rem; margin-left: 4px;
+}
+
+/* ── 容器 ── */
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+.alert { background: #fef2f2; border: 1px solid #fca5a5; color: #b91c1c;
+         padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+
+/* ── Hero ── */
+.hero {
+  text-align: center; background: var(--navy);
+  color: #fff; padding: 4rem 2rem; border-radius: 16px; margin-bottom: 2rem;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.hero p  { font-size: 1.1rem; color: #cadcfc; margin-bottom: 1.5rem; }
+
+/* ── Features ── */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+.feature-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem; text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.feature-card h3 { margin: 0.5rem 0; color: var(--navy); }
+.feature-card p  { color: var(--gray); font-size: 0.9rem; }
+
+/* ── 按鈕 ── */
+.btn-primary {
+  display: inline-block; background: var(--green); color: #fff;
+  padding: 0.6rem 1.5rem; border-radius: 8px; text-decoration: none;
+  border: none; cursor: pointer; font-size: 1rem; font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: #0f766e; }
+.btn-sm {
+  display: inline-block; padding: 0.3rem 0.8rem; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--white);
+  font-size: 0.85rem; cursor: pointer; text-decoration: none; color: #1e293b;
+  transition: all 0.15s;
+}
+.btn-sm:hover, .btn-sm.active { background: var(--green); color: #fff; border-color: var(--green); }
+.btn-add { background: var(--light); border-color: var(--green); color: var(--green); }
+.btn-add:hover { background: var(--green); color: #fff; }
+
+/* ── 商品網格 ── */
+.category-filter { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+.product-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s;
+}
+.product-card:hover { transform: translateY(-3px); }
+.product-img { font-size: 3rem; text-align: center; margin-bottom: 0.75rem; }
+.product-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.product-origin { color: var(--gray); font-size: 0.82rem; margin-bottom: 0.4rem; }
+.product-desc { color: var(--gray); font-size: 0.85rem; margin-bottom: 0.75rem; }
+.product-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.price { color: var(--green); font-weight: 700; font-size: 1.05rem; }
+
+/* ── 商品詳情 ── */
+.product-detail { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: start; }
+.product-detail-img { font-size: 8rem; text-align: center; background: var(--light); border-radius: 12px; padding: 2rem; }
+.product-detail-info h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.product-detail-info p { margin-bottom: 0.75rem; color: var(--gray); }
+.tag { display: inline-block; background: var(--light); color: var(--green); padding: 2px 12px; border-radius: 99px; font-size: 0.85rem; }
+.price-lg { font-size: 2rem; font-weight: 700; color: var(--green); }
+.qty-row { display: flex; gap: 1rem; align-items: center; margin-top: 1rem; }
+
+/* ── 購物車 ── */
+.cart-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.cart-table th, .cart-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); text-align: left; }
+.cart-table th { background: var(--light); color: var(--navy); font-weight: 600; }
+.cart-total { margin: 1rem 0; font-size: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+.free-shipping { color: var(--green); font-weight: 600; }
+.need-more { color: var(--gray); font-size: 0.9rem; }
+
+/* ── 登入表單 ── */
+.form-card { max-width: 420px; margin: 4rem auto; background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.form-card h2 { margin-bottom: 1.5rem; color: var(--navy); }
+.form-card label { display: block; margin-bottom: 1rem; font-size: 0.95rem; color: var(--gray); }
+.form-card input { display: block; width: 100%; margin-top: 4px; padding: 0.6rem 0.8rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; }
+.form-card input:focus { outline: none; border-color: var(--green); }
+
+/* ── 管理後台 ── */
+.admin-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.admin-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.admin-card h3 { color: var(--navy); margin-bottom: 0.5rem; }
+.admin-card p  { color: var(--gray); margin-bottom: 1rem; font-size: 0.9rem; }
+
+/* ── Footer ── */
+.footer { text-align: center; padding: 1.5rem; color: var(--gray); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+
+/* ── 響應式 ── */
+@media (max-width: 768px) {
+  .features { grid-template-columns: 1fr; }
+  .product-detail { grid-template-columns: 1fr; }
+  .navbar { flex-direction: column; gap: 0.5rem; }
+}

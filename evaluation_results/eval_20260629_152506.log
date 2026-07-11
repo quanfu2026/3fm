@@ -1,0 +1,13 @@
+2026-06-29 15:25:06,741 [INFO] ============================================================
+2026-06-29 15:25:06,741 [INFO] 🚀  RAG 自動化批量評測啟動
+2026-06-29 15:25:06,744 [INFO] ============================================================
+2026-06-29 15:25:06,744 [INFO] 知識庫載入：226 個 chunks（來源：knowledge_base/docs/product_specs.txt）
+2026-06-29 15:25:07,068 [INFO] 評測資料集：115 筆（來源：knowledge_base/evaluation/電商客服問答集.docx）
+2026-06-29 15:25:07,068 [INFO] 限制評測題數：10 題
+2026-06-29 15:25:07,068 [INFO] 建立 BM25 + BGE 雙層索引...
+2026-06-29 15:25:07,293 [DEBUG] Building prefix dict from the default dictionary ...
+2026-06-29 15:25:07,294 [DEBUG] Loading model from cache C:\Users\CHENQU~1\AppData\Local\Temp\jieba.cache
+2026-06-29 15:25:07,827 [DEBUG] Loading model cost 0.535 seconds.
+2026-06-29 15:25:07,827 [DEBUG] Prefix dict has been built successfully.
+2026-06-29 15:25:07,954 [INFO] BM25 索引建立完成：226 筆
+2026-06-29 15:25:07,954 [INFO] 載入 BGE 模型：BAAI/bge-m3（首次較慢）

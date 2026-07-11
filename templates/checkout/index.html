@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}結帳{% endblock %}
+{% block content %}
+<h2>📦 確認訂單</h2>
+<table class="cart-table">
+  <thead>
+    <tr><th>商品</th><th>數量</th><th>小計</th></tr>
+  </thead>
+  <tbody>
+  {% for item in items %}
+  <tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.qty }}</td>
+    <td>NT$ {{ item.subtotal }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div class="cart-total">
+  <p>商品合計：NT$ {{ total }}</p>
+  <p>運費：NT$ {{ shipping }}</p>
+  <strong>總計：NT$ {{ total + shipping }}</strong>
+</div>
+<h3>收件資訊</h3>
+<form method="POST" action="/checkout/confirm">
+  <input type="text" name="name" placeholder="姓名" required><br><br>
+  <input type="text" name="phone" placeholder="電話" required><br><br>
+  <input type="text" name="address" placeholder="地址" required><br><br>
+  <button class="btn-primary" type="submit">確認下單</button>
+</form>
+{% endblock %}

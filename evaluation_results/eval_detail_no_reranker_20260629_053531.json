@@ -1,0 +1,3983 @@
+{
+  "summary": {
+    "eval_file": "knowledge_base/evaluation/電商客服問答集.docx",
+    "knowledge_file": "knowledge_base/docs/product_specs.txt",
+    "total_questions": 115,
+    "model": "qwen2.5-7b-instruct",
+    "use_reranker": false,
+    "timestamp": "2026-06-29T05:35:31.796255",
+    "metrics_avg": {
+      "hit_at_5": 1.0,
+      "mrr": 0.9401,
+      "ndcg_at_5": 0.9125,
+      "bge_cosine": 0.3445,
+      "hallucination": 1.0,
+      "latency_ms_avg": 184.31,
+      "latency_ms_p95": 214.45
+    }
+  },
+  "results": [
+    {
+      "sample_id": 1,
+      "question": "這台電視有支援 4K 120Hz 嗎？我接 PS5 玩遊戲會不會有 Delay 的感覺？",
+      "ground_truth": "本款電視具備 4K 120Hz 高更新率，並配備 HDMI 2.1 介面與 VRR 可變更新率技術，能有效降低畫面延遲與撕裂感，非常適合搭配 PS5 等次世代遊戲主機使用。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.8503,
+        "bge_cosine": 0.3413,
+        "hallucination": 1.0,
+        "latency_ms": 183.59
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0131",
+          "chunk_0068",
+          "chunk_0103",
+          "chunk_0109",
+          "chunk_0130"
+        ],
+        "relevant_ids": [
+          "chunk_0131",
+          "chunk_0130"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.07,
+        "bge_ms": 181.45,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 183.59
+      }
+    },
+    {
+      "sample_id": 2,
+      "question": "請問這款智慧電視的 OS 是哪一種？可以直接用 AirPlay 把 iPhone 畫面投過去嗎？",
+      "ground_truth": "本電視搭載最新的 Google TV 作業系統，內建 Chromecast 投放功能。同時它也支援 Apple AirPlay 2，您可以直接將 iPhone 或 iPad 的畫面無線投影至電視大螢幕上。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3232,
+        "hallucination": 1.0,
+        "latency_ms": 164.13
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0157",
+          "chunk_0068",
+          "chunk_0131",
+          "chunk_0141",
+          "chunk_0109"
+        ],
+        "relevant_ids": [
+          "chunk_0157"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.25,
+        "bge_ms": 161.81,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 164.13
+      }
+    },
+    {
+      "sample_id": 3,
+      "question": "客廳採光很好會反光，這台的面板亮度夠嗎？還有它的 HDR 效果怎麼樣？",
+      "ground_truth": "此車款採用 Mini-LED 面板技術，峰值亮度高達 1500 nits，並具備抗眩光霧面塗層，在採光良好的客廳也能清晰呈現。此外，它支援 Dolby Vision IQ 與 HDR10+，能根據環境光線自動優化高動態範圍的畫面細節。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3278,
+        "hallucination": 1.0,
+        "latency_ms": 151.04
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0168",
+          "chunk_0074",
+          "chunk_0070",
+          "chunk_0123",
+          "chunk_0157"
+        ],
+        "relevant_ids": [
+          "chunk_0168"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.74,
+        "bge_ms": 149.24,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 151.04
+      }
+    },
+    {
+      "sample_id": 4,
+      "question": "壁掛架是隨機附贈還是要加購？原廠保固是算兩年還是三年？",
+      "ground_truth": "本商品包裝內僅隨附桌上型底座，專用壁掛架需另外加購。保固部分，自購買發票日起享有台灣原廠全機 3 年完整保固（含面板與主機板）。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.25,
+        "ndcg_at_5": 0.2021,
+        "bge_cosine": 0.3253,
+        "hallucination": 1.0,
+        "latency_ms": 154.43
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0218",
+          "chunk_0217",
+          "chunk_0122",
+          "chunk_0088",
+          "chunk_0109"
+        ],
+        "relevant_ids": [
+          "chunk_0088",
+          "chunk_0030",
+          "chunk_0180"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.19,
+        "bge_ms": 153.18,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 154.43
+      }
+    },
+    {
+      "sample_id": 5,
+      "question": "這台有內建 Soundbar 嗎？它的喇叭輸出功率功率瓦數是多少？",
+      "ground_truth": "本電視並未內建獨立 Soundbar，但機身內部配置了 2.1 聲道喇叭系統，包含雙聲道全音域揚聲器與一個後置重低音單體，總輸出功率為 40W，並支援 Dolby Atmos 杜比全景聲環繞音效。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.2701,
+        "hallucination": 1.0,
+        "latency_ms": 159.15
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0156",
+          "chunk_0104",
+          "chunk_0222",
+          "chunk_0136",
+          "chunk_0168"
+        ],
+        "relevant_ids": [
+          "chunk_0156"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.85,
+        "bge_ms": 157.23,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 159.15
+      }
+    },
+    {
+      "sample_id": 6,
+      "question": "這款升降桌有附安全防撞嗎？萬一降下來壓到椅子會不會卡死？",
+      "ground_truth": "本款電動升降桌內建高靈敏度陀螺儀防撞感應系統（Anti-Collision），在升降過程中若遇到椅子或抽屜等阻礙物，桌子會立即停止並反向回彈約2公分，確保使用安全。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3339,
+        "hallucination": 1.0,
+        "latency_ms": 156.98
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0129",
+          "chunk_0067",
+          "chunk_0085",
+          "chunk_0118",
+          "chunk_0197"
+        ],
+        "relevant_ids": [
+          "chunk_0129"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.39,
+        "bge_ms": 155.55,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 156.98
+      }
+    },
+    {
+      "sample_id": 7,
+      "question": "請問這張桌子的最大承重是多少？我放兩台 32吋 monitor 外加主機撐得住嗎？",
+      "ground_truth": "該電腦桌採用高強度加厚鋼架結構，靜態最大承重可達 100 公斤。放置兩台 32 吋螢幕與一台高階電腦主機完全沒有問題，整體結構依然穩固不搖晃。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.2965,
+        "hallucination": 1.0,
+        "latency_ms": 154.12
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0193",
+          "chunk_0015",
+          "chunk_0120",
+          "chunk_0100",
+          "chunk_0166"
+        ],
+        "relevant_ids": [
+          "chunk_0193"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.98,
+        "bge_ms": 152.08,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 154.12
+      }
+    },
+    {
+      "sample_id": 8,
+      "question": "這款 L型電腦桌有沒有免運送到家？住公寓 4樓沒有電梯可以幫忙搬運上去嗎？",
+      "ground_truth": "目前全館消費滿千元即享免運費送達指定地址。若目的地為無電梯公寓 4 樓，物流公司需酌收樓層搬運費（每層樓約 100-150 元），建議於下單時備註以利安排。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3734,
+        "hallucination": 1.0,
+        "latency_ms": 161.23
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0175",
+          "chunk_0147",
+          "chunk_0159",
+          "chunk_0161",
+          "chunk_0207"
+        ],
+        "relevant_ids": [
+          "chunk_0175"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.65,
+        "bge_ms": 159.52,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 161.23
+      }
+    },
+    {
+      "sample_id": 9,
+      "question": "這張書桌的 size 寬度和深度是多少？120公分有現貨嗎？",
+      "ground_truth": "此款電腦桌共有三種標準尺寸，您詢問的 120 公分款，具體規格為寬度 120 公分、深度 60 公分、高度 75 公分。目前 120 公分極簡黑與橡木色皆有現貨，下單後約 3 個工作天內出貨。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3482,
+        "hallucination": 1.0,
+        "latency_ms": 163.35
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0166",
+          "chunk_0120",
+          "chunk_0153",
+          "chunk_0117",
+          "chunk_0127"
+        ],
+        "relevant_ids": [
+          "chunk_0166"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.78,
+        "bge_ms": 161.51,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 163.35
+      }
+    },
+    {
+      "sample_id": 10,
+      "question": "升降桌的馬達保固是算多久？是台灣原廠負責維修嗎？",
+      "ground_truth": "本公司提供全桌台灣原廠核心保固，其中電動升降桌的雙馬達與控制盒享有 5 年保固，鋼製桌架與桌面板則享有 2 年非人為損壞保固，後續維修皆由台灣本地維修團隊提供到府服務。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.5414,
+        "bge_cosine": 0.2975,
+        "hallucination": 1.0,
+        "latency_ms": 154.15
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0085",
+          "chunk_0073",
+          "chunk_0136",
+          "chunk_0088",
+          "chunk_0039"
+        ],
+        "relevant_ids": [
+          "chunk_0085",
+          "chunk_0039",
+          "chunk_0038",
+          "chunk_0137"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.26,
+        "bge_ms": 152.83,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 154.15
+      }
+    },
+    {
+      "sample_id": 11,
+      "question": "桌面是什麼材質？如果常常放熱咖啡 cup 在上面會不會容易起泡或吃色？",
+      "ground_truth": "桌面採用 E1 級環保高密度板，表面經由高溫熱壓防刮耐磨三聚氰胺（MFC）與防潑水塗層處理。一般溫熱馬克杯直接放置不會導致起泡，且具備抗污防吃色特性，若不慎沾染咖啡僅需用濕布擦拭乾淨即可。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3321,
+        "hallucination": 1.0,
+        "latency_ms": 147.44
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0162",
+          "chunk_0084",
+          "chunk_0120",
+          "chunk_0170",
+          "chunk_0107"
+        ],
+        "relevant_ids": [
+          "chunk_0162"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.31,
+        "bge_ms": 146.07,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 147.44
+      }
+    },
+    {
+      "sample_id": 12,
+      "question": "這款電腦桌本身有帶集線槽嗎？我的線很多想要收得乾淨一點。",
+      "ground_truth": "有的，該款電腦桌桌面後方中央設計了隱藏式翻蓋理線孔，且桌板下方附帶一個大容量金屬網狀集線槽（Cable Management Tray），方便您收納延長線、變壓器與各種線材，保持桌面整潔。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3828,
+        "hallucination": 1.0,
+        "latency_ms": 140.81
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0084",
+          "chunk_0112",
+          "chunk_0120",
+          "chunk_0200",
+          "chunk_0166"
+        ],
+        "relevant_ids": [
+          "chunk_0084"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.28,
+        "bge_ms": 139.47,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 140.81
+      }
+    },
+    {
+      "sample_id": 13,
+      "question": "我想安裝螢幕壁掛架或是 monitor arm，這張桌子的桌緣深度夠夾嗎？",
+      "ground_truth": "本款桌面邊緣的鋼管結構有內縮 5 公分，留有充足的夾式空間，桌板厚度為 2.5 公分，完全相容市面上絕大多數的夾桌式或穿孔式螢幕支架（Monitor Arm）。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.25,
+        "ndcg_at_5": 0.4307,
+        "bge_cosine": 0.3378,
+        "hallucination": 1.0,
+        "latency_ms": 153.15
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0166",
+          "chunk_0088",
+          "chunk_0153",
+          "chunk_0120",
+          "chunk_0137"
+        ],
+        "relevant_ids": [
+          "chunk_0120"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.89,
+        "bge_ms": 151.21,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 153.15
+      }
+    },
+    {
+      "sample_id": 14,
+      "question": "手搖升降的會不會很難轉？如果從 70 升到 110 級公分大概要轉幾圈？",
+      "ground_truth": "本款手搖升降桌採用輕量化專利齒輪比設計，轉動手把時十分流暢省力。從最低 70 公分調整至最高 110 公分，大約需要順時針轉動 45 圈左右，手把在不用時可折疊收納於桌底。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3161,
+        "hallucination": 1.0,
+        "latency_ms": 151.49
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0118",
+          "chunk_0107",
+          "chunk_0146",
+          "chunk_0197",
+          "chunk_0113"
+        ],
+        "relevant_ids": [
+          "chunk_0118"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.57,
+        "bge_ms": 149.85,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 151.49
+      }
+    },
+    {
+      "sample_id": 15,
+      "question": "這張桌子需要自己 DIY 組裝嗎？說明書的步驟會不會很複雜？",
+      "ground_truth": "本商品為 DIY 自行組裝商品，包裝內隨附五金配件包與專用六角板手，並附有詳細的繁體中文圖解說明書，組裝步驟已極簡化，單人組裝大約需要 30 分鐘。若需工程師到府組裝，可在加購區選擇代組裝服務（需酌收服務費）。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3551,
+        "hallucination": 1.0,
+        "latency_ms": 156.32
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0089",
+          "chunk_0114",
+          "chunk_0166",
+          "chunk_0140",
+          "chunk_0118"
+        ],
+        "relevant_ids": [
+          "chunk_0089"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.7,
+        "bge_ms": 154.57,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 156.32
+      }
+    },
+    {
+      "sample_id": 16,
+      "question": "這台螢幕有支援 2K 144Hz 嗎？我接顯卡玩 FPS 遊戲畫面會不會有殘影？",
+      "ground_truth": "本款電競螢幕具備 2K（2560x1440）解析度與 165Hz 超高更新率，並擁有 1ms（GTG）極速反應時間與 G-Sync Compatible 技術，能有效消除高速動態畫面下的殘影與撕裂感，非常適合 FPS 玩家。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.368,
+        "hallucination": 1.0,
+        "latency_ms": 156.99
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0130",
+          "chunk_0102",
+          "chunk_0109",
+          "chunk_0083",
+          "chunk_0131"
+        ],
+        "relevant_ids": [
+          "chunk_0130"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.93,
+        "bge_ms": 155.0,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 156.99
+      }
+    },
+    {
+      "sample_id": 17,
+      "question": "我是做設計的，這台 monitor 的色彩精準度 ok 嗎？有沒有校色證明？",
+      "ground_truth": "本螢幕專為專業創作者設計，具備 100% sRGB 與 98% DCI-P3 廣色域，且每台機器在出廠前皆經過嚴格的逐台色彩校正（Delta E < 2），包裝內均隨附原廠紙本校色報告，確保色彩真實精準。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3474,
+        "hallucination": 1.0,
+        "latency_ms": 155.52
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0145",
+          "chunk_0070",
+          "chunk_0207",
+          "chunk_0208",
+          "chunk_0143"
+        ],
+        "relevant_ids": [
+          "chunk_0145"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.52,
+        "bge_ms": 153.95,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 155.52
+      }
+    },
+    {
+      "sample_id": 18,
+      "question": "請問這款曲面螢幕的曲率是多少？我看影片或打電動包覆感好嗎？",
+      "ground_truth": "本款螢幕採用 1000R 黃金曲率設計，相較於傳統 1500R 擁有更貼合人眼視網膜的弧度。無論是觀看 21:9 電影還是遊玩沉浸式 3A 大作，都能提供極佳的環繞包覆感與視覺臨場感。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3227,
+        "hallucination": 1.0,
+        "latency_ms": 145.46
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0122",
+          "chunk_0074",
+          "chunk_0109",
+          "chunk_0130",
+          "chunk_0104"
+        ],
+        "relevant_ids": [
+          "chunk_0122"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.34,
+        "bge_ms": 144.07,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 145.46
+      }
+    },
+    {
+      "sample_id": 19,
+      "question": "它的 Type-C 接口有支援 PD 快充嗎？可以直接接 MacBook 畫面輸出兼充電嗎？",
+      "ground_truth": "有的，本螢幕配備全功能 USB Type-C 介面，支援 DisplayPort Alternate Mode 影像輸出，並提供高達 90W 的 USB Power Delivery（PD）反向快速充電，只需一條線即可搞定 MacBook 的畫面投放與供電。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3562,
+        "hallucination": 1.0,
+        "latency_ms": 144.44
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0083",
+          "chunk_0139",
+          "chunk_0082",
+          "chunk_0141",
+          "chunk_0158"
+        ],
+        "relevant_ids": [
+          "chunk_0083"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.99,
+        "bge_ms": 142.38,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 144.44
+      }
+    },
+    {
+      "sample_id": 20,
+      "question": "這台螢幕有沒有內建立體聲喇叭？還是說我一定要自己加購外接喇叭？",
+      "ground_truth": "本機身內部已內建 2 瓦特（2W x 2）的立體聲音訊揚聲器，可滿足日常系統提示音或單純觀看影片的基本聽覺需求。若您對音質或低音表現有較高要求，建議可透過螢幕後方的 3.5mm 音訊輸出孔外接喇叭或耳機。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.2949,
+        "hallucination": 1.0,
+        "latency_ms": 174.45
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0104",
+          "chunk_0156",
+          "chunk_0120",
+          "chunk_0083",
+          "chunk_0207"
+        ],
+        "relevant_ids": [
+          "chunk_0104"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.47,
+        "bge_ms": 172.92,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 174.45
+      }
+    },
+    {
+      "sample_id": 21,
+      "question": "我常加班寫 code 看螢幕，這台防藍光或閃屏的效果好嗎？眼睛會不會酸？",
+      "ground_truth": "本產品通過德國萊因（TÜV Rheinland）雙重認證，具備硬體級低藍光技術（減藍光而不偏黃）以及不閃濾波（Flicker-Free）不閃屏技術，能大幅減少長時間觀看程式碼帶來的眼睛疲勞與乾澀感。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.5,
+        "ndcg_at_5": 0.6309,
+        "bge_cosine": 0.3762,
+        "hallucination": 1.0,
+        "latency_ms": 169.08
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0074",
+          "chunk_0143",
+          "chunk_0146",
+          "chunk_0070",
+          "chunk_0104"
+        ],
+        "relevant_ids": [
+          "chunk_0143"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.2,
+        "bge_ms": 166.81,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 169.08
+      }
+    },
+    {
+      "sample_id": 22,
+      "question": "這款螢幕的支架可以直立旋轉嗎？還是只能前後調整角度？",
+      "ground_truth": "本螢幕隨附高階人體工學支架，支援全方位調整：包含 130mm 垂直高度升降、傾斜角度（-5°至+21°）、左右旋轉（±30°），並支援 90° 垂直旋轉（Pivot），方便您將螢幕轉為直式瀏覽網頁或撰寫程式。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3601,
+        "hallucination": 1.0,
+        "latency_ms": 160.47
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0146",
+          "chunk_0120",
+          "chunk_0123",
+          "chunk_0122",
+          "chunk_0113"
+        ],
+        "relevant_ids": [
+          "chunk_0146"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.43,
+        "bge_ms": 158.88,
+        "rrf_ms": 0.14,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 160.47
+      }
+    },
+    {
+      "sample_id": 23,
+      "question": "請問它的面板是 IPS 還是 VA 的？側面看過去畫面會不會變黑或色偏？",
+      "ground_truth": "本款螢幕採用先進的 IPS 超廣視角面板，具備水平與垂直皆達 178 度的可視角。即使從極端的側面角度觀看，畫面色彩與對比度依然能保持高度一致，不會出現明顯的灰階反轉或色偏現象。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3145,
+        "hallucination": 1.0,
+        "latency_ms": 150.46
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0123",
+          "chunk_0168",
+          "chunk_0122",
+          "chunk_0157",
+          "chunk_0145"
+        ],
+        "relevant_ids": [
+          "chunk_0123"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.66,
+        "bge_ms": 148.76,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 150.46
+      }
+    },
+    {
+      "sample_id": 24,
+      "question": "買這台電視螢幕如果有亮點或暗點怎麼辦？原廠有保固幾個月無亮點嗎？",
+      "ground_truth": "台灣原廠提供全機 3 年完整保固。針對面板部分，本型號享有自購買日起 30 天內「全區無亮點保固（ZBD）」，若在限期內發現任何一個規格外的亮點，可憑發票與購買憑證申請免費更換全新面板。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.5531,
+        "bge_cosine": 0.3429,
+        "hallucination": 1.0,
+        "latency_ms": 147.2
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0030",
+          "chunk_0180",
+          "chunk_0218",
+          "chunk_0087",
+          "chunk_0217"
+        ],
+        "relevant_ids": [
+          "chunk_0088",
+          "chunk_0180",
+          "chunk_0018",
+          "chunk_0019",
+          "chunk_0090",
+          "chunk_0030"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.68,
+        "bge_ms": 145.46,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 147.2
+      }
+    },
+    {
+      "sample_id": 25,
+      "question": "這台有 HDR400 認證嗎？我看 Netflix 特效全開的話亮度夠不夠？",
+      "ground_truth": "是的，本螢幕通過 VESA DisplayHDR 400 官方認證，峰值亮度可達 400 nits。當您觀看 Netflix 或 YouTube 等支援 HDR 格式的影音內容時，系統會自動觸發 HDR 模式，顯著提升明暗對比與亮部細節。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.2674,
+        "hallucination": 1.0,
+        "latency_ms": 163.61
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0074",
+          "chunk_0168",
+          "chunk_0070",
+          "chunk_0102",
+          "chunk_0104"
+        ],
+        "relevant_ids": [
+          "chunk_0074"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.97,
+        "bge_ms": 161.58,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 163.61
+      }
+    },
+    {
+      "sample_id": 26,
+      "question": "開這款隨身碟接電腦的 USB 3.2 接口，傳一個 10G 的影片檔案大概要多久？會不會太慢？",
+      "ground_truth": "本款隨身碟採用高速 USB 3.2 Gen 1 介面，讀取速度最高可達 400MB/s，寫入速度達 150MB/s。傳輸一個 10GB 的高畫質影片檔案大約僅需 1 分多鐘，大幅減少您的等待時間。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3687,
+        "hallucination": 1.0,
+        "latency_ms": 168.56
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0128",
+          "chunk_0127",
+          "chunk_0141",
+          "chunk_0103",
+          "chunk_0107"
+        ],
+        "relevant_ids": [
+          "chunk_0128"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.68,
+        "bge_ms": 166.82,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 168.56
+      }
+    },
+    {
+      "sample_id": 27,
+      "question": "我的手機是 Type-C 的，這支隨身碟可以直接插手機備份照片嗎？需要裝 App 嗎？",
+      "ground_truth": "本產品為雙頭（Dual Connectors）兩用隨身碟，具備 USB-A 與 USB Type-C 雙介面，可直接插入支援 OTG 功能的 Android 手機或 iPhone 15/16 系列。無需安裝額外 App，透過手機內建的「檔案」軟體即可直接傳輸備份相片。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3666,
+        "hallucination": 1.0,
+        "latency_ms": 172.23
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0141",
+          "chunk_0158",
+          "chunk_0127",
+          "chunk_0155",
+          "chunk_0139"
+        ],
+        "relevant_ids": [
+          "chunk_0141"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.09,
+        "bge_ms": 170.09,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 172.23
+      }
+    },
+    {
+      "sample_id": 28,
+      "question": "這種金屬外殼的隨身碟用久了會不會很燙？會不會因為過熱結果突然斷線讀不到？",
+      "ground_truth": "高規格高速隨身碟在大量讀寫時，金屬外殼會主動導熱以保護內部晶片，因此摸起來有微溫感屬正常現象。本產品內建智慧溫控（Thermal Throttling）保護機制，會自動調節傳輸效率以防止過熱，不會發生突然斷線或無法讀取的情況。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3516,
+        "hallucination": 1.0,
+        "latency_ms": 180.66
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0226",
+          "chunk_0154",
+          "chunk_0127",
+          "chunk_0155",
+          "chunk_0102"
+        ],
+        "relevant_ids": [
+          "chunk_0226"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.89,
+        "bge_ms": 178.7,
+        "rrf_ms": 0.07,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 180.66
+      }
+    },
+    {
+      "sample_id": 29,
+      "question": "開這款有防震防摔嗎？我不小心摔到地上或碰到水，裡面的 Data 會不會不見？",
+      "ground_truth": "本隨身碟採用一體成型（COB）封裝技術，具備基本的防水、防塵及防震防摔特性。若不慎掉落地上或掉入清水中，只要及時撿起並確保金屬接頭完全晾乾後，即可正常使用，資料不會輕易遺失。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3937,
+        "hallucination": 1.0,
+        "latency_ms": 196.28
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0154",
+          "chunk_0125",
+          "chunk_0119",
+          "chunk_0197",
+          "chunk_0202"
+        ],
+        "relevant_ids": [
+          "chunk_0154"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.79,
+        "bge_ms": 194.43,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 196.28
+      }
+    },
+    {
+      "sample_id": 30,
+      "question": "請問保固是算幾年？如果隨身碟壞了，原廠會幫忙把裡面的檔案 Data 救回來嗎？",
+      "ground_truth": "台灣代理商提供 5 年有限保固，保固期間內若非人為損壞可享免費維修或換新。但請注意，所有原廠保固範圍僅限於硬體本身，均不包含內部資料的救援與備份服務，建議重要資料務必定期進行多重備份。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.7039,
+        "bge_cosine": 0.3523,
+        "hallucination": 1.0,
+        "latency_ms": 184.56
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0136",
+          "chunk_0155",
+          "chunk_0028",
+          "chunk_0128",
+          "chunk_0086"
+        ],
+        "relevant_ids": [
+          "chunk_0029",
+          "chunk_0028",
+          "chunk_0136"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.07,
+        "bge_ms": 182.43,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 184.56
+      }
+    },
+    {
+      "sample_id": 31,
+      "question": "請問 256GB 的隨身碟實際上插到 Windows 電腦上看，容量是多少？怎麼變少了？",
+      "ground_truth": "這是因為硬體廠商與電腦作業系統的進位制不同所致（廠商採十進位，電腦採二進位：$1\\text{KB}=1024\\text{Bytes}$）。因此，256GB 的隨身碟在 Windows 系統中顯示的實際可用容量大約在 230GB 到 238GB 之間，此為正常現象而非瑕疵。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3133,
+        "hallucination": 1.0,
+        "latency_ms": 186.04
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0196",
+          "chunk_0148",
+          "chunk_0155",
+          "chunk_0127",
+          "chunk_0128"
+        ],
+        "relevant_ids": [
+          "chunk_0196"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.61,
+        "bge_ms": 184.38,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 186.04
+      }
+    },
+    {
+      "sample_id": 32,
+      "question": "這款有支援硬體加密嗎？我想要把私密文件鎖起來，換電腦看要密碼的那種。",
+      "ground_truth": "本隨身碟隨機附贈原廠專屬的安全加密軟體，支援 AES 256 位元硬體加密技術。您可以在隨身碟內建立加密保險箱資料夾，設定密碼後，無論將隨身碟插到哪一台電腦，都必須輸入正確密碼才能解鎖讀取該資料夾內的內容。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3291,
+        "hallucination": 1.0,
+        "latency_ms": 214.03
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0155",
+          "chunk_0144",
+          "chunk_0053",
+          "chunk_0213",
+          "chunk_0154"
+        ],
+        "relevant_ids": [
+          "chunk_0155"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.46,
+        "bge_ms": 211.51,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 214.03
+      }
+    },
+    {
+      "sample_id": 33,
+      "question": "這支隨身碟的 size 會不會很大？如果插在筆電上會不會卡到隔壁的 USB port？",
+      "ground_truth": "本款隨身碟採用極致迷你（Ultra-compact）的窄身工藝設計，機身寬度僅約 1.2 公分。即使插在側邊接口較密集的輕薄筆電上，也不會阻擋或卡到鄰近的 USB 埠或 Type-C 接口。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3317,
+        "hallucination": 1.0,
+        "latency_ms": 241.49
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0127",
+          "chunk_0128",
+          "chunk_0196",
+          "chunk_0155",
+          "chunk_0148"
+        ],
+        "relevant_ids": [
+          "chunk_0127"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.94,
+        "bge_ms": 238.49,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 241.49
+      }
+    },
+    {
+      "sample_id": 34,
+      "question": "這台有免運嗎？我如果是要拿來做 Windows 11 的開機隨身碟引導，16G 夠不夠大？",
+      "ground_truth": "本賣場消費滿 499 元即享超商免運。若要製作 Windows 11 的官方系統安裝開機碟（Bootable USB），微軟官方規格要求至少需要 8GB 以上的空間，因此選擇 16GB 的容量是絕對足夠使用的。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3307,
+        "hallucination": 1.0,
+        "latency_ms": 219.7
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0148",
+          "chunk_0111",
+          "chunk_0142",
+          "chunk_0196",
+          "chunk_0092"
+        ],
+        "relevant_ids": [
+          "chunk_0148"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.28,
+        "bge_ms": 217.36,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 219.7
+      }
+    },
+    {
+      "sample_id": 35,
+      "question": "它是無蓋設計嗎？我很常把蓋子不見，這種伸縮的用久了彈簧會不會卡死？",
+      "ground_truth": "是的，本款採用推滑式無蓋（Capless）設計，免去遺失上蓋的煩惱。其內部採用高耐用度的卡榫滑道結構（非傳統彈簧），經過原廠高達 10,000 次的推拉測試，只要不遭受重力撞擊，長期使用依然能保持滑順不卡死。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3867,
+        "hallucination": 1.0,
+        "latency_ms": 223.09
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0067",
+          "chunk_0101",
+          "chunk_0094",
+          "chunk_0096",
+          "chunk_0090"
+        ],
+        "relevant_ids": [
+          "chunk_0067"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.99,
+        "bge_ms": 221.04,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 223.09
+      }
+    },
+    {
+      "sample_id": 36,
+      "question": "這台 2-Bay 的 NAS 如果我裝兩顆 4TB 跑 RAID 1，這樣我的可用容量是多少？Data 安全性高嗎？",
+      "ground_truth": "在 RAID 1（鏡像模式）架構下，兩顆硬碟會互為備份，因此可用容量為單顆硬碟的空間，即 4TB。這種配置的安全性極高，因為即使其中一顆硬碟完全損壞，您的 Data 依然完好保存在另一顆硬碟中，支援即時更換壞軌硬碟自動修復。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3859,
+        "hallucination": 1.0,
+        "latency_ms": 195.8
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0035",
+          "chunk_0106",
+          "chunk_0196",
+          "chunk_0107",
+          "chunk_0116"
+        ],
+        "relevant_ids": [
+          "chunk_0035"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.81,
+        "bge_ms": 192.93,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 195.8
+      }
+    },
+    {
+      "sample_id": 37,
+      "question": "請問這台 NAS 的網路埠是 1G 還是 2.5GbE 的？如果我要區網傳大檔案會不會卡在網路速度？",
+      "ground_truth": "本機款配備了雙 2.5GbE 高速網路埠，並支援網路聚合（Link Aggregation）。相較於傳統 1GbE 埠，能提供高達 2.5 倍的傳輸頻寬，在區域網路內傳輸 4K 影片或大型專案檔案時，能大幅減少傳輸延遲與 Lag 現象。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3256,
+        "hallucination": 1.0,
+        "latency_ms": 189.68
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0103",
+          "chunk_0179",
+          "chunk_0098",
+          "chunk_0116",
+          "chunk_0106"
+        ],
+        "relevant_ids": [
+          "chunk_0103"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 3.53,
+        "bge_ms": 186.09,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 189.68
+      }
+    },
+    {
+      "sample_id": 38,
+      "question": "我很在乎保固，這台智慧儲存伺服器的保固是幾年？出問題有台灣原廠可以送修嗎？",
+      "ground_truth": "本產品享有台灣代理商與原廠提供的 3 年硬體有限保固。若產品發生非人為故障，您可以直接送至台灣原廠授權的維修中心，或是透過官網申請 Rma 到府收送服務，售後服務皆在台灣本地完成。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.8688,
+        "bge_cosine": 0.3394,
+        "hallucination": 1.0,
+        "latency_ms": 187.03
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0072",
+          "chunk_0136",
+          "chunk_0073",
+          "chunk_0137",
+          "chunk_0203"
+        ],
+        "relevant_ids": [
+          "chunk_0085",
+          "chunk_0052",
+          "chunk_0136",
+          "chunk_0039",
+          "chunk_0072",
+          "chunk_0038",
+          "chunk_0036",
+          "chunk_0073",
+          "chunk_0137",
+          "chunk_0037",
+          "chunk_0090",
+          "chunk_0087",
+          "chunk_0071",
+          "chunk_0051"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.48,
+        "bge_ms": 184.49,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 187.03
+      }
+    },
+    {
+      "sample_id": 39,
+      "question": "它的作業系統 App 軟體可以支援手機外網連線嗎？還是我一定要在同一個 Wi-Fi 才能連？",
+      "ground_truth": "系統搭載專屬的智慧內建作業系統，並提供免費的 QuickConnect（快連）功能。您只需註冊一組 ID，無需繁瑣的路由器設定，即可透過手機 App（如 iOS/Android 專屬軟體）在外部 4G/5G 行動網路下遠端存取與備份 NAS 內的資料。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.2,
+        "ndcg_at_5": 0.1815,
+        "bge_cosine": 0.3992,
+        "hallucination": 1.0,
+        "latency_ms": 177.71
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0080",
+          "chunk_0045",
+          "chunk_0046",
+          "chunk_0044",
+          "chunk_0179"
+        ],
+        "relevant_ids": [
+          "chunk_0167",
+          "chunk_0165",
+          "chunk_0179"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.22,
+        "bge_ms": 175.45,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 177.71
+      }
+    },
+    {
+      "sample_id": 40,
+      "question": "這款 NAS 有沒有免運費？隨機出貨有包含硬碟嗎？還是 HDD 要自己加購？",
+      "ground_truth": "本商品現正舉辦滿額免運活動，下單即享宅配免運費送達。商品包裝內為 NAS 主機空機（Diskless Unit），不包含任何硬碟，您需要根據自身容量需求，另外加購專用的 NAS 專用傳統硬碟（HDD）或固態硬碟（SSD）。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.4022,
+        "hallucination": 1.0,
+        "latency_ms": 195.27
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0092",
+          "chunk_0078",
+          "chunk_0207",
+          "chunk_0149",
+          "chunk_0208"
+        ],
+        "relevant_ids": [
+          "chunk_0092"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.79,
+        "bge_ms": 193.42,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 195.27
+      }
+    },
+    {
+      "sample_id": 41,
+      "question": "我想拿這台來跑 Docker 或者是架虛擬機，這台的 CPU 撐得住嗎？RAM 記憶體能不能自己加？",
+      "ground_truth": "本機款採用 Intel 四核心處理器，具備強大的硬體解碼與計算能力，非常適合執行 Docker 容器軟體。主機內建 4GB DDR4 記憶體，並留有一個擴充插槽，最大可自行升級加裝至 16GB RAM，以流暢執行多個虛擬機。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3081,
+        "hallucination": 1.0,
+        "latency_ms": 178.42
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0100",
+          "chunk_0093",
+          "chunk_0033",
+          "chunk_0110",
+          "chunk_0070"
+        ],
+        "relevant_ids": [
+          "chunk_0100"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.48,
+        "bge_ms": 175.87,
+        "rrf_ms": 0.07,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 178.42
+      }
+    },
+    {
+      "sample_id": 42,
+      "question": "這台的 size 會不會很大很佔位子？放在客廳或房間會不會有很大的馬達噪音？",
+      "ground_truth": "本款 2-Bay NAS 採用極簡緊湊的外觀設計，尺寸僅約 16.5 x 10.8 x 23 公分（高x寬x深），非常節省空間。內建智慧溫控靜音風扇，在一般系統待機或低負載運作時，噪音值僅約 18.2 聲學分貝（dB），幾乎聽不到運轉聲。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.5,
+        "ndcg_at_5": 0.6309,
+        "bge_cosine": 0.2944,
+        "hallucination": 1.0,
+        "latency_ms": 174.7
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0017",
+          "chunk_0106",
+          "chunk_0168",
+          "chunk_0193",
+          "chunk_0123"
+        ],
+        "relevant_ids": [
+          "chunk_0106"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.64,
+        "bge_ms": 173.01,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 174.7
+      }
+    },
+    {
+      "sample_id": 43,
+      "question": "它有支援 M.2 NVMe SSD 當快取嗎？裝了之後對檢索或讀寫速度有優化嗎？",
+      "ground_truth": "有的，主機內部配置了兩個額外的 M.2 NVMe SSD 插槽。您可以安裝固態硬碟作為系統的快取記憶體（SSD Cache），這能大幅提升多使用者隨機存取、小檔案讀寫以及資料庫檢索時的系統反應速度。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.8772,
+        "bge_cosine": 0.3852,
+        "hallucination": 1.0,
+        "latency_ms": 177.98
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0078",
+          "chunk_0111",
+          "chunk_0128",
+          "chunk_0015",
+          "chunk_0168"
+        ],
+        "relevant_ids": [
+          "chunk_0015",
+          "chunk_0078"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.25,
+        "bge_ms": 175.67,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 177.98
+      }
+    },
+    {
+      "sample_id": 44,
+      "question": "這台 NAS 有防勒索軟體嗎？萬一電腦中病毒，NAS 裡面的備份檔案會不會也死掉？",
+      "ground_truth": "本系統支援強大的 Btrfs 檔案系統，具備「快照（Snapshot）」技術。您可以設定排程每小時自動建立快照，由於快照檔案具備唯讀屬性，即使電腦不慎感染勒索病毒並波及網路磁碟機，您也能在幾分鐘內將系統 Data 還原至被加密前的健康狀態。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3761,
+        "hallucination": 1.0,
+        "latency_ms": 184.35
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0144",
+          "chunk_0092",
+          "chunk_0179",
+          "chunk_0116",
+          "chunk_0155"
+        ],
+        "relevant_ids": [
+          "chunk_0144"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 4.29,
+        "bge_ms": 179.99,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 184.35
+      }
+    },
+    {
+      "sample_id": 45,
+      "question": "請問這台有支援 4K 影片硬體解碼嗎？我想用 Plex 在電視上播 NAS 裡的影片。",
+      "ground_truth": "是的，本款處理器內建 Intel UHD Graphics 顯示晶片，全面支援 4K H.265/HEVC 影片硬體即時轉碼（Hardware Transcoding）。當您使用 Plex 或內建影音軟體在智慧電視、手機上播放時，系統能自動將影片解碼轉換為適合當前設備的解析度，確保播放流暢不 Lag。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3462,
+        "hallucination": 1.0,
+        "latency_ms": 180.43
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0068",
+          "chunk_0131",
+          "chunk_0103",
+          "chunk_0104",
+          "chunk_0100"
+        ],
+        "relevant_ids": [
+          "chunk_0068"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.33,
+        "bge_ms": 178.04,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 180.43
+      }
+    },
+    {
+      "sample_id": 46,
+      "question": "這支手機有支援 120Hz 更新率嗎？我滑臉書或打手遊畫面會不會有 Lag 的感覺？",
+      "ground_truth": "本款 Android 手機配備了 6.7 吋 AMOLED 螢幕，支援 120Hz 智慧動態更新率技術。無論是高速滑動社群軟體網頁，還是遊玩支援高幀率的大型 3A 手遊，都能提供極致流暢、無殘影且低延遲的視覺體驗。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3083,
+        "hallucination": 1.0,
+        "latency_ms": 170.0
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0109",
+          "chunk_0131",
+          "chunk_0130",
+          "chunk_0079",
+          "chunk_0082"
+        ],
+        "relevant_ids": [
+          "chunk_0109"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.03,
+        "bge_ms": 167.91,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 170.0
+      }
+    },
+    {
+      "sample_id": 47,
+      "question": "請問這台的拍照功能怎麼樣？有沒有光學防手震？拍夜景大樓會不會糊掉？",
+      "ground_truth": "該機款搭載 5000 萬畫素超感光主鏡頭，並全面內建 OIS 光學防手震技術。搭配獨家夜景演算法軟體，在暗光或夜間環境下拍攝大樓與夜景，能大幅提升進光量並有效防止手震，拍出清晰純淨、不模糊的夜拍照片。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3132,
+        "hallucination": 1.0,
+        "latency_ms": 167.13
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0192",
+          "chunk_0207",
+          "chunk_0119",
+          "chunk_0208",
+          "chunk_0109"
+        ],
+        "relevant_ids": [
+          "chunk_0192"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.81,
+        "bge_ms": 165.26,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 167.13
+      }
+    },
+    {
+      "sample_id": 48,
+      "question": "開這款手機有隨機附贈充電頭嗎？快充速度是幾瓦特？大概多久可以充飽 battery？",
+      "ground_truth": "響應環保政策，本商品原廠包裝內僅附贈充電線，超極速快充頭需另外加購。手機硬體最高支援 67W 有線快充，搭配相容的充電器，最快僅需 45 分鐘即可將 5000mAh 的大容量電池（Battery）由 0% 充至 100%。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3184,
+        "hallucination": 1.0,
+        "latency_ms": 174.67
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0225",
+          "chunk_0111",
+          "chunk_0202",
+          "chunk_0221",
+          "chunk_0169"
+        ],
+        "relevant_ids": [
+          "chunk_0225"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.89,
+        "bge_ms": 172.72,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 174.67
+      }
+    },
+    {
+      "sample_id": 49,
+      "question": "我想要可以防水的手機，這台的防水等級是多少？不小心掉到水槽會壞嗎？",
+      "ground_truth": "本款旗艦機具備業界頂級的 IP68 防水防塵規格。在實驗室測試環境下，可抗禦深達 1.5 公尺的靜止純水中不慎浸泡 30 分鐘，因此日常生活中不小心掉入清水槽或淋到雨，只要及時撈起並妥善乾燥，硬體結構是不會損壞的。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.357,
+        "hallucination": 1.0,
+        "latency_ms": 169.82
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0119",
+          "chunk_0154",
+          "chunk_0206",
+          "chunk_0205",
+          "chunk_0102"
+        ],
+        "relevant_ids": [
+          "chunk_0119"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.51,
+        "bge_ms": 167.25,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 169.82
+      }
+    },
+    {
+      "sample_id": 50,
+      "question": "請問台灣原廠保固是算幾年？如果是螢幕人為摔裂掉，換新面板有保固嗎？",
+      "ground_truth": "自購買發票日起，享有台灣原廠或代理商 1 年的行動電話有限保固。若螢幕因不慎摔落等人為因素損壞，不屬於免費保固範圍，需至原廠維修中心自費更換面板，而自費更換的全新原廠零件通常享有該部件額外 3 個月的專屬延伸保固。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.7654,
+        "bge_cosine": 0.3365,
+        "hallucination": 1.0,
+        "latency_ms": 171.78
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0180",
+          "chunk_0030",
+          "chunk_0150",
+          "chunk_0218",
+          "chunk_0028"
+        ],
+        "relevant_ids": [
+          "chunk_0029",
+          "chunk_0030",
+          "chunk_0180"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.92,
+        "bge_ms": 168.79,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 171.78
+      }
+    },
+    {
+      "sample_id": 51,
+      "question": "這台的記憶體是多少？如果背景開很多 App 軟體，系統會不會自動閃退卡頓？",
+      "ground_truth": "本型號內建 12GB LPDDR5X 旗鍵級記憶體（RAM），並支援高達 8GB 的虛擬記憶體擴展軟體技術。充沛的快取空間允許您在背景同時運行超過 20 個應用程式，切換流暢，絕不易發生自動閃退或卡頓現象。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3288,
+        "hallucination": 1.0,
+        "latency_ms": 165.13
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0093",
+          "chunk_0142",
+          "chunk_0033",
+          "chunk_0070",
+          "chunk_0074"
+        ],
+        "relevant_ids": [
+          "chunk_0093"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.4,
+        "bge_ms": 163.67,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 165.13
+      }
+    },
+    {
+      "sample_id": 52,
+      "question": "這款有支援實體雙卡雙待嗎？還是其中一個位置一定要裝記憶卡？",
+      "ground_truth": "本手機採用獨立雙卡槽設計，支援兩張 Nano-SIM 卡同時放入，達成 5G+5G 雙卡雙待（DSDS）功能。但請注意，本款機型為了追求輕薄 size，並未配置 MicroSD 記憶卡擴充槽，容量規格請務必於購買時選足。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.346,
+        "hallucination": 1.0,
+        "latency_ms": 183.92
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0095",
+          "chunk_0098",
+          "chunk_0079",
+          "chunk_0084",
+          "chunk_0141"
+        ],
+        "relevant_ids": [
+          "chunk_0095"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.15,
+        "bge_ms": 182.73,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 183.92
+      }
+    },
+    {
+      "sample_id": 53,
+      "question": "它的處理器 CPU 是哪一顆？玩《原神》這種重量級遊戲特效全開可以穩 60幀嗎？",
+      "ground_truth": "本機款搭載高通最新一代 Snapdragon 8 旗艦級八核心處理器。內建散熱面積高達 5000 幾何平方毫米的 VC 液冷散熱系統，實測遊玩《原神》在極高畫質特效全開的情境下，能穩定維持在 58-60 fps 運作，不會因為過熱降頻而 Lag。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3245,
+        "hallucination": 1.0,
+        "latency_ms": 194.6
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0102",
+          "chunk_0068",
+          "chunk_0034",
+          "chunk_0100",
+          "chunk_0110"
+        ],
+        "relevant_ids": [
+          "chunk_0102"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.16,
+        "bge_ms": 192.39,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 194.6
+      }
+    },
+    {
+      "sample_id": 54,
+      "question": "現在買這台有超商免運費嗎？如果買了發現系統用不習慣，可以申請退貨嗎？",
+      "ground_truth": "目前全館舉辦年中慶，單筆訂單購買手機即享超商與宅配免運費優惠。此外，本賣場提供蝦皮/官網 15 天鑑賞期服務，但請注意鑑賞期非試用期，手機一經開機激活（連上 Wi-Fi 啟用保固）即無法辦理全額退貨，退貨時商品需保持全新未拆封狀態。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.3333,
+        "ndcg_at_5": 0.5,
+        "bge_cosine": 0.4215,
+        "hallucination": 1.0,
+        "latency_ms": 183.17
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0058",
+          "chunk_0147",
+          "chunk_0176",
+          "chunk_0030",
+          "chunk_0177"
+        ],
+        "relevant_ids": [
+          "chunk_0176"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.84,
+        "bge_ms": 181.26,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 183.17
+      }
+    },
+    {
+      "sample_id": 55,
+      "question": "這台 Android 手機有沒有內建 NFC 功能？可以直接感應 Google Pay 或刷悠遊卡嗎？",
+      "ground_truth": "有的，本手機全面內建高性能 NFC 感應晶片，完全支援 Google 錢包（Google Pay）進行信用卡無線感應支付。若您欲使用悠遊卡功能，可透過下載電信商提供的 SIM 悠遊卡軟體服務，即可直接用手機感應搭乘捷運或公車。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3696,
+        "hallucination": 1.0,
+        "latency_ms": 176.29
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0079",
+          "chunk_0157",
+          "chunk_0179",
+          "chunk_0141",
+          "chunk_0095"
+        ],
+        "relevant_ids": [
+          "chunk_0079"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.94,
+        "bge_ms": 174.3,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 176.29
+      }
+    },
+    {
+      "sample_id": 56,
+      "question": "這款 DDR5 記憶體可以相容 Intel 第 14 代的 CPU 嗎？我的主機板要不要先更新 BIOS？",
+      "ground_truth": "本款 DDR5 桌上型記憶體全面相容 Intel 第 13 代與第 14 代處理器。若您使用的是較早出廠的 Z690 或 B660 主機板，建議在安裝前先至主機板官網下載並更新至最新版 BIOS 軟體，以確保最佳的相容性與運作穩定度。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3212,
+        "hallucination": 1.0,
+        "latency_ms": 189.27
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0110",
+          "chunk_0033",
+          "chunk_0070",
+          "chunk_0064",
+          "chunk_0100"
+        ],
+        "relevant_ids": [
+          "chunk_0110"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.95,
+        "bge_ms": 187.26,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 189.27
+      }
+    },
+    {
+      "sample_id": 57,
+      "question": "請問這組 16G 兩條的套條有支援 XMP 嗎？我進 BIOS 裡要怎麼一鍵超頻？",
+      "ground_truth": "本款 32GB（16GB x 2）雙通道套件支援 Intel XMP 3.0 與 AMD EXPO 官方一鍵超頻技術。開機時按下 Del 鍵進入 BIOS 設定畫面，在超頻選項中將 XMP 或 EXPO 功能切換為「Enabled（開啟）」，系統便會自動讀取最佳化的時序與頻率設定。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3913,
+        "hallucination": 1.0,
+        "latency_ms": 176.07
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0108",
+          "chunk_0033",
+          "chunk_0110",
+          "chunk_0083",
+          "chunk_0070"
+        ],
+        "relevant_ids": [
+          "chunk_0108"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.9,
+        "bge_ms": 174.12,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 176.07
+      }
+    },
+    {
+      "sample_id": 58,
+      "question": "這種帶有 RGB 燈效的記憶體，它的燈光可以用主機板的軟體去改顏色嗎？",
+      "ground_truth": "是的，本款電競記憶體具備高亮度 RGB 導光條，全面支援包含 ASUS Aura Sync、GIGABYTE RGB Fusion、MSI Mystic Light 等各大台灣主機板廠的燈效同步軟體，您可以直接透過 these 軟體自訂光效色彩與閃爍模式。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3518,
+        "hallucination": 1.0,
+        "latency_ms": 167.87
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0070",
+          "chunk_0216",
+          "chunk_0093",
+          "chunk_0215",
+          "chunk_0078"
+        ],
+        "relevant_ids": [
+          "chunk_0070"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.96,
+        "bge_ms": 165.84,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 167.87
+      }
+    },
+    {
+      "sample_id": 59,
+      "question": "這款記憶體的時序 CL30 會不會太高？玩遊戲或跑運算會不會有 Delay 延遲？",
+      "ground_truth": "在 DDR5 頻率達 6000MHz 的規格下，CL30 屬於極低延遲（Low Latency）的高階優質時序配置。相較於常見的 CL36 或 CL40，CL30 能提供更快速的資料反應時間，在 3A 遊戲大作幀率表現與重度影片渲染運算中，能有效減少延遲。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3191,
+        "hallucination": 1.0,
+        "latency_ms": 173.53
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0034",
+          "chunk_0111",
+          "chunk_0033",
+          "chunk_0093",
+          "chunk_0108"
+        ],
+        "relevant_ids": [
+          "chunk_0034"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.82,
+        "bge_ms": 171.64,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 173.53
+      }
+    },
+    {
+      "sample_id": 60,
+      "question": "請問保固是算幾年？如果是因為我自己超頻超到燒掉，原廠還會換新嗎？",
+      "ground_truth": "本品牌記憶體皆享有原廠提供的「有限終身保固」。在正常使用或開啟官方認證的 XMP/EXPO 超頻規格下發生損壞皆在保固範圍內；但若因自行加壓過高、改裝散熱片等人為不當操作導致硬體實體燒毀，則屬於人為損壞，不在免費保固與換新範圍內。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.6131,
+        "bge_cosine": 0.376,
+        "hallucination": 1.0,
+        "latency_ms": 180.51
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0086",
+          "chunk_0028",
+          "chunk_0150",
+          "chunk_0151",
+          "chunk_0107"
+        ],
+        "relevant_ids": [
+          "chunk_0086",
+          "chunk_0029"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.57,
+        "bge_ms": 177.87,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 180.51
+      }
+    },
+    {
+      "sample_id": 61,
+      "question": "這款散熱片的高度是多少？我的 CPU 散熱器是巨型雙塔風扇，會不會卡到 RAM？",
+      "ground_truth": "本款記憶體配備低調奢華的鋁合金散熱片，整體含針腳的高度（Size）約為 3.5 公分。此高度設計大幅提升了空間相容性，通常不易卡到市面上的巨型空冷雙塔散熱器，本安裝前建議仍需確認您散熱器下方的預留高度。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.323,
+        "hallucination": 1.0,
+        "latency_ms": 185.32
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0124",
+          "chunk_0094",
+          "chunk_0033",
+          "chunk_0093",
+          "chunk_0100"
+        ],
+        "relevant_ids": [
+          "chunk_0124"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.16,
+        "bge_ms": 183.1,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 185.32
+      }
+    },
+    {
+      "sample_id": 62,
+      "question": "我的舊筆電想要升級，這條桌上型的記憶體可以直接插在筆電裡面嗎？",
+      "ground_truth": "不行，本款商品為桌上型電腦專用的長條形記憶體（UDIMM），而筆記型電腦使用的是體積較小的短條形記憶體（SO-DIMM），兩者的插槽物理規格完全不同，無法混用。請搜尋選購本館的筆記型電腦專用記憶體。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3781,
+        "hallucination": 1.0,
+        "latency_ms": 171.3
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0016",
+          "chunk_0110",
+          "chunk_0043",
+          "chunk_0033",
+          "chunk_0070"
+        ],
+        "relevant_ids": [
+          "chunk_0016"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.13,
+        "bge_ms": 169.06,
+        "rrf_ms": 0.09,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 171.3
+      }
+    },
+    {
+      "sample_id": 63,
+      "question": "買兩組 16G*2 湊成四條插滿，這樣跑雙通道的速度會不會退化或 Lag？",
+      "ground_truth": "在 DDR5 新架構下，插滿四條記憶體（4-DIMM）會加重 CPU 內建記憶體控制器（IMC）的訊號負載，導致主機板自動調降運作頻率，這屬於硬體天生限制而非商品瑕疵。若追求極致的速度與穩定度，強烈建議直接購買單組 32GB x 2 的雙通道套條。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3353,
+        "hallucination": 1.0,
+        "latency_ms": 172.72
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0033",
+          "chunk_0108",
+          "chunk_0111",
+          "chunk_0128",
+          "chunk_0103"
+        ],
+        "relevant_ids": [
+          "chunk_0033"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.44,
+        "bge_ms": 171.21,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 172.72
+      }
+    },
+    {
+      "sample_id": 64,
+      "question": "這款記憶體有免運費嗎？16G 拿來打黑神話悟空這種 3A 大作夠用嗎？",
+      "ground_truth": "本產品現正舉辦滿千免運活動，宅配與超商皆享免運費。容量方面，16GB 記憶體已達到多數 3A 遊戲大作的建議基本配備要求，但若您在執行遊戲的同時，背景還開啟網頁瀏覽器或 LINE 等多個 App 軟體，建議選購 32GB 容量以確保絕對流暢不卡頓。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3275,
+        "hallucination": 1.0,
+        "latency_ms": 176.16
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0142",
+          "chunk_0093",
+          "chunk_0070",
+          "chunk_0033",
+          "chunk_0122"
+        ],
+        "relevant_ids": [
+          "chunk_0142"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.79,
+        "bge_ms": 174.3,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 176.16
+      }
+    },
+    {
+      "sample_id": 65,
+      "question": "這款有內建 ECC 錯誤校正嗎？這樣我的電腦主機開著開著會不會比較不容易藍屏？",
+      "ground_truth": "所有的 DDR5 記憶體本身硬體皆全面內建 On-Die ECC（晶粒內部錯誤校正）軟硬體機制，能自行在晶片內部偵測並修正單一條位元錯誤，大幅提升了 Data 的精準度與顆粒穩定性。這能顯著降低因記憶體資料出錯而引發的系統無故藍屏（BSOD）機率。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.35,
+        "hallucination": 1.0,
+        "latency_ms": 185.4
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0064",
+          "chunk_0197",
+          "chunk_0082",
+          "chunk_0202",
+          "chunk_0017"
+        ],
+        "relevant_ids": [
+          "chunk_0064"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.83,
+        "bge_ms": 183.51,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 185.4
+      }
+    },
+    {
+      "sample_id": 66,
+      "question": "這款 2TB 的 M.2 SSD 讀寫速度有多少？我拿來當 Windows 系統碟開機會變快嗎？",
+      "ground_truth": "本款 M.2 NVMe PCIe Gen4 SSD 具備極致效能，連續讀取速度高達 7000MB/s，寫入速度達 6500MB/s。將其作為系統碟使用，Windows 11 開機僅需約 5-8 秒，且各類軟體與遊戲載入基本流暢秒開，不會有任何延遲 Lag 感覺。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3703,
+        "hallucination": 1.0,
+        "latency_ms": 193.66
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0111",
+          "chunk_0078",
+          "chunk_0128",
+          "chunk_0196",
+          "chunk_0148"
+        ],
+        "relevant_ids": [
+          "chunk_0111"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.63,
+        "bge_ms": 191.97,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 193.66
+      }
+    },
+    {
+      "sample_id": 67,
+      "question": "請問這顆 4TB 傳統硬碟可以裝進我的 PS5 裡面擴充遊戲空間嗎？",
+      "ground_truth": "不行，PS5 主機內部的擴充插槽物理規格僅支援 M.2 NVMe PCIe Gen4 x4 的固態硬碟（SSD）。這顆 3.5 吋傳統硬碟（HDD）無法安裝在主機內部，但您可以將它裝入外接硬碟盒，透過 USB 介面接在 PS5 上，作為不常玩的 PS4 舊遊戲或備份 Data 儲存空間。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3262,
+        "hallucination": 1.0,
+        "latency_ms": 181.55
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0015",
+          "chunk_0043",
+          "chunk_0035",
+          "chunk_0107",
+          "chunk_0131"
+        ],
+        "relevant_ids": [
+          "chunk_0015"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.52,
+        "bge_ms": 179.95,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 181.55
+      }
+    },
+    {
+      "sample_id": 68,
+      "question": "這款外接行動硬碟如果從桌上不小心摔到地上，裡面的 Data 會不會直接死掉讀不到？",
+      "ground_truth": "本款軍規級外接行動硬碟外層採用了特殊防震橡膠矽膠材質，內部配置懸吊式動態防震緩衝系統，通過美軍 MIL-STD-810G 規格的落摔測試。雖然具備高強度防摔保護，但仍建議在硬碟進行存取讀寫時避免劇烈震動，以確保磁頭與碟片安全。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3691,
+        "hallucination": 1.0,
+        "latency_ms": 172.01
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0125",
+          "chunk_0136",
+          "chunk_0035",
+          "chunk_0043",
+          "chunk_0154"
+        ],
+        "relevant_ids": [
+          "chunk_0125"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.04,
+        "bge_ms": 169.9,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 172.01
+      }
+    },
+    {
+      "sample_id": 69,
+      "question": "我看這台 8TB 企業級硬碟是 7200轉的，裝在桌機裡當倉庫碟，馬達運轉的噪音會不會很吵？",
+      "ground_truth": "企業級硬碟（Enterprise HDD）為了追求全天候運作的極致穩定性與高轉速效能，其尋道時的磁頭機械作動聲與馬達運轉低頻音會比一般 5400 轉的家用桌機硬碟稍微明顯。若對聲音極度敏感，建議安裝在機殼密閉性較好或有防震橡膠墊的硬碟架上。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3392,
+        "hallucination": 1.0,
+        "latency_ms": 196.72
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0017",
+          "chunk_0106",
+          "chunk_0136",
+          "chunk_0116",
+          "chunk_0074"
+        ],
+        "relevant_ids": [
+          "chunk_0017"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 4.66,
+        "bge_ms": 191.99,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 196.72
+      }
+    },
+    {
+      "sample_id": 70,
+      "question": "這款 SSD 有自帶散熱片嗎？我的主機板本身就有內建金屬散熱盔甲，這樣裝得下嗎？",
+      "ground_truth": "本型號出貨為低調窄身無散熱片版本（隨附一條薄型石墨烯導熱貼軟體片）。此設計相容性極高，您可以直接使用主機板自帶的金屬散熱盔甲進行鎖固壓緊，不用擔心 Size 太厚卡到顯示卡或其他硬體元件。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.381,
+        "hallucination": 1.0,
+        "latency_ms": 175.13
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0094",
+          "chunk_0078",
+          "chunk_0207",
+          "chunk_0124",
+          "chunk_0208"
+        ],
+        "relevant_ids": [
+          "chunk_0094"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.95,
+        "bge_ms": 173.11,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 175.13
+      }
+    },
+    {
+      "sample_id": 71,
+      "question": "請問保固是幾年？如果硬碟壽命到期突然壞掉，台灣原廠會提供免費資料救援服務嗎？",
+      "ground_truth": "本產品享有台灣代理商提供的 5 年全機原廠有限保固。更重要的是，該系列硬碟在保固期內「隨附 3 年期原廠 Rescue 資料救援計畫」，若硬碟不幸發生非人為的硬體故障，可免費送至原廠專業實驗室嘗試進行 Data 救回，成功率高達 90% 以上。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.7227,
+        "bge_cosine": 0.3611,
+        "hallucination": 1.0,
+        "latency_ms": 361.61
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0136",
+          "chunk_0028",
+          "chunk_0137",
+          "chunk_0107",
+          "chunk_0090"
+        ],
+        "relevant_ids": [
+          "chunk_0028",
+          "chunk_0136",
+          "chunk_0072",
+          "chunk_0137",
+          "chunk_0073",
+          "chunk_0071"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.86,
+        "bge_ms": 358.66,
+        "rrf_ms": 0.07,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 361.61
+      }
+    },
+    {
+      "sample_id": 72,
+      "question": "這顆 12TB 的 NAS 硬碟是 CMR 還是 SMR 紀錄技術的？拿來跑 RAID 會不會有疊瓦式掉速的問題？",
+      "ground_truth": "本款專為網路儲存伺機設計的硬碟全系列皆採用傳統磁性紀錄（CMR, Conventional Magnetic Recording）技術，非疊瓦式（SMR）。這能確保硬碟在 NAS 系統內進行 24x7 頻繁且隨機的大量讀寫、或進行 RAID 陣列重建時，始終保持穩定不掉速，大幅降低磁碟陣列崩潰的風險。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3578,
+        "hallucination": 1.0,
+        "latency_ms": 374.22
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0116",
+          "chunk_0035",
+          "chunk_0107",
+          "chunk_0015",
+          "chunk_0111"
+        ],
+        "relevant_ids": [
+          "chunk_0116"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 3.56,
+        "bge_ms": 370.6,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 374.22
+      }
+    },
+    {
+      "sample_id": 73,
+      "question": "現在買這款 1TB 外接式 SSD 有免運費嗎？出貨有附一條可以接 Type-C 手機的線嗎？",
+      "ground_truth": "本館商品現正舉辦滿千免運活動，下單即享宅配與超商取貨免運費。產品包裝內均隨附一條高規格二合一傳輸線（一端為 USB-C，並附帶 USB-A 轉接頭），完全相容並可直接插入支援 Type-C 的 Android 手機或 iPhone 進行檔案備份。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3513,
+        "hallucination": 1.0,
+        "latency_ms": 198.08
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0158",
+          "chunk_0149",
+          "chunk_0141",
+          "chunk_0015",
+          "chunk_0092"
+        ],
+        "relevant_ids": [
+          "chunk_0158"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.68,
+        "bge_ms": 196.32,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 198.08
+      }
+    },
+    {
+      "sample_id": 74,
+      "question": "我的老舊筆電是傳統 2.5吋 HDD，可以直接買這款 2.5吋 SATA SSD 來換嗎？界面合不合？",
+      "ground_truth": "完全可以。本款 2.5 吋固態硬碟採用標準的 SATA III 6Gb/s 介面，物理尺寸與厚度（7mm）與一般筆電的 2.5 吋傳統硬碟完全相同。直接替換安裝並重新安裝作業系統軟體後，能顯著大幅提升老舊筆電的整體流暢度，重獲新生。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3526,
+        "hallucination": 1.0,
+        "latency_ms": 197.96
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0043",
+          "chunk_0015",
+          "chunk_0103",
+          "chunk_0078",
+          "chunk_0092"
+        ],
+        "relevant_ids": [
+          "chunk_0043"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.14,
+        "bge_ms": 195.76,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 197.96
+      }
+    },
+    {
+      "sample_id": 75,
+      "question": "這款 QLC 的 SSD 它的 TBW 寫入壽命是多少？拿來每天瘋狂下載大檔案會不會很容易死掉？",
+      "ground_truth": "本款 2TB QLC 固態硬碟的原廠標稱寫入壽命為 400 TBW（總寫入位元組數）。這意味著在 5 年保固期內，您每天平均需要寫入約 219GB 的資料才會耗盡壽命。如果您的主要用途是單純作為遊戲庫或電影倉庫硬碟（多讀少寫），這個壽命規格是絕對綽綽有餘的；但若要進行重度 PT 下載或 4K 影片頻繁剪輯渲染，則建議選購本館 TLC 顆粒規格的產品。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3215,
+        "hallucination": 1.0,
+        "latency_ms": 199.17
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0107",
+          "chunk_0111",
+          "chunk_0078",
+          "chunk_0128",
+          "chunk_0157"
+        ],
+        "relevant_ids": [
+          "chunk_0107"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.87,
+        "bge_ms": 197.24,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 199.17
+      }
+    },
+    {
+      "sample_id": 76,
+      "question": "這台大連供噴墨印表機如果我一兩個禮拜沒開機用，噴頭會不會乾掉堵塞啊？",
+      "ground_truth": "本款連續供墨印表機內建「噴頭自動維護軟體機制」，只要維持機器處於插電待機狀態，系統每隔一段時間會自動執行微量清噴頭作業。即便一兩週未手動列印，亦能有效防止墨水乾涸與噴嘴堵塞。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3272,
+        "hallucination": 1.0,
+        "latency_ms": 210.45
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0126",
+          "chunk_0105",
+          "chunk_0222",
+          "chunk_0132",
+          "chunk_0147"
+        ],
+        "relevant_ids": [
+          "chunk_0126"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.87,
+        "bge_ms": 208.52,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 210.45
+      }
+    },
+    {
+      "sample_id": 77,
+      "question": "請問這台有支援無線 Wi-Fi 雙面列印嗎？我可以用手機 App 直接印 PDF 嗎？",
+      "ground_truth": "有的，本機款內建雙頻 Wi-Fi 無線網路模組，並配備自動雙面列印功能（Auto Duplex）。您可以下載原廠專屬的手機 App 軟體，在同一個無線網域下，直接無線選取手機內的 PDF、Word 檔案或照片進行雙面列印。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3319,
+        "hallucination": 1.0,
+        "latency_ms": 199.51
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0080",
+          "chunk_0045",
+          "chunk_0044",
+          "chunk_0098",
+          "chunk_0047"
+        ],
+        "relevant_ids": [
+          "chunk_0080"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.53,
+        "bge_ms": 196.93,
+        "rrf_ms": 0.03,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 199.51
+      }
+    },
+    {
+      "sample_id": 78,
+      "question": "這台墨水用完的話，一瓶原廠補充墨水慢多少錢？可以印多少張 A4 紙？",
+      "ground_truth": "本款大連供印表機原廠單色補充墨水瓶（黑色）官網建議售價約為新台幣 298 元。一瓶大容量黑色墨水在標準列印模式下，大約可列印高達 6,000 張 A4 文件，單張列印成本僅約 0.05 元，極具經濟效益。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.251,
+        "hallucination": 1.0,
+        "latency_ms": 205.61
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0115",
+          "chunk_0105",
+          "chunk_0097",
+          "chunk_0096",
+          "chunk_0140"
+        ],
+        "relevant_ids": [
+          "chunk_0115"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.83,
+        "bge_ms": 203.72,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 205.61
+      }
+    },
+    {
+      "sample_id": 79,
+      "question": "我是要買來印相片跟彩色手帳的，這台噴墨的彩色列印解析度夠不夠細緻？會不會有條紋？",
+      "ground_truth": "本機採用高階微噴嘴技術，最高彩色列印解析度可達 4800 x 1200 dpi，最小墨點僅 2 微微升（pl）。搭配原廠專用相片紙，能呈現細緻無瑕的色彩過渡與影像細節，在正常噴頭狀態下絕不易出現白線或印刷條紋。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3266,
+        "hallucination": 1.0,
+        "latency_ms": 213.39
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0097",
+          "chunk_0117",
+          "chunk_0132",
+          "chunk_0099",
+          "chunk_0140"
+        ],
+        "relevant_ids": [
+          "chunk_0097"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.43,
+        "bge_ms": 210.91,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 213.39
+      }
+    },
+    {
+      "sample_id": 80,
+      "question": "辦這台事務機有包含 Scan 掃描和 Copy 影印功能嗎？原廠保固是幾年？",
+      "ground_truth": "本產品為三合一多功能複合機，機身頂部配置平台式掃描器，全面支援 A4 尺寸的彩色掃描與黑白/彩色獨立影印。台灣原廠提供 1 年基本保固，上網登錄保固活動通常可免費延伸升級至 2 年完整保固。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3208,
+        "hallucination": 1.0,
+        "latency_ms": 186.9
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0140",
+          "chunk_0136",
+          "chunk_0081",
+          "chunk_0053",
+          "chunk_0087"
+        ],
+        "relevant_ids": [
+          "chunk_0140"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.47,
+        "bge_ms": 185.29,
+        "rrf_ms": 0.13,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 186.9
+      }
+    },
+    {
+      "sample_id": 81,
+      "question": "這款印表機的 Size 會不會很大很佔位子？租屋處的電腦桌放得下嗎？",
+      "ground_truth": "本款主打極緻空間壓縮設計，整機尺寸（寬x深x高）僅約 37.5 x 34.7 x 17.9 公分。其進紙槽與出紙託盤在不用時皆可完全折疊收納，體積十分迷你，非常適合放置在空間有限的學生套房或電腦桌一角。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.3333,
+        "ndcg_at_5": 0.5,
+        "bge_cosine": 0.3078,
+        "hallucination": 1.0,
+        "latency_ms": 195.86
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0117",
+          "chunk_0105",
+          "chunk_0112",
+          "chunk_0132",
+          "chunk_0102"
+        ],
+        "relevant_ids": [
+          "chunk_0112"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.53,
+        "bge_ms": 194.26,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 195.86
+      }
+    },
+    {
+      "sample_id": 82,
+      "question": "請問這台印表機是採用顏料墨水還是染料墨水？印出來的文件潑到水字會不會糊掉？",
+      "ground_truth": "本機款採取混合墨水系統配置：核心黑色採用「防水顏料墨水（Pigment Ink）」，列印文字銳利且遇水不暈染，非常適合重要文件與報表；彩色（藍、紅、黃）則採用「高鮮豔度染料墨水（Dye Ink）」，能確保照片色彩飽和亮麗。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3238,
+        "hallucination": 1.0,
+        "latency_ms": 196.88
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0099",
+          "chunk_0223",
+          "chunk_0105",
+          "chunk_0126",
+          "chunk_0115"
+        ],
+        "relevant_ids": [
+          "chunk_0099"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.83,
+        "bge_ms": 195.0,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 196.88
+      }
+    },
+    {
+      "sample_id": 83,
+      "question": "現在買這台有現貨免運費嗎？包裝裡面隨機有直接附贈一組滿版墨水嗎？",
+      "ground_truth": "本商品現正舉辦年中特惠，全台宅配下單即享免運費快速到貨。新機外盒包裝內已隨機附贈一套四色（黑、藍、紅、黃）原廠全新正品飽和墨水瓶，無須另外加購，開箱完成初始化導墨軟體程序後即可立即開始列印。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.6131,
+        "bge_cosine": 0.3589,
+        "hallucination": 1.0,
+        "latency_ms": 187.12
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0091",
+          "chunk_0149",
+          "chunk_0221",
+          "chunk_0069",
+          "chunk_0092"
+        ],
+        "relevant_ids": [
+          "chunk_0090",
+          "chunk_0091"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.66,
+        "bge_ms": 185.38,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 187.12
+      }
+    },
+    {
+      "sample_id": 84,
+      "question": "這台有支援自動進紙槽 ADF 嗎？如果我有 20 幾張報告要連續影印怎麼辦？",
+      "ground_truth": "很抱歉，本型號為了追求極簡體積與平價定位，僅配置頂部平台式掃描窗，並未內建自動進紙器（ADF）。若您有大量多頁文件連續掃描或影印的需求，建議選購本館另一款進階款大連供商務事務機。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.5,
+        "ndcg_at_5": 0.6309,
+        "bge_cosine": 0.3567,
+        "hallucination": 1.0,
+        "latency_ms": 191.69
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0081",
+          "chunk_0053",
+          "chunk_0096",
+          "chunk_0080",
+          "chunk_0093"
+        ],
+        "relevant_ids": [
+          "chunk_0053"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.62,
+        "bge_ms": 190.01,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 191.69
+      }
+    },
+    {
+      "sample_id": 85,
+      "question": "這款噴墨印表機可以印防水姓名貼或是厚磅的卡片紙（Cardstock）嗎？會不會卡紙？",
+      "ground_truth": "本機採用後方進紙槽（Rear Paper Feed）的直通式平進平出紙道設計，相較於下方抽屜式紙槽，更適合處理厚紙。它支援列印厚度高達 220g/m² 的卡片紙、標籤貼紙或防水相片紙，只要進紙時將紙張邊緣固定夾調整妥當，便不易發生卡紙或 Lag 延遲拉不出紙的問題。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3364,
+        "hallucination": 1.0,
+        "latency_ms": 194.66
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0096",
+          "chunk_0132",
+          "chunk_0105",
+          "chunk_0097",
+          "chunk_0114"
+        ],
+        "relevant_ids": [
+          "chunk_0096"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.95,
+        "bge_ms": 192.64,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 194.66
+      }
+    },
+    {
+      "sample_id": 86,
+      "question": "這台黑白雷射印表機印一頁大概要幾秒？會不會像噴墨那樣在這邊慢慢拉紙？",
+      "ground_truth": "本款高速雷射印表機採用高效能定影加熱技術，首頁輸出時間僅需 6 秒。其黑白列印速度高達每分鐘 30 頁（30 ppm），紙張快速通過，完全不會有噴墨印表機逐行來回噴印的卡頓與延遲感。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3388,
+        "hallucination": 1.0,
+        "latency_ms": 184.34
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0132",
+          "chunk_0222",
+          "chunk_0105",
+          "chunk_0223",
+          "chunk_0117"
+        ],
+        "relevant_ids": [
+          "chunk_0132"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.72,
+        "bge_ms": 182.56,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 184.34
+      }
+    },
+    {
+      "sample_id": 87,
+      "question": "請問這台雷射的碳粉匣耗材一根可以印多少張？如果很久沒印碳粉會不會結塊壞掉？",
+      "ground_truth": "本機隨機隨附標準容量碳粉匣，在 A4 5% 覆蓋率下約可列印 1,200 頁。雷射印表機使用固態碳粉而非液體墨水，因此即便放置數個月未開機使用，碳粉也絕不會發生乾涸、結塊或堵塞噴頭的問題，非常適合列印頻率不固定的使用者。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3199,
+        "hallucination": 1.0,
+        "latency_ms": 186.77
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0105",
+          "chunk_0101",
+          "chunk_0223",
+          "chunk_0117",
+          "chunk_0147"
+        ],
+        "relevant_ids": [
+          "chunk_0105"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.75,
+        "bge_ms": 184.96,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 186.77
+      }
+    },
+    {
+      "sample_id": 88,
+      "question": "我想買來印論文跟上課講義，這台彩色雷射印表機印出來的字會不會有毛邊？被螢光筆劃到會糊嗎？",
+      "ground_truth": "雷射印表機是透過高溫將碳粉微粒微米級定影燒結在紙張表面，因此文字邊緣極其銳利、完全無毛邊。由於不含水分，列印成品具備極佳的耐水性，直接使用螢光筆或原子筆劃記、甚至打翻水，字體依然清晰，完全不會暈染糊掉。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3383,
+        "hallucination": 1.0,
+        "latency_ms": 197.43
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0223",
+          "chunk_0117",
+          "chunk_0132",
+          "chunk_0105",
+          "chunk_0222"
+        ],
+        "relevant_ids": [
+          "chunk_0223"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 3.5,
+        "bge_ms": 193.88,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 197.43
+      }
+    },
+    {
+      "sample_id": 89,
+      "question": "這款雷射事務機有支援自動雙面影印跟掃描嗎？我要處理大批的雙面文件。",
+      "ground_truth": "有的，本款高階商務雷射複合機不僅支援自動雙面列印，更頂部配置了「自動雙面進紙器（DADF）」。您可以將整疊多達 50 頁的雙面報告放入槽中，系統會自動流暢進行雙面連續掃描或影印，大幅提升辦公效率。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3661,
+        "hallucination": 1.0,
+        "latency_ms": 191.17
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0081",
+          "chunk_0080",
+          "chunk_0053",
+          "chunk_0140",
+          "chunk_0008"
+        ],
+        "relevant_ids": [
+          "chunk_0081"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.17,
+        "bge_ms": 188.94,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 191.17
+      }
+    },
+    {
+      "sample_id": 90,
+      "question": "請問這台雷射電視印表機的耗電量會不會很大？開機列印的時候房間的燈會不會閃一下？",
+      "ground_truth": "雷射印表機在初始開機或列印啟動瞬間，內部加熱定影滾筒（Fuser）需要快速升溫，瞬間功率約在 900W - 1200W 之間（待機時僅約 5W）。此為正常物理現象，只要不要與高負載電器共用延長線，並接在穩定的插座上，通常不會影響室內照明。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.5,
+        "ndcg_at_5": 0.6309,
+        "bge_cosine": 0.3194,
+        "hallucination": 1.0,
+        "latency_ms": 193.98
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0132",
+          "chunk_0222",
+          "chunk_0105",
+          "chunk_0223",
+          "chunk_0117"
+        ],
+        "relevant_ids": [
+          "chunk_0222"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.81,
+        "bge_ms": 192.11,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 193.98
+      }
+    },
+    {
+      "sample_id": 91,
+      "question": "這台的網路功能有支援 5G Wi-Fi 嗎？還是只能接實體網路線 Lan port？",
+      "ground_truth": "本機款同時支援多種網路連接方式：機身後方配備一個 RJ-45 實體乙太網路埠（LAN Port），內部無線模組則全新支援 2.4GHz 與 5GHz 雙頻 Wi-Fi 無線網路。不論是桌機接線還是手機、筆電無線通訊投放，皆能快速對接不 Lag。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.25,
+        "ndcg_at_5": 0.4307,
+        "bge_cosine": 0.3037,
+        "hallucination": 1.0,
+        "latency_ms": 178.1
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0046",
+          "chunk_0047",
+          "chunk_0045",
+          "chunk_0098",
+          "chunk_0044"
+        ],
+        "relevant_ids": [
+          "chunk_0098"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.95,
+        "bge_ms": 176.09,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 178.1
+      }
+    },
+    {
+      "sample_id": 92,
+      "question": "開這台彩色雷射印表機的 Size 大概是多少？重量會不會很重？我想放在書櫃上。",
+      "ground_truth": "本款彩色雷射機型因為內部需容納四色（黑、藍、紅、黃）獨立碳粉匣與感光鼓結構，機身尺寸約為 41 x 39.8 x 24.4 公分，整機重量約 15 公斤。由於重量較沉且列印時會有微幅機械震動，強烈建議放置在結構穩固的電腦桌或專用印表機架上，不建議擺在承重力有限的懸空書櫃上。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3263,
+        "hallucination": 1.0,
+        "latency_ms": 183.35
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0117",
+          "chunk_0105",
+          "chunk_0222",
+          "chunk_0132",
+          "chunk_0140"
+        ],
+        "relevant_ids": [
+          "chunk_0117"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.97,
+        "bge_ms": 181.24,
+        "rrf_ms": 0.12,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 183.35
+      }
+    },
+    {
+      "sample_id": 93,
+      "question": "買這台原廠隨機會有保固嗎？如果印出來畫面出現黑點或黑線，可以直接報修嗎？",
+      "ground_truth": "本商品享有台灣原廠 1 年到府維修有限保固。若在保固期內正常使用下，發現列印成品出現固定間距的黑點、橫線或白條紋，通常為感光鼓組件（Drum Unit）或定影單元非人為瑕疵，您可以直接撥打原廠客服專線，由工程師到府進行硬體檢測與免費更換組件。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.7227,
+        "bge_cosine": 0.3602,
+        "hallucination": 1.0,
+        "latency_ms": 199.0
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0087",
+          "chunk_0073",
+          "chunk_0071",
+          "chunk_0185",
+          "chunk_0140"
+        ],
+        "relevant_ids": [
+          "chunk_0072",
+          "chunk_0073",
+          "chunk_0218",
+          "chunk_0087",
+          "chunk_0071",
+          "chunk_0217"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.96,
+        "bge_ms": 196.98,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 199.0
+      }
+    },
+    {
+      "sample_id": 94,
+      "question": "現在下單有免運費送上樓嗎？如果買回來發現桌子放不下，可以退貨嗎？",
+      "ground_truth": "本賣場全台大型家電與辦公設備皆享宅配免運費送達一樓，若公寓無電梯需搬運上樓，物流將酌收樓層費。關於退貨部分，本商品享有 15 天鑑賞期，但印表機屬於耗材類商品，一旦開機通電並執行安裝「碳粉匣破壞性撕除封條軟體程序」，即視同使用，非硬體瑕疵拆封後恕不接受退貨。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3969,
+        "hallucination": 1.0,
+        "latency_ms": 182.99
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0147",
+          "chunk_0014",
+          "chunk_0175",
+          "chunk_0013",
+          "chunk_0149"
+        ],
+        "relevant_ids": [
+          "chunk_0147"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.63,
+        "bge_ms": 181.31,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 182.99
+      }
+    },
+    {
+      "sample_id": 95,
+      "question": "這台印表機的碳粉匣跟感光鼓是分離式的還是二合一的？哪一種後續換耗材比較省錢？",
+      "ground_truth": "本機款採用「鼓粉分離（Separate Toner & Drum）」的環保技術設計。碳粉匣用完時，只需單獨更換經濟便宜的碳粉匣即可，不需要連同壽命較長的感光鼓一起丟棄。感光鼓通常可承載約 12,000 頁的壽命，這種分離式設計能大幅降低企業長期的後續列印成本。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3551,
+        "hallucination": 1.0,
+        "latency_ms": 188.76
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0101",
+          "chunk_0117",
+          "chunk_0105",
+          "chunk_0158",
+          "chunk_0099"
+        ],
+        "relevant_ids": [
+          "chunk_0101"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.18,
+        "bge_ms": 186.52,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 188.76
+      }
+    },
+    {
+      "sample_id": 96,
+      "question": "這款機械鍵盤的青軸打起來會不會很吵？我如果在辦公室用會不會被同事白眼？",
+      "ground_truth": "青軸機械鍵盤具備明顯的段落感與清脆的「Click」敲擊聲，打字音量確實較大，並不建議在安靜的辦公室或公共空間使用。若您有辦公室使用需求，建議選購本款搭載「紅軸」或「茶軸」的靜音規格版本。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3263,
+        "hallucination": 1.0,
+        "latency_ms": 185.6
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0224",
+          "chunk_0197",
+          "chunk_0069",
+          "chunk_0202",
+          "chunk_0017"
+        ],
+        "relevant_ids": [
+          "chunk_0224"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.18,
+        "bge_ms": 183.34,
+        "rrf_ms": 0.07,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 185.6
+      }
+    },
+    {
+      "sample_id": 97,
+      "question": "請問這款 keyboard 有支援熱插拔嗎？如果用久了其中一個按鍵壞掉可以直接自己換嗎？",
+      "ground_truth": "是的，本款鍵盤全鍵支援熱插拔（Hot-swappable）軟硬體設計，相容市面上絕大多數的 3 針與 5 針機械軸體。若未來有特定按鍵接觸不良或想體驗不同手感，您直接使用隨機附贈的拔軸器即可安全拆卸並更換新軸體，無須動用烙鐵焊接。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3639,
+        "hallucination": 1.0,
+        "latency_ms": 196.1
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0069",
+          "chunk_0114",
+          "chunk_0135",
+          "chunk_0084",
+          "chunk_0138"
+        ],
+        "relevant_ids": [
+          "chunk_0069"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.32,
+        "bge_ms": 193.73,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 196.1
+      }
+    },
+    {
+      "sample_id": 98,
+      "question": "它是 100% 的設計還是有省掉數字鍵？寬度 size 大概是多少？",
+      "ground_truth": "本鍵盤採用緊湊型的 80% 配置（87 鍵設計），省去了右側的獨立數字鍵盤區，以騰出更多桌面空間給滑鼠移動。具體外觀尺寸寬度約為 35.8 公分、深度 13.5 公分，非常適合電競玩家與小桌面使用者。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3441,
+        "hallucination": 1.0,
+        "latency_ms": 169.28
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0153",
+          "chunk_0127",
+          "chunk_0069",
+          "chunk_0145",
+          "chunk_0122"
+        ],
+        "relevant_ids": [
+          "chunk_0153"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.6,
+        "bge_ms": 167.62,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 169.28
+      }
+    },
+    {
+      "sample_id": 99,
+      "question": "這款有支援三模連線嗎？我可以一邊接 PC 打電動，一邊按快捷鍵切換到平板打字嗎？",
+      "ground_truth": "有的，本款高階鍵盤支援「藍牙 5.0 / 無線 2.4Ghz / Type-C 有線」三模連線技術。藍牙模式下最多可同時配對 3 台設備，您可以透過實體切換鍵或組合快捷鍵，在桌上型電腦（PC）、iPad 平板或手機之間達到流暢秒切不 Lag。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3693,
+        "hallucination": 1.0,
+        "latency_ms": 196.92
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0082",
+          "chunk_0139",
+          "chunk_0216",
+          "chunk_0213",
+          "chunk_0069"
+        ],
+        "relevant_ids": [
+          "chunk_0082",
+          "chunk_0139"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.64,
+        "bge_ms": 195.18,
+        "rrf_ms": 0.07,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 196.92
+      }
+    },
+    {
+      "sample_id": 100,
+      "question": "鍵帽用久了英文字母會不會磨到掉漆？表面會不會容易變得油油的？",
+      "ground_truth": "本產品全面升級採用高規格的 PBT 材質鍵帽，並結合雙色注塑（Double-shot）工藝製成，字體封裝於鍵帽內層，字樣絕不磨損脫落。此外，PBT 材質具備極佳的抗油性與微砂觸感，長期使用下來依然能保持乾爽、不易打油。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3664,
+        "hallucination": 1.0,
+        "latency_ms": 192.51
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0138",
+          "chunk_0134",
+          "chunk_0162",
+          "chunk_0223",
+          "chunk_0069"
+        ],
+        "relevant_ids": [
+          "chunk_0138"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.78,
+        "bge_ms": 190.67,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 192.51
+      }
+    },
+    {
+      "sample_id": 101,
+      "question": "請問保固是算幾年？如果我不小心打翻飲料 coffee 倒在鍵盤上，原廠有免費修到好嗎？",
+      "ground_truth": "台灣代理商提供原廠 2 年有限保固。但請注意，液體潑濺（如咖啡、飲料）導致內部電路板燒毀或蝕刻屬於「人為不當使用損壞」，並不在免費保固範圍內。不慎液體倒灌時，請務必立即拔除電源、關閉開關，並送至維修中心自費檢測維修。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.6131,
+        "bge_cosine": 0.3601,
+        "hallucination": 1.0,
+        "latency_ms": 195.41
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0029",
+          "chunk_0218",
+          "chunk_0217",
+          "chunk_0028",
+          "chunk_0090"
+        ],
+        "relevant_ids": [
+          "chunk_0029",
+          "chunk_0180"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.63,
+        "bge_ms": 192.7,
+        "rrf_ms": 0.07,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 195.41
+      }
+    },
+    {
+      "sample_id": 102,
+      "question": "這款 RGB 的背光可以自己用軟體改特效嗎？還是它只能切換內建的閃爍模式？",
+      "ground_truth": "除了可以使用鍵盤內建的 18 種硬體燈效快捷鍵切換外，您還可以下載官方專屬的驅動軟體。在軟體內，您可以針對全鍵 1680 萬色進行逐鍵自訂（Per-key RGB），並支援音樂律動模式與自訂巨集（Macro）設定功能。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.5,
+        "ndcg_at_5": 0.3869,
+        "bge_cosine": 0.3239,
+        "hallucination": 1.0,
+        "latency_ms": 214.45
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0070",
+          "chunk_0216",
+          "chunk_0157",
+          "chunk_0168",
+          "chunk_0139"
+        ],
+        "relevant_ids": [
+          "chunk_0216",
+          "chunk_0114"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.25,
+        "bge_ms": 212.13,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 214.45
+      }
+    },
+    {
+      "sample_id": 103,
+      "question": "現在下單有超商免運費嗎？隨機出貨有送防塵蓋跟拔鍵器嗎？",
+      "ground_truth": "本賣場現正舉辦年中慶活動，下單即可享有四大超商取貨免運費。每組全新品盒裝內皆隨機標準附贈透明吸塑防塵蓋、二合一鋼絲拔鍵拔軸器、Type-C 編織傳輸線以及 3 顆備用原廠軸體。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.377,
+        "hallucination": 1.0,
+        "latency_ms": 177.52
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0149",
+          "chunk_0092",
+          "chunk_0014",
+          "chunk_0147",
+          "chunk_0013"
+        ],
+        "relevant_ids": [
+          "chunk_0149"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.22,
+        "bge_ms": 176.24,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 177.52
+      }
+    },
+    {
+      "sample_id": 104,
+      "question": "這款鍵盤有相容 Mac 系統嗎？鍵盤上的 Windows 鍵在蘋果電腦上按出來是什麼？",
+      "ground_truth": "本鍵盤完全相容 Windows 與 macOS 雙系統，機身背面配置了系統切換開關，切換至 Mac 模式後，原本的 Win 鍵會自動軟體對應為 Command 鍵，Alt 鍵則對應為 Option 鍵。包裝內亦額外附贈了 4 顆 Mac 專屬配置鍵帽供您替換。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3555,
+        "hallucination": 1.0,
+        "latency_ms": 185.38
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0152",
+          "chunk_0069",
+          "chunk_0114",
+          "chunk_0082",
+          "chunk_0215"
+        ],
+        "relevant_ids": [
+          "chunk_0152"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.47,
+        "bge_ms": 182.86,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 185.38
+      }
+    },
+    {
+      "sample_id": 105,
+      "question": "內建的 battery 電池容量是多少？如果完全不開 RGB 燈的話，充飽電可以用幾個月？",
+      "ground_truth": "鍵盤內部配置了 4000mAh 超大容量安全鋰電池。在關閉所有 RGB 燈效的省電模式下，實測每日工作使用 8 小時，續航力最高可達 200 小時，大約可連續使用將近 1 個月才需要再次充電。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3126,
+        "hallucination": 1.0,
+        "latency_ms": 185.68
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0215",
+          "chunk_0070",
+          "chunk_0197",
+          "chunk_0225",
+          "chunk_0202"
+        ],
+        "relevant_ids": [
+          "chunk_0215"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.23,
+        "bge_ms": 183.39,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 185.68
+      }
+    },
+    {
+      "sample_id": 106,
+      "question": "這款電競滑鼠的 DPI 最高是多少？我打 FPS 遊戲需要轉身甩槍，它反應夠快嗎？",
+      "ground_truth": "本款高階電競滑鼠搭載頂級光學感應器，原生 DPI 最高可達 26,000，並支援最高 8000Hz 的超高輪詢率（Polling Rate）。其追蹤速度高達 650 IPS，能精準捕捉任何極速的甩槍與轉身動作，訊號傳輸零延遲、不跳格。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3581,
+        "hallucination": 1.0,
+        "latency_ms": 191.06
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0133",
+          "chunk_0130",
+          "chunk_0070",
+          "chunk_0113",
+          "chunk_0225"
+        ],
+        "relevant_ids": [
+          "chunk_0133"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.86,
+        "bge_ms": 189.11,
+        "rrf_ms": 0.07,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 191.06
+      }
+    },
+    {
+      "sample_id": 107,
+      "question": "請問這隻微動開關是用光學的還是傳統機械式的？點久了會不會發生連點雙擊的壞掉問題？",
+      "ground_truth": "本滑鼠左右鍵全面採用最新一代「光學滑鼠微動開關（Optical Switches）」。由於利用光束截斷原理觸發，物理上完全免除了傳統機械微動因金屬疲勞與氧化所導致的連點（Double-click）瑕疵，擁有高達 9000 萬次的點擊壽命。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.4122,
+        "hallucination": 1.0,
+        "latency_ms": 197.8
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0135",
+          "chunk_0090",
+          "chunk_0122",
+          "chunk_0197",
+          "chunk_0109"
+        ],
+        "relevant_ids": [
+          "chunk_0135"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.91,
+        "bge_ms": 195.82,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 197.8
+      }
+    },
+    {
+      "sample_id": 108,
+      "question": "我是大手抓握的人，這隻滑鼠的 size 會不會太小？它的重量是多少公克？",
+      "ground_truth": "本款滑鼠專為中大型手型的人體工學右手設計，具備飽滿的鼠背弧度，能完美支撐掌心。重量方面，本體採用極致輕量化（Ultra-lightweight）結構設計，重量僅有 63 公克，長時間高強度甩鼠手腕也絕不易酸痛。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3434,
+        "hallucination": 1.0,
+        "latency_ms": 192.29
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0121",
+          "chunk_0117",
+          "chunk_0107",
+          "chunk_0113",
+          "chunk_0047"
+        ],
+        "relevant_ids": [
+          "chunk_0121"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.83,
+        "bge_ms": 190.41,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 192.29
+      }
+    },
+    {
+      "sample_id": 109,
+      "question": "這款無線滑鼠可以用藍牙接 iPad 平板嗎？還是它一定要插那個 USB 接收器（Dongle）？",
+      "ground_truth": "本產品支援雙模無線技術，機身底部配置了切換開關。您可以透過低延遲「2.4GHz 無線模式」（需插上隨附的 Type-C 接收器）連接電腦打電動；亦可直接切換至「藍牙模式」，免接收器即可直接與 iPad、MacBook 或 Android 手機配對使用。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3541,
+        "hallucination": 1.0,
+        "latency_ms": 195.13
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0139",
+          "chunk_0082",
+          "chunk_0098",
+          "chunk_0083",
+          "chunk_0157"
+        ],
+        "relevant_ids": [
+          "chunk_0082",
+          "chunk_0139"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.1,
+        "bge_ms": 192.92,
+        "rrf_ms": 0.09,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 195.13
+      }
+    },
+    {
+      "sample_id": 110,
+      "question": "滑鼠側邊是用一般塑膠還是環保橡膠？用久了表面會不會變得黏黏的、很難清？",
+      "ground_truth": "本滑鼠外殼全機採用高階防滑霧面塗層工藝，側邊並未採用傳統容易老化水解的環保橡膠材質。即使長期使用或手汗較多，表面依然能保持乾爽不黏膩，日常清潔僅需用稍微沾濕的科技海綿或超細纖維布輕拭即可。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3731,
+        "hallucination": 1.0,
+        "latency_ms": 191.39
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0134",
+          "chunk_0170",
+          "chunk_0135",
+          "chunk_0153",
+          "chunk_0121"
+        ],
+        "relevant_ids": [
+          "chunk_0134"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.99,
+        "bge_ms": 189.31,
+        "rrf_ms": 0.07,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 191.39
+      }
+    },
+    {
+      "sample_id": 111,
+      "question": "請問這款垂直滑鼠真的可以改善滑鼠手嗎？我天天剪片手腕痛，用這個習慣嗎？",
+      "ground_truth": "本款人體工學垂直滑鼠採用 57 度獨特垂直角度設計，能讓您在使用時手部呈現如同自然握手般的姿勢，大幅減輕前臂肌肉韌帶的扭轉，有效釋放正中神經壓力（改善滑鼠手/腕隧道症候群）。初次從傳統滑鼠轉換過來大約需要 2-3 天適應期，隨後即可明顯感受手腕酸痛減輕。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3459,
+        "hallucination": 1.0,
+        "latency_ms": 168.35
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0113",
+          "chunk_0121",
+          "chunk_0135",
+          "chunk_0169",
+          "chunk_0170"
+        ],
+        "relevant_ids": [
+          "chunk_0113"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.79,
+        "bge_ms": 166.5,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 168.35
+      }
+    },
+    {
+      "sample_id": 112,
+      "question": "這款無線滑鼠的 battery 蓄電量可以用多久？如果打電動打到一半沒電，可以直接邊充邊玩嗎？",
+      "ground_truth": "滑鼠內建高效能安全鋰電池，在 2.4GHz 無線連線且關閉燈效的省電軟體模式下，續航力長達 80 小時。包裝內隨附一條低阻力超輕編織 Type-C 傳輸線，若電力不足時直接插上電腦，滑鼠會自動切換為有線模式，讓您邊充電邊繼續流暢遊玩，絕不中斷。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3457,
+        "hallucination": 1.0,
+        "latency_ms": 188.49
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0169",
+          "chunk_0139",
+          "chunk_0215",
+          "chunk_0080",
+          "chunk_0225"
+        ],
+        "relevant_ids": [
+          "chunk_0169"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.02,
+        "bge_ms": 186.41,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 188.49
+      }
+    },
+    {
+      "sample_id": 113,
+      "question": "滑鼠底部的鼠腳墊是什麼材質？在一般的木頭電腦桌面上滑會不會刮傷桌子？",
+      "ground_truth": "滑鼠底部配置高規格 100% 特氟龍（PTFE）軍規級鼠腳墊，邊緣皆經過圓弧倒角鈍化處理。其摩擦係數極低，在木質桌面、塑膠或布質滑鼠墊上皆能提供極其流暢滑順的移動感，絕不刮傷您的電腦桌表面。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.365,
+        "hallucination": 1.0,
+        "latency_ms": 185.0
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0170",
+          "chunk_0017",
+          "chunk_0121",
+          "chunk_0134",
+          "chunk_0153"
+        ],
+        "relevant_ids": [
+          "chunk_0170"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.99,
+        "bge_ms": 182.96,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 185.0
+      }
+    },
+    {
+      "sample_id": 114,
+      "question": "現在買這隻有現貨免運費嗎？原廠保固是幾年？要是滾輪滾動沒反應怎麼辦？",
+      "ground_truth": "本商品現正舉辦年中慶特惠，全台宅配下單即享免運費快速到貨。台灣原廠提供 2 年有限硬體保固，保固期間內若發生非人為損壞的滾輪故障、連點或感應失效，皆可憑購買憑證直接聯繫原廠售後維修中心，免費更換全新良品。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.3392,
+        "bge_cosine": 0.3752,
+        "hallucination": 1.0,
+        "latency_ms": 188.89
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0090",
+          "chunk_0224",
+          "chunk_0151",
+          "chunk_0107",
+          "chunk_0042"
+        ],
+        "relevant_ids": [
+          "chunk_0039",
+          "chunk_0091",
+          "chunk_0038",
+          "chunk_0137",
+          "chunk_0090",
+          "chunk_0087"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.84,
+        "bge_ms": 187.0,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 188.89
+      }
+    },
+    {
+      "sample_id": 115,
+      "question": "這款滑鼠側邊有幾個巨集按鍵？我可以把它設定成 Excel 的複製貼上快捷鍵嗎？",
+      "ground_truth": "本款多功能辦公/電競滑鼠左側配置了 3 個可自訂的獨立實體側鍵。您可以下載原廠專屬的官方驅動軟體，在配置頁面中將 these 按鍵自訂為巨集（Macro）、多媒體控制，或是直接綁定 Windows 系統的 Ctrl+C（複製）與 Ctrl+V（貼上）等快捷功能，大幅提升辦公效率。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.358,
+        "hallucination": 1.0,
+        "latency_ms": 199.02
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0114",
+          "chunk_0216",
+          "chunk_0135",
+          "chunk_0153",
+          "chunk_0082"
+        ],
+        "relevant_ids": [
+          "chunk_0114"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.98,
+        "bge_ms": 196.99,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 199.02
+      }
+    }
+  ]
+}

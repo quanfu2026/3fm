@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}商品館{% endblock %}
+{% block content %}
+<h2>商品館</h2>
+<div class="category-filter">
+  <a href="{{ url_for('shop.index') }}" class="btn-sm {% if not category %}active{% endif %}">全部</a>
+  {% for cat in ['蔬菜','水果','蛋品','油品','米穀'] %}
+  <a href="{{ url_for('shop.index', category=cat) }}"
+     class="btn-sm {% if category==cat %}active{% endif %}">{{ cat }}</a>
+  {% endfor %}
+</div>
+<div class="product-grid">
+  {% for p in products %}
+  <div class="product-card">
+    <div class="product-img">🛒</div>
+    <h3>{{ p.name }}</h3>
+    <p class="product-origin">📍 {{ p.origin }}</p>
+    <p class="product-desc">{{ p.description[:40] }}...</p>
+    <div class="product-footer">
+      <span class="price">NT$ {{ p.price }}</span>
+      <div>
+        <a href="{{ url_for('shop.product', pid=p.id) }}" class="btn-sm">詳情</a>
+        <button class="btn-sm btn-add" onclick="addToCart('{{ p.id }}')">加入購物車</button>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p>目前沒有符合條件的商品。</p>
+  {% endfor %}
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+function addToCart(pid) {
+  fetch('/cart/add', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({product_id: pid, qty: 1})
+  }).then(r => r.json()).then(d => {
+    document.getElementById('cart-count').textContent = d.count;
+    alert('已加入購物車！');
+  });
+}
+</script>
+{% endblock %}

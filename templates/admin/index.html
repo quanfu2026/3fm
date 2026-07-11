@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}管理後台{% endblock %}
+{% block content %}
+<h2>⚙️ 管理後台</h2>
+
+<div class="admin-section">
+  <h3>📁 上傳知識文件</h3>
+  <p>支援 Markdown / PDF / DOCX / XLSX / PPTX / 圖片</p>
+  <input type="file" id="fileInput" multiple accept=".md,.txt,.pdf,.docx,.xlsx,.pptx,.jpg,.jpeg,.png,.webp">
+  <button class="btn-primary" onclick="uploadFiles()">上傳</button>
+  <p id="uploadMsg"></p>
+</div>
+
+<div class="admin-section">
+  <h3>📄 已上傳文件</h3>
+  <ul id="fileList">
+    {% for f in files %}
+    <li>{{ f }} <button class="btn-sm" onclick="deleteFile('{{ f }}')">刪除</button></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="admin-section">
+  <h3>🔄 重建索引</h3>
+  <button class="btn-primary" onclick="rebuildIndex()">重建索引</button>
+  <p id="rebuildMsg"></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function uploadFiles() {
+  const input = document.getElementById("fileInput");
+  const msg = document.getElementById("uploadMsg");
+  if (!input.files.length) { msg.textContent = "請選擇檔案"; return; }
+  for (const file of input.files) {
+    const form = new FormData();
+    form.append("file", file);
+    const res = await fetch("/admin/upload", { method: "POST", body: form });
+    const data = await res.json();
+    msg.textContent = data.message;
+  }
+  location.reload();
+}
+
+async function deleteFile(filename) {
+  if (!confirm("確定刪除 " + filename + "？")) return;
+  await fetch("/admin/delete", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({filename})
+  });
+  location.reload();
+}
+
+async function rebuildIndex() {
+  const msg = document.getElementById("rebuildMsg");
+  msg.textContent = "重建中...";
+  const res = await fetch("/admin/rebuild-index", { method: "POST" });
+  const data = await res.json();
+  msg.textContent = data.message;
+}
+</script>
+{% endblock %}

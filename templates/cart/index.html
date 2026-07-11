@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}購物車{% endblock %}
+{% block content %}
+<h2>🛒 購物車</h2>
+{% if items %}
+<table class="cart-table">
+  <thead>
+    <tr><th>商品</th><th>單價</th><th>數量</th><th>小計</th><th>操作</th></tr>
+  </thead>
+  <tbody>
+  {% for item in items %}
+  <tr>
+    <td>{{ item.name }}</td>
+    <td>NT$ {{ item.price }}</td>
+    <td>{{ item.qty }}</td>
+    <td>NT$ {{ item.subtotal }}</td>
+    <td><button class="btn-sm" onclick="removeItem('{{ item.id }}')">移除</button></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div class="cart-total">
+  <strong>合計：NT$ {{ total }}</strong>
+  {% if total >= 699 %}
+    <span class="free-shipping">🎉 免運費</span>
+  {% else %}
+    <span class="need-more">再購 NT$ {{ 699 - total }} 元免運費</span>
+  {% endif %}
+</div>
+<button class="btn-primary" onclick="location.href='/checkout/'">前往結帳</button>
+{% else %}
+<p>購物車是空的，<a href="{{ url_for('shop.index') }}">去選購</a>吧！</p>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script>
+function removeItem(pid) {
+  fetch('/cart/remove', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({product_id: pid})
+  }).then(() => location.reload());
+}
+</script>
+{% endblock %}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}智慧機器人工程系有機電商{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+
+<!-- ── 導覽列 ── -->
+<nav class="navbar">
+  <a href="{{ url_for('main.index') }}" class="brand">🌿 智慧機器人工程系 有機電商</a>
+  <div class="nav-links">
+    <a href="{{ url_for('shop.index') }}">商品館</a>
+    <a href="{{ url_for('cart.index') }}" id="cart-link">
+      🛒 購物車 <span id="cart-count" class="badge">{{ session.get('cart', {}).values()|map('int')|sum if session.get('cart') else 0 }}</span>
+    </a>
+    {% if session.get('user') %}
+      <span class="user-name">👤 {{ session.user.name }}</span>
+      {% if session.user.role == 'admin' %}
+        <a href="{{ url_for('admin.index') }}">管理後台</a>
+      {% endif %}
+      <a href="{{ url_for('auth.logout') }}">登出</a>
+    {% else %}
+      <a href="{{ url_for('auth.login') }}">登入</a>
+    {% endif %}
+  </div>
+</nav>
+
+<!-- ── 主內容 ── -->
+<main class="container">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <div class="alert">{{ msg }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ── AI 客服浮動按鈕 ── -->
+<button class="chat-fab" onclick="toggleChat()" title="AI 客服">💬</button>
+
+<!-- ── AI 客服視窗 ── -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <span>🤖 AI 智能客服</span>
+    <div class="chat-header-controls">
+      <span class="chat-status" id="chatStatus">● 線上</span>
+      <button onclick="toggleChat()">✕</button>
+    </div>
+  </div>
+
+  <div class="chat-config">
+    <label>
+      <input type="checkbox" id="rerankerToggle" checked>
+      BGE-Reranker
+    </label>
+    <label>
+      Top-K
+      <select id="topKSelect">
+        <option value="3">3</option>
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="msg assistant">
+      您好！我是2026 智慧機器工程系有機電商平台 的 AI 客服助理，請問有什麼可以幫您？🌿
+    </div>
+  </div>
+
+  <div class="chat-metrics" id="chatMetrics" style="display:none">
+    <span id="metricLatency">⏱ —</span>
+    <span id="metricReranker">🔍 —</span>
+    <span id="metricMRR">📊 —</span>
+  </div>
+
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="請輸入您的問題..."
+           onkeydown="if(event.key==='Enter') sendChat()">
+    <button onclick="sendChat()">送出</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2026 智慧機器工程系有機電商平台｜基於任務分解之雙階段 RAG 架構</p>
+</footer>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

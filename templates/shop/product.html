@@ -1,0 +1,111 @@
+﻿{% extends "base.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="product-detail">
+
+  <div class="product-detail-img">
+    🛍️
+  </div>
+
+  <div class="product-detail-info">
+    <h1>{{ product.name }}</h1>
+
+    <p class="tag">{{ product.category }}</p>
+
+    <p>
+      <strong>產地：</strong>
+      {{ product.origin }}
+    </p>
+
+    <p>{{ product.description }}</p>
+
+    <p>
+      <strong>保存方式：</strong>
+      {{ product.storage }}
+    </p>
+
+    <p class="price-lg">
+      NT$ {{ product.price }}
+    </p>
+
+    <div class="qty-row">
+      <label for="qty">
+        數量：
+      </label>
+
+      <input
+        type="number"
+        id="qty"
+        value="1"
+        min="1"
+        max="{{ product.stock }}"
+        style="width: 60px;"
+      >
+
+      <button
+        type="button"
+        class="btn-primary"
+        onclick="addToCart('{{ product.id }}')"
+      >
+        加入購物車
+      </button>
+    </div>
+
+    <p id="cart-message" style="margin-top: 12px;"></p>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function addToCart(productId) {
+  const qtyInput = document.getElementById("qty");
+  const message = document.getElementById("cart-message");
+  const cartCount = document.getElementById("cart-count");
+
+  const qty = Number.parseInt(qtyInput.value, 10);
+
+  if (!Number.isInteger(qty) || qty < 1) {
+    alert("請輸入正確的購買數量。");
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "{{ url_for('cart.add') }}",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          product_id: productId,
+          qty: qty
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "加入購物車失敗");
+    }
+
+    if (cartCount) {
+      cartCount.textContent = data.count;
+    }
+
+    message.textContent = "商品已成功加入購物車。";
+    alert("商品已加入購物車。");
+
+  } catch (error) {
+    console.error(error);
+    message.textContent = error.message;
+    alert("加入購物車失敗：" + error.message);
+  }
+}
+</script>
+{% endblock %}

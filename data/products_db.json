@@ -1,0 +1,57 @@
+[
+  {
+    "id": "P001",
+    "name": "有機高麗菜",
+    "category": "蔬菜",
+    "price": 45,
+    "stock": 100,
+    "origin": "台灣彰化",
+    "description": "無農藥有機種植，清甜爽口，適合炒食或火鍋",
+    "storage": "冷藏保存，建議 3-5 天內食用",
+    "image": "cabbage.jpg"
+  },
+  {
+    "id": "P002",
+    "name": "台灣香蕉",
+    "category": "水果",
+    "price": 60,
+    "stock": 80,
+    "origin": "台灣旗山",
+    "description": "旗山香蕉香甜綿密，富含鉀質與膳食纖維",
+    "storage": "常溫保存，避免冷藏，熟透後可放冰箱",
+    "image": "banana.jpg"
+  },
+  {
+    "id": "P003",
+    "name": "有機雞蛋（10入）",
+    "category": "蛋品",
+    "price": 85,
+    "stock": 50,
+    "origin": "台灣嘉義",
+    "description": "放牧飼養，無抗生素，蛋黃呈橙黃色，營養豐富",
+    "storage": "冷藏保存，建議 2 週內食用",
+    "image": "eggs.jpg"
+  },
+  {
+    "id": "P004",
+    "name": "冷壓初榨橄欖油（500ml）",
+    "category": "油品",
+    "price": 380,
+    "stock": 30,
+    "origin": "西班牙",
+    "description": "第一道冷壓萃取，酸度低於 0.3%，適合涼拌與低溫烹調",
+    "storage": "置於陰涼避光處，開封後建議 3 個月內用完",
+    "image": "olive_oil.jpg"
+  },
+  {
+    "id": "P005",
+    "name": "有機糙米（2kg）",
+    "category": "米穀",
+    "price": 180,
+    "stock": 60,
+    "origin": "台灣花蓮",
+    "description": "花蓮有機認證糙米，保留完整胚芽與糠層，富含 B 群與膳食纖維",
+    "storage": "密封保存於乾燥陰涼處，開封後置冰箱",
+    "image": "brown_rice.jpg"
+  }
+]

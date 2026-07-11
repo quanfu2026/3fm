@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+<div class="product-detail">
+  <div class="product-detail-img">🌿</div>
+  <div class="product-detail-info">
+    <h1>{{ product.name }}</h1>
+    <p class="tag">{{ product.category }}</p>
+    <p>📍 產地：{{ product.origin }}</p>
+    <p>{{ product.description }}</p>
+    <p>🗄 保存方式：{{ product.storage }}</p>
+    <p class="price-lg">NT$ {{ product.price }}</p>
+    <div class="qty-row">
+      <label>數量：
+        <input type="number" id="qty" value="1" min="1" max="{{ product.stock }}" style="width:60px">
+      </label>
+      <button class="btn-primary" onclick="addToCart('{{ product.id }}')">加入購物車</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+function addToCart(pid) {
+  const qty = parseInt(document.getElementById('qty').value);
+  fetch('/cart/add', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({product_id: pid, qty: qty})
+  }).then(r => r.json()).then(d => {
+    document.getElementById('cart-count').textContent = d.count;
+    alert('已加入購物車！');
+  });
+}
+</script>
+{% endblock %}

@@ -1,0 +1,523 @@
+2026-06-29 06:13:18,130 [INFO] ============================================================
+2026-06-29 06:13:18,130 [INFO] 🚀  RAG 自動化批量評測啟動
+2026-06-29 06:13:18,132 [INFO] ============================================================
+2026-06-29 06:13:18,133 [INFO] 知識庫載入：226 個 chunks（來源：knowledge_base/docs/product_specs.txt）
+2026-06-29 06:13:18,237 [INFO] 評測資料集：115 筆（來源：knowledge_base/evaluation/電商客服問答集.docx）
+2026-06-29 06:13:18,237 [INFO] 建立 BM25 + BGE 雙層索引...
+2026-06-29 06:13:18,436 [DEBUG] Building prefix dict from the default dictionary ...
+2026-06-29 06:13:18,439 [DEBUG] Loading model from cache C:\Users\CHENQU~1\AppData\Local\Temp\jieba.cache
+2026-06-29 06:13:18,960 [DEBUG] Loading model cost 0.522 seconds.
+2026-06-29 06:13:18,961 [DEBUG] Prefix dict has been built successfully.
+2026-06-29 06:13:19,180 [INFO] BM25 索引建立完成：226 筆
+2026-06-29 06:13:19,181 [INFO] 載入 BGE 模型：BAAI/bge-m3（首次較慢）
+2026-06-29 06:13:25,356 [INFO] No device provided, using cpu
+2026-06-29 06:13:26,014 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:26,015 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-29 06:13:26,055 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:26,277 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:26,314 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:26,319 [INFO] Loading SentenceTransformer model from BAAI/bge-m3.
+2026-06-29 06:13:26,537 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:26,571 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:26,796 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:26,837 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-29 06:13:27,088 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:27,126 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:27,353 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:27,388 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:27,613 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 06:13:27,843 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:27,873 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:28,141 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:28,174 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:28,403 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-29 06:13:28,636 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-29 06:13:28,894 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 06:13:28,901 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-06-29 06:13:29,139 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 06:13:29,162 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-29 06:13:29,370 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 06:13:29,419 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-06-29 06:13:29,601 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 06:13:29,654 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-29 06:13:29,829 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:29,865 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:29,877 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-06-29 06:13:30,095 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:30,135 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:30,357 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:30,390 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:30,640 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:30,673 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:30,901 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-29 06:13:31,133 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-29 06:13:33,918 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-29 06:13:34,186 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 06:13:34,231 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-29 06:13:34,466 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-29 06:13:34,472 [INFO] BGE 模型載入完成
+2026-06-29 06:13:34,472 [INFO] BGE 向量編碼中（226 筆）...
+2026-06-29 06:14:35,883 [INFO] BGE 向量索引建立完成
+2026-06-29 06:14:35,883 [INFO] 
+開始批量評測（共 115 題）
+────────────────────────────────────────────────────────────
+2026-06-29 06:14:35,884 [INFO] 
+[  1/115] 樣本 ID=1
+2026-06-29 06:14:35,884 [INFO]   問題：這台電視有支援 4K 120Hz 嗎？我接 PS5 玩遊戲會不會有 Delay 的感覺？...
+2026-06-29 06:14:36,596 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.850  Cosine=0.341  Halluc=1.000  Latency=219ms
+2026-06-29 06:14:36,596 [INFO] 
+[  2/115] 樣本 ID=2
+2026-06-29 06:14:36,596 [INFO]   問題：請問這款智慧電視的 OS 是哪一種？可以直接用 AirPlay 把 iPhone 畫面投過去嗎？...
+2026-06-29 06:14:37,312 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.323  Halluc=1.000  Latency=238ms
+2026-06-29 06:14:37,312 [INFO] 
+[  3/115] 樣本 ID=3
+2026-06-29 06:14:37,313 [INFO]   問題：客廳採光很好會反光，這台的面板亮度夠嗎？還有它的 HDR 效果怎麼樣？...
+2026-06-29 06:14:38,119 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.328  Halluc=1.000  Latency=220ms
+2026-06-29 06:14:38,119 [INFO] 
+[  4/115] 樣本 ID=4
+2026-06-29 06:14:38,120 [INFO]   問題：壁掛架是隨機附贈還是要加購？原廠保固是算兩年還是三年？...
+2026-06-29 06:14:38,783 [INFO]   Hit@5=1.00  MRR=0.250  NDCG@5=0.202  Cosine=0.325  Halluc=1.000  Latency=202ms
+2026-06-29 06:14:38,783 [INFO] 
+[  5/115] 樣本 ID=5
+2026-06-29 06:14:38,783 [INFO]   問題：這台有內建 Soundbar 嗎？它的喇叭輸出功率功率瓦數是多少？...
+2026-06-29 06:14:39,554 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.270  Halluc=1.000  Latency=212ms
+2026-06-29 06:14:39,555 [INFO] 
+[  6/115] 樣本 ID=6
+2026-06-29 06:14:39,555 [INFO]   問題：這款升降桌有附安全防撞嗎？萬一降下來壓到椅子會不會卡死？...
+2026-06-29 06:14:40,308 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.334  Halluc=1.000  Latency=232ms
+2026-06-29 06:14:40,309 [INFO] 
+[  7/115] 樣本 ID=7
+2026-06-29 06:14:40,309 [INFO]   問題：請問這張桌子的最大承重是多少？我放兩台 32吋 monitor 外加主機撐得住嗎？...
+2026-06-29 06:14:41,010 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.296  Halluc=1.000  Latency=230ms
+2026-06-29 06:14:41,010 [INFO] 
+[  8/115] 樣本 ID=8
+2026-06-29 06:14:41,011 [INFO]   問題：這款 L型電腦桌有沒有免運送到家？住公寓 4樓沒有電梯可以幫忙搬運上去嗎？...
+2026-06-29 06:14:41,749 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.373  Halluc=1.000  Latency=232ms
+2026-06-29 06:14:41,749 [INFO] 
+[  9/115] 樣本 ID=9
+2026-06-29 06:14:41,750 [INFO]   問題：這張書桌的 size 寬度和深度是多少？120公分有現貨嗎？...
+2026-06-29 06:14:42,494 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.348  Halluc=1.000  Latency=223ms
+2026-06-29 06:14:42,494 [INFO] 
+[ 10/115] 樣本 ID=10
+2026-06-29 06:14:42,495 [INFO]   問題：升降桌的馬達保固是算多久？是台灣原廠負責維修嗎？...
+2026-06-29 06:14:43,272 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.541  Cosine=0.298  Halluc=1.000  Latency=225ms
+2026-06-29 06:14:43,272 [INFO] 
+[ 11/115] 樣本 ID=11
+2026-06-29 06:14:43,273 [INFO]   問題：桌面是什麼材質？如果常常放熱咖啡 cup 在上面會不會容易起泡或吃色？...
+2026-06-29 06:14:44,092 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.332  Halluc=1.000  Latency=217ms
+2026-06-29 06:14:44,093 [INFO] 
+[ 12/115] 樣本 ID=12
+2026-06-29 06:14:44,093 [INFO]   問題：這款電腦桌本身有帶集線槽嗎？我的線很多想要收得乾淨一點。...
+2026-06-29 06:14:44,845 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.383  Halluc=1.000  Latency=236ms
+2026-06-29 06:14:44,846 [INFO] 
+[ 13/115] 樣本 ID=13
+2026-06-29 06:14:44,846 [INFO]   問題：我想安裝螢幕壁掛架或是 monitor arm，這張桌子的桌緣深度夠夾嗎？...
+2026-06-29 06:14:45,589 [INFO]   Hit@5=1.00  MRR=0.250  NDCG@5=0.431  Cosine=0.338  Halluc=1.000  Latency=232ms
+2026-06-29 06:14:45,590 [INFO] 
+[ 14/115] 樣本 ID=14
+2026-06-29 06:14:45,590 [INFO]   問題：手搖升降的會不會很難轉？如果從 70 升到 110 級公分大概要轉幾圈？...
+2026-06-29 06:14:46,355 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.316  Halluc=1.000  Latency=229ms
+2026-06-29 06:14:46,355 [INFO] 
+[ 15/115] 樣本 ID=15
+2026-06-29 06:14:46,356 [INFO]   問題：這張桌子需要自己 DIY 組裝嗎？說明書的步驟會不會很複雜？...
+2026-06-29 06:14:47,138 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.355  Halluc=1.000  Latency=202ms
+2026-06-29 06:14:47,138 [INFO] 
+[ 16/115] 樣本 ID=16
+2026-06-29 06:14:47,138 [INFO]   問題：這台螢幕有支援 2K 144Hz 嗎？我接顯卡玩 FPS 遊戲畫面會不會有殘影？...
+2026-06-29 06:14:47,916 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.368  Halluc=1.000  Latency=233ms
+2026-06-29 06:14:47,916 [INFO] 
+[ 17/115] 樣本 ID=17
+2026-06-29 06:14:47,917 [INFO]   問題：我是做設計的，這台 monitor 的色彩精準度 ok 嗎？有沒有校色證明？...
+2026-06-29 06:14:48,699 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.347  Halluc=1.000  Latency=231ms
+2026-06-29 06:14:48,699 [INFO] 
+[ 18/115] 樣本 ID=18
+2026-06-29 06:14:48,699 [INFO]   問題：請問這款曲面螢幕的曲率是多少？我看影片或打電動包覆感好嗎？...
+2026-06-29 06:14:49,465 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.323  Halluc=1.000  Latency=232ms
+2026-06-29 06:14:49,465 [INFO] 
+[ 19/115] 樣本 ID=19
+2026-06-29 06:14:49,466 [INFO]   問題：它的 Type-C 接口有支援 PD 快充嗎？可以直接接 MacBook 畫面輸出兼充電嗎？...
+2026-06-29 06:14:50,230 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.356  Halluc=1.000  Latency=233ms
+2026-06-29 06:14:50,230 [INFO] 
+[ 20/115] 樣本 ID=20
+2026-06-29 06:14:50,231 [INFO]   問題：這台螢幕有沒有內建立體聲喇叭？還是說我一定要自己加購外接喇叭？...
+2026-06-29 06:14:50,979 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.295  Halluc=1.000  Latency=192ms
+2026-06-29 06:14:50,980 [INFO] 
+[ 21/115] 樣本 ID=21
+2026-06-29 06:14:50,980 [INFO]   問題：我常加班寫 code 看螢幕，這台防藍光或閃屏的效果好嗎？眼睛會不會酸？...
+2026-06-29 06:14:51,744 [INFO]   Hit@5=1.00  MRR=0.500  NDCG@5=0.631  Cosine=0.376  Halluc=1.000  Latency=241ms
+2026-06-29 06:14:51,744 [INFO] 
+[ 22/115] 樣本 ID=22
+2026-06-29 06:14:51,745 [INFO]   問題：這款螢幕的支架可以直立旋轉嗎？還是只能前後調整角度？...
+2026-06-29 06:14:52,504 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.360  Halluc=1.000  Latency=220ms
+2026-06-29 06:14:52,504 [INFO] 
+[ 23/115] 樣本 ID=23
+2026-06-29 06:14:52,505 [INFO]   問題：請問它的面板是 IPS 還是 VA 的？側面看過去畫面會不會變黑或色偏？...
+2026-06-29 06:14:53,288 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.314  Halluc=1.000  Latency=240ms
+2026-06-29 06:14:53,288 [INFO] 
+[ 24/115] 樣本 ID=24
+2026-06-29 06:14:53,288 [INFO]   問題：買這台電視螢幕如果有亮點或暗點怎麼辦？原廠有保固幾個月無亮點嗎？...
+2026-06-29 06:14:54,041 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.553  Cosine=0.343  Halluc=1.000  Latency=189ms
+2026-06-29 06:14:54,041 [INFO] 
+[ 25/115] 樣本 ID=25
+2026-06-29 06:14:54,042 [INFO]   問題：這台有 HDR400 認證嗎？我看 Netflix 特效全開的話亮度夠不夠？...
+2026-06-29 06:14:54,845 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.267  Halluc=1.000  Latency=261ms
+2026-06-29 06:14:54,846 [INFO] 
+[ 26/115] 樣本 ID=26
+2026-06-29 06:14:54,846 [INFO]   問題：開這款隨身碟接電腦的 USB 3.2 接口，傳一個 10G 的影片檔案大概要多久？會不會太慢？...
+2026-06-29 06:14:55,590 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.369  Halluc=1.000  Latency=258ms
+2026-06-29 06:14:55,591 [INFO] 
+[ 27/115] 樣本 ID=27
+2026-06-29 06:14:55,591 [INFO]   問題：我的手機是 Type-C 的，這支隨身碟可以直接插手機備份照片嗎？需要裝 App 嗎？...
+2026-06-29 06:14:56,427 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.367  Halluc=1.000  Latency=244ms
+2026-06-29 06:14:56,428 [INFO] 
+[ 28/115] 樣本 ID=28
+2026-06-29 06:14:56,428 [INFO]   問題：這種金屬外殼的隨身碟用久了會不會很燙？會不會因為過熱結果突然斷線讀不到？...
+2026-06-29 06:14:57,233 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.352  Halluc=1.000  Latency=209ms
+2026-06-29 06:14:57,233 [INFO] 
+[ 29/115] 樣本 ID=29
+2026-06-29 06:14:57,233 [INFO]   問題：開這款有防震防摔嗎？我不小心摔到地上或碰到水，裡面的 Data 會不會不見？...
+2026-06-29 06:14:58,026 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.394  Halluc=1.000  Latency=243ms
+2026-06-29 06:14:58,026 [INFO] 
+[ 30/115] 樣本 ID=30
+2026-06-29 06:14:58,027 [INFO]   問題：請問保固是算幾年？如果隨身碟壞了，原廠會幫忙把裡面的檔案 Data 救回來嗎？...
+2026-06-29 06:14:58,825 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.704  Cosine=0.352  Halluc=1.000  Latency=250ms
+2026-06-29 06:14:58,825 [INFO] 
+[ 31/115] 樣本 ID=31
+2026-06-29 06:14:58,826 [INFO]   問題：請問 256GB 的隨身碟實際上插到 Windows 電腦上看，容量是多少？怎麼變少了？...
+2026-06-29 06:14:59,690 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.313  Halluc=1.000  Latency=243ms
+2026-06-29 06:14:59,691 [INFO] 
+[ 32/115] 樣本 ID=32
+2026-06-29 06:14:59,691 [INFO]   問題：這款有支援硬體加密嗎？我想要把私密文件鎖起來，換電腦看要密碼的那種。...
+2026-06-29 06:15:00,501 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.329  Halluc=1.000  Latency=258ms
+2026-06-29 06:15:00,502 [INFO] 
+[ 33/115] 樣本 ID=33
+2026-06-29 06:15:00,502 [INFO]   問題：這支隨身碟的 size 會不會很大？如果插在筆電上會不會卡到隔壁的 USB port？...
+2026-06-29 06:15:01,315 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.332  Halluc=1.000  Latency=236ms
+2026-06-29 06:15:01,315 [INFO] 
+[ 34/115] 樣本 ID=34
+2026-06-29 06:15:01,316 [INFO]   問題：這台有免運嗎？我如果是要拿來做 Windows 11 的開機隨身碟引導，16G 夠不夠大？...
+2026-06-29 06:15:02,045 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.331  Halluc=1.000  Latency=223ms
+2026-06-29 06:15:02,045 [INFO] 
+[ 35/115] 樣本 ID=35
+2026-06-29 06:15:02,046 [INFO]   問題：它是無蓋設計嗎？我很常把蓋子不見，這種伸縮的用久了彈簧會不會卡死？...
+2026-06-29 06:15:02,874 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.387  Halluc=1.000  Latency=239ms
+2026-06-29 06:15:02,875 [INFO] 
+[ 36/115] 樣本 ID=36
+2026-06-29 06:15:02,875 [INFO]   問題：這台 2-Bay 的 NAS 如果我裝兩顆 4TB 跑 RAID 1，這樣我的可用容量是多少？Data 安全性高嗎？...
+2026-06-29 06:15:03,724 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.386  Halluc=1.000  Latency=278ms
+2026-06-29 06:15:03,725 [INFO] 
+[ 37/115] 樣本 ID=37
+2026-06-29 06:15:03,726 [INFO]   問題：請問這台 NAS 的網路埠是 1G 還是 2.5GbE 的？如果我要區網傳大檔案會不會卡在網路速度？...
+2026-06-29 06:15:04,577 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.326  Halluc=1.000  Latency=264ms
+2026-06-29 06:15:04,577 [INFO] 
+[ 38/115] 樣本 ID=38
+2026-06-29 06:15:04,577 [INFO]   問題：我很在乎保固，這台智慧儲存伺服器的保固是幾年？出問題有台灣原廠可以送修嗎？...
+2026-06-29 06:15:05,309 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.869  Cosine=0.339  Halluc=1.000  Latency=232ms
+2026-06-29 06:15:05,310 [INFO] 
+[ 39/115] 樣本 ID=39
+2026-06-29 06:15:05,310 [INFO]   問題：它的作業系統 App 軟體可以支援手機外網連線嗎？還是我一定要在同一個 Wi-Fi 才能連？...
+2026-06-29 06:15:06,100 [INFO]   Hit@5=1.00  MRR=0.200  NDCG@5=0.182  Cosine=0.399  Halluc=1.000  Latency=230ms
+2026-06-29 06:15:06,100 [INFO] 
+[ 40/115] 樣本 ID=40
+2026-06-29 06:15:06,101 [INFO]   問題：這款 NAS 有沒有免運費？隨機出貨有包含硬碟嗎？還是 HDD 要自己加購？...
+2026-06-29 06:15:06,893 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.402  Halluc=1.000  Latency=239ms
+2026-06-29 06:15:06,893 [INFO] 
+[ 41/115] 樣本 ID=41
+2026-06-29 06:15:06,894 [INFO]   問題：我想拿這台來跑 Docker 或者是架虛擬機，這台的 CPU 撐得住嗎？RAM 記憶體能不能自己加？...
+2026-06-29 06:15:07,692 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.308  Halluc=1.000  Latency=253ms
+2026-06-29 06:15:07,693 [INFO] 
+[ 42/115] 樣本 ID=42
+2026-06-29 06:15:07,693 [INFO]   問題：這台的 size 會不會很大很佔位子？放在客廳或房間會不會有很大的馬達噪音？...
+2026-06-29 06:15:08,555 [INFO]   Hit@5=1.00  MRR=0.500  NDCG@5=0.631  Cosine=0.294  Halluc=1.000  Latency=236ms
+2026-06-29 06:15:08,555 [INFO] 
+[ 43/115] 樣本 ID=43
+2026-06-29 06:15:08,555 [INFO]   問題：它有支援 M.2 NVMe SSD 當快取嗎？裝了之後對檢索或讀寫速度有優化嗎？...
+2026-06-29 06:15:09,325 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.877  Cosine=0.385  Halluc=1.000  Latency=217ms
+2026-06-29 06:15:09,325 [INFO] 
+[ 44/115] 樣本 ID=44
+2026-06-29 06:15:09,325 [INFO]   問題：這台 NAS 有防勒索軟體嗎？萬一電腦中病毒，NAS 裡面的備份檔案會不會也死掉？...
+2026-06-29 06:15:10,160 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.376  Halluc=1.000  Latency=252ms
+2026-06-29 06:15:10,161 [INFO] 
+[ 45/115] 樣本 ID=45
+2026-06-29 06:15:10,161 [INFO]   問題：請問這台有支援 4K 影片硬體解碼嗎？我想用 Plex 在電視上播 NAS 裡的影片。...
+2026-06-29 06:15:11,042 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.346  Halluc=1.000  Latency=260ms
+2026-06-29 06:15:11,043 [INFO] 
+[ 46/115] 樣本 ID=46
+2026-06-29 06:15:11,043 [INFO]   問題：這支手機有支援 120Hz 更新率嗎？我滑臉書或打手遊畫面會不會有 Lag 的感覺？...
+2026-06-29 06:15:11,818 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.308  Halluc=1.000  Latency=257ms
+2026-06-29 06:15:11,818 [INFO] 
+[ 47/115] 樣本 ID=47
+2026-06-29 06:15:11,819 [INFO]   問題：請問這台的拍照功能怎麼樣？有沒有光學防手震？拍夜景大樓會不會糊掉？...
+2026-06-29 06:15:12,644 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.313  Halluc=1.000  Latency=233ms
+2026-06-29 06:15:12,645 [INFO] 
+[ 48/115] 樣本 ID=48
+2026-06-29 06:15:12,645 [INFO]   問題：開這款手機有隨機附贈充電頭嗎？快充速度是幾瓦特？大概多久可以充飽 battery？...
+2026-06-29 06:15:13,493 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.318  Halluc=1.000  Latency=234ms
+2026-06-29 06:15:13,493 [INFO] 
+[ 49/115] 樣本 ID=49
+2026-06-29 06:15:13,493 [INFO]   問題：我想要可以防水的手機，這台的防水等級是多少？不小心掉到水槽會壞嗎？...
+2026-06-29 06:15:14,248 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.357  Halluc=1.000  Latency=185ms
+2026-06-29 06:15:14,249 [INFO] 
+[ 50/115] 樣本 ID=50
+2026-06-29 06:15:14,249 [INFO]   問題：請問台灣原廠保固是算幾年？如果是螢幕人為摔裂掉，換新面板有保固嗎？...
+2026-06-29 06:15:15,062 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.765  Cosine=0.337  Halluc=1.000  Latency=245ms
+2026-06-29 06:15:15,063 [INFO] 
+[ 51/115] 樣本 ID=51
+2026-06-29 06:15:15,063 [INFO]   問題：這台的記憶體是多少？如果背景開很多 App 軟體，系統會不會自動閃退卡頓？...
+2026-06-29 06:15:15,878 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.329  Halluc=1.000  Latency=241ms
+2026-06-29 06:15:15,878 [INFO] 
+[ 52/115] 樣本 ID=52
+2026-06-29 06:15:15,878 [INFO]   問題：這款有支援實體雙卡雙待嗎？還是其中一個位置一定要裝記憶卡？...
+2026-06-29 06:15:16,705 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.346  Halluc=1.000  Latency=239ms
+2026-06-29 06:15:16,705 [INFO] 
+[ 53/115] 樣本 ID=53
+2026-06-29 06:15:16,706 [INFO]   問題：它的處理器 CPU 是哪一顆？玩《原神》這種重量級遊戲特效全開可以穩 60幀嗎？...
+2026-06-29 06:15:17,592 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.324  Halluc=1.000  Latency=231ms
+2026-06-29 06:15:17,592 [INFO] 
+[ 54/115] 樣本 ID=54
+2026-06-29 06:15:17,592 [INFO]   問題：現在買這台有超商免運費嗎？如果買了發現系統用不習慣，可以申請退貨嗎？...
+2026-06-29 06:15:18,450 [INFO]   Hit@5=1.00  MRR=0.333  NDCG@5=0.500  Cosine=0.422  Halluc=1.000  Latency=198ms
+2026-06-29 06:15:18,451 [INFO] 
+[ 55/115] 樣本 ID=55
+2026-06-29 06:15:18,451 [INFO]   問題：這台 Android 手機有沒有內建 NFC 功能？可以直接感應 Google Pay 或刷悠遊卡嗎？...
+2026-06-29 06:15:19,228 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.370  Halluc=1.000  Latency=235ms
+2026-06-29 06:15:19,229 [INFO] 
+[ 56/115] 樣本 ID=56
+2026-06-29 06:15:19,229 [INFO]   問題：這款 DDR5 記憶體可以相容 Intel 第 14 代的 CPU 嗎？我的主機板要不要先更新 BIOS？...
+2026-06-29 06:15:20,064 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.321  Halluc=1.000  Latency=241ms
+2026-06-29 06:15:20,064 [INFO] 
+[ 57/115] 樣本 ID=57
+2026-06-29 06:15:20,065 [INFO]   問題：請問這組 16G 兩條的套條有支援 XMP 嗎？我進 BIOS 裡要怎麼一鍵超頻？...
+2026-06-29 06:15:20,934 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.391  Halluc=1.000  Latency=245ms
+2026-06-29 06:15:20,935 [INFO] 
+[ 58/115] 樣本 ID=58
+2026-06-29 06:15:20,935 [INFO]   問題：這種帶有 RGB 燈效的記憶體，它的燈光可以用主機板的軟體去改顏色嗎？...
+2026-06-29 06:15:21,773 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.352  Halluc=1.000  Latency=253ms
+2026-06-29 06:15:21,773 [INFO] 
+[ 59/115] 樣本 ID=59
+2026-06-29 06:15:21,773 [INFO]   問題：這款記憶體的時序 CL30 會不會太高？玩遊戲或跑運算會不會有 Delay 延遲？...
+2026-06-29 06:15:22,667 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.319  Halluc=1.000  Latency=237ms
+2026-06-29 06:15:22,668 [INFO] 
+[ 60/115] 樣本 ID=60
+2026-06-29 06:15:22,668 [INFO]   問題：請問保固是算幾年？如果是因為我自己超頻超到燒掉，原廠還會換新嗎？...
+2026-06-29 06:15:23,527 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.613  Cosine=0.376  Halluc=1.000  Latency=197ms
+2026-06-29 06:15:23,527 [INFO] 
+[ 61/115] 樣本 ID=61
+2026-06-29 06:15:23,527 [INFO]   問題：這款散熱片的高度是多少？我的 CPU 散熱器是巨型雙塔風扇，會不會卡到 RAM？...
+2026-06-29 06:15:24,349 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.323  Halluc=1.000  Latency=226ms
+2026-06-29 06:15:24,349 [INFO] 
+[ 62/115] 樣本 ID=62
+2026-06-29 06:15:24,349 [INFO]   問題：我的舊筆電想要升級，這條桌上型的記憶體可以直接插在筆電裡面嗎？...
+2026-06-29 06:15:25,223 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.378  Halluc=1.000  Latency=254ms
+2026-06-29 06:15:25,224 [INFO] 
+[ 63/115] 樣本 ID=63
+2026-06-29 06:15:25,224 [INFO]   問題：買兩組 16G*2 湊成四條插滿，這樣跑雙通道的速度會不會退化或 Lag？...
+2026-06-29 06:15:26,077 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.335  Halluc=1.000  Latency=251ms
+2026-06-29 06:15:26,077 [INFO] 
+[ 64/115] 樣本 ID=64
+2026-06-29 06:15:26,078 [INFO]   問題：這款記憶體有免運費嗎？16G 拿來打黑神話悟空這種 3A 大作夠用嗎？...
+2026-06-29 06:15:26,916 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.327  Halluc=1.000  Latency=247ms
+2026-06-29 06:15:26,917 [INFO] 
+[ 65/115] 樣本 ID=65
+2026-06-29 06:15:26,917 [INFO]   問題：這款有內建 ECC 錯誤校正嗎？這樣我的電腦主機開著開著會不會比較不容易藍屏？...
+2026-06-29 06:15:27,789 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.350  Halluc=1.000  Latency=250ms
+2026-06-29 06:15:27,789 [INFO] 
+[ 66/115] 樣本 ID=66
+2026-06-29 06:15:27,789 [INFO]   問題：這款 2TB 的 M.2 SSD 讀寫速度有多少？我拿來當 Windows 系統碟開機會變快嗎？...
+2026-06-29 06:15:28,679 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.370  Halluc=1.000  Latency=233ms
+2026-06-29 06:15:28,679 [INFO] 
+[ 67/115] 樣本 ID=67
+2026-06-29 06:15:28,680 [INFO]   問題：請問這顆 4TB 傳統硬碟可以裝進我的 PS5 裡面擴充遊戲空間嗎？...
+2026-06-29 06:15:29,528 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.326  Halluc=1.000  Latency=187ms
+2026-06-29 06:15:29,528 [INFO] 
+[ 68/115] 樣本 ID=68
+2026-06-29 06:15:29,529 [INFO]   問題：這款外接行動硬碟如果從桌上不小心摔到地上，裡面的 Data 會不會直接死掉讀不到？...
+2026-06-29 06:15:30,430 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.369  Halluc=1.000  Latency=256ms
+2026-06-29 06:15:30,430 [INFO] 
+[ 69/115] 樣本 ID=69
+2026-06-29 06:15:30,431 [INFO]   問題：我看這台 8TB 企業級硬碟是 7200轉的，裝在桌機裡當倉庫碟，馬達運轉的噪音會不會很吵？...
+2026-06-29 06:15:31,336 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.339  Halluc=1.000  Latency=275ms
+2026-06-29 06:15:31,336 [INFO] 
+[ 70/115] 樣本 ID=70
+2026-06-29 06:15:31,336 [INFO]   問題：這款 SSD 有自帶散熱片嗎？我的主機板本身就有內建金屬散熱盔甲，這樣裝得下嗎？...
+2026-06-29 06:15:32,170 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.381  Halluc=1.000  Latency=256ms
+2026-06-29 06:15:32,170 [INFO] 
+[ 71/115] 樣本 ID=71
+2026-06-29 06:15:32,171 [INFO]   問題：請問保固是幾年？如果硬碟壽命到期突然壞掉，台灣原廠會提供免費資料救援服務嗎？...
+2026-06-29 06:15:32,978 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.723  Cosine=0.361  Halluc=1.000  Latency=243ms
+2026-06-29 06:15:32,978 [INFO] 
+[ 72/115] 樣本 ID=72
+2026-06-29 06:15:32,979 [INFO]   問題：這顆 12TB 的 NAS 硬碟是 CMR 還是 SMR 紀錄技術的？拿來跑 RAID 會不會有疊瓦式掉速的問題？...
+2026-06-29 06:15:33,890 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.358  Halluc=1.000  Latency=262ms
+2026-06-29 06:15:33,890 [INFO] 
+[ 73/115] 樣本 ID=73
+2026-06-29 06:15:33,891 [INFO]   問題：現在買這款 1TB 外接式 SSD 有免運費嗎？出貨有附一條可以接 Type-C 手機的線嗎？...
+2026-06-29 06:15:34,772 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.351  Halluc=1.000  Latency=252ms
+2026-06-29 06:15:34,772 [INFO] 
+[ 74/115] 樣本 ID=74
+2026-06-29 06:15:34,773 [INFO]   問題：我的老舊筆電是傳統 2.5吋 HDD，可以直接買這款 2.5吋 SATA SSD 來換嗎？界面合不合？...
+2026-06-29 06:15:35,566 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.353  Halluc=1.000  Latency=198ms
+2026-06-29 06:15:35,567 [INFO] 
+[ 75/115] 樣本 ID=75
+2026-06-29 06:15:35,567 [INFO]   問題：這款 QLC 的 SSD 它的 TBW 寫入壽命是多少？拿來每天瘋狂下載大檔案會不會很容易死掉？...
+2026-06-29 06:15:36,612 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.321  Halluc=1.000  Latency=258ms
+2026-06-29 06:15:36,612 [INFO] 
+[ 76/115] 樣本 ID=76
+2026-06-29 06:15:36,612 [INFO]   問題：這台大連供噴墨印表機如果我一兩個禮拜沒開機用，噴頭會不會乾掉堵塞啊？...
+2026-06-29 06:15:37,415 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.327  Halluc=1.000  Latency=277ms
+2026-06-29 06:15:37,415 [INFO] 
+[ 77/115] 樣本 ID=77
+2026-06-29 06:15:37,416 [INFO]   問題：請問這台有支援無線 Wi-Fi 雙面列印嗎？我可以用手機 App 直接印 PDF 嗎？...
+2026-06-29 06:15:38,215 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.332  Halluc=1.000  Latency=242ms
+2026-06-29 06:15:38,215 [INFO] 
+[ 78/115] 樣本 ID=78
+2026-06-29 06:15:38,216 [INFO]   問題：這台墨水用完的話，一瓶原廠補充墨水慢多少錢？可以印多少張 A4 紙？...
+2026-06-29 06:15:39,039 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.251  Halluc=1.000  Latency=245ms
+2026-06-29 06:15:39,040 [INFO] 
+[ 79/115] 樣本 ID=79
+2026-06-29 06:15:39,040 [INFO]   問題：我是要買來印相片跟彩色手帳的，這台噴墨的彩色列印解析度夠不夠細緻？會不會有條紋？...
+2026-06-29 06:15:39,866 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.327  Halluc=1.000  Latency=250ms
+2026-06-29 06:15:39,867 [INFO] 
+[ 80/115] 樣本 ID=80
+2026-06-29 06:15:39,867 [INFO]   問題：辦這台事務機有包含 Scan 掃描和 Copy 影印功能嗎？原廠保固是幾年？...
+2026-06-29 06:15:40,700 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.321  Halluc=1.000  Latency=216ms
+2026-06-29 06:15:40,700 [INFO] 
+[ 81/115] 樣本 ID=81
+2026-06-29 06:15:40,701 [INFO]   問題：這款印表機的 Size 會不會很大很佔位子？租屋處的電腦桌放得下嗎？...
+2026-06-29 06:15:41,494 [INFO]   Hit@5=1.00  MRR=0.333  NDCG@5=0.500  Cosine=0.308  Halluc=1.000  Latency=216ms
+2026-06-29 06:15:41,494 [INFO] 
+[ 82/115] 樣本 ID=82
+2026-06-29 06:15:41,495 [INFO]   問題：請問這台印表機是採用顏料墨水還是染料墨水？印出來的文件潑到水字會不會糊掉？...
+2026-06-29 06:15:42,348 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.324  Halluc=1.000  Latency=249ms
+2026-06-29 06:15:42,349 [INFO] 
+[ 83/115] 樣本 ID=83
+2026-06-29 06:15:42,349 [INFO]   問題：現在買這台有現貨免運費嗎？包裝裡面隨機有直接附贈一組滿版墨水嗎？...
+2026-06-29 06:15:43,175 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.613  Cosine=0.359  Halluc=1.000  Latency=253ms
+2026-06-29 06:15:43,175 [INFO] 
+[ 84/115] 樣本 ID=84
+2026-06-29 06:15:43,176 [INFO]   問題：這台有支援自動進紙槽 ADF 嗎？如果我有 20 幾張報告要連續影印怎麼辦？...
+2026-06-29 06:15:43,972 [INFO]   Hit@5=1.00  MRR=0.500  NDCG@5=0.631  Cosine=0.357  Halluc=1.000  Latency=240ms
+2026-06-29 06:15:43,972 [INFO] 
+[ 85/115] 樣本 ID=85
+2026-06-29 06:15:43,972 [INFO]   問題：這款噴墨印表機可以印防水姓名貼或是厚磅的卡片紙（Cardstock）嗎？會不會卡紙？...
+2026-06-29 06:15:44,938 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.336  Halluc=1.000  Latency=247ms
+2026-06-29 06:15:44,938 [INFO] 
+[ 86/115] 樣本 ID=86
+2026-06-29 06:15:44,938 [INFO]   問題：這台黑白雷射印表機印一頁大概要幾秒？會不會像噴墨那樣在這邊慢慢拉紙？...
+2026-06-29 06:15:45,725 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.339  Halluc=1.000  Latency=215ms
+2026-06-29 06:15:45,725 [INFO] 
+[ 87/115] 樣本 ID=87
+2026-06-29 06:15:45,725 [INFO]   問題：請問這台雷射的碳粉匣耗材一根可以印多少張？如果很久沒印碳粉會不會結塊壞掉？...
+2026-06-29 06:15:46,567 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.320  Halluc=1.000  Latency=226ms
+2026-06-29 06:15:46,567 [INFO] 
+[ 88/115] 樣本 ID=88
+2026-06-29 06:15:46,568 [INFO]   問題：我想買來印論文跟上課講義，這台彩色雷射印表機印出來的字會不會有毛邊？被螢光筆劃到會糊嗎？...
+2026-06-29 06:15:47,450 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.338  Halluc=1.000  Latency=265ms
+2026-06-29 06:15:47,451 [INFO] 
+[ 89/115] 樣本 ID=89
+2026-06-29 06:15:47,451 [INFO]   問題：這款雷射事務機有支援自動雙面影印跟掃描嗎？我要處理大批的雙面文件。...
+2026-06-29 06:15:48,258 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.366  Halluc=1.000  Latency=252ms
+2026-06-29 06:15:48,258 [INFO] 
+[ 90/115] 樣本 ID=90
+2026-06-29 06:15:48,258 [INFO]   問題：請問這台雷射電視印表機的耗電量會不會很大？開機列印的時候房間的燈會不會閃一下？...
+2026-06-29 06:15:49,111 [INFO]   Hit@5=1.00  MRR=0.500  NDCG@5=0.631  Cosine=0.319  Halluc=1.000  Latency=242ms
+2026-06-29 06:15:49,111 [INFO] 
+[ 91/115] 樣本 ID=91
+2026-06-29 06:15:49,112 [INFO]   問題：這台的網路功能有支援 5G Wi-Fi 嗎？還是只能接實體網路線 Lan port？...
+2026-06-29 06:15:49,950 [INFO]   Hit@5=1.00  MRR=0.250  NDCG@5=0.431  Cosine=0.304  Halluc=1.000  Latency=251ms
+2026-06-29 06:15:49,950 [INFO] 
+[ 92/115] 樣本 ID=92
+2026-06-29 06:15:49,950 [INFO]   問題：開這台彩色雷射印表機的 Size 大概是多少？重量會不會很重？我想放在書櫃上。...
+2026-06-29 06:15:50,901 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.326  Halluc=1.000  Latency=209ms
+2026-06-29 06:15:50,901 [INFO] 
+[ 93/115] 樣本 ID=93
+2026-06-29 06:15:50,901 [INFO]   問題：買這台原廠隨機會有保固嗎？如果印出來畫面出現黑點或黑線，可以直接報修嗎？...
+2026-06-29 06:15:51,757 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.723  Cosine=0.360  Halluc=1.000  Latency=187ms
+2026-06-29 06:15:51,758 [INFO] 
+[ 94/115] 樣本 ID=94
+2026-06-29 06:15:51,759 [INFO]   問題：現在下單有免運費送上樓嗎？如果買回來發現桌子放不下，可以退貨嗎？...
+2026-06-29 06:15:52,650 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.397  Halluc=1.000  Latency=234ms
+2026-06-29 06:15:52,650 [INFO] 
+[ 95/115] 樣本 ID=95
+2026-06-29 06:15:52,650 [INFO]   問題：這台印表機的碳粉匣跟感光鼓是分離式的還是二合一的？哪一種後續換耗材比較省錢？...
+2026-06-29 06:15:53,552 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.355  Halluc=1.000  Latency=272ms
+2026-06-29 06:15:53,552 [INFO] 
+[ 96/115] 樣本 ID=96
+2026-06-29 06:15:53,553 [INFO]   問題：這款機械鍵盤的青軸打起來會不會很吵？我如果在辦公室用會不會被同事白眼？...
+2026-06-29 06:15:54,354 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.326  Halluc=1.000  Latency=260ms
+2026-06-29 06:15:54,355 [INFO] 
+[ 97/115] 樣本 ID=97
+2026-06-29 06:15:54,355 [INFO]   問題：請問這款 keyboard 有支援熱插拔嗎？如果用久了其中一個按鍵壞掉可以直接自己換嗎？...
+2026-06-29 06:15:55,217 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.364  Halluc=1.000  Latency=241ms
+2026-06-29 06:15:55,217 [INFO] 
+[ 98/115] 樣本 ID=98
+2026-06-29 06:15:55,217 [INFO]   問題：它是 100% 的設計還是有省掉數字鍵？寬度 size 大概是多少？...
+2026-06-29 06:15:56,006 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.344  Halluc=1.000  Latency=250ms
+2026-06-29 06:15:56,006 [INFO] 
+[ 99/115] 樣本 ID=99
+2026-06-29 06:15:56,007 [INFO]   問題：這款有支援三模連線嗎？我可以一邊接 PC 打電動，一邊按快捷鍵切換到平板打字嗎？...
+2026-06-29 06:15:56,907 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.369  Halluc=1.000  Latency=239ms
+2026-06-29 06:15:56,908 [INFO] 
+[100/115] 樣本 ID=100
+2026-06-29 06:15:56,908 [INFO]   問題：鍵帽用久了英文字母會不會磨到掉漆？表面會不會容易變得油油的？...
+2026-06-29 06:15:57,708 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.366  Halluc=1.000  Latency=176ms
+2026-06-29 06:15:57,709 [INFO] 
+[101/115] 樣本 ID=101
+2026-06-29 06:15:57,709 [INFO]   問題：請問保固是算幾年？如果我不小心打翻飲料 coffee 倒在鍵盤上，原廠有免費修到好嗎？...
+2026-06-29 06:15:58,549 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.613  Cosine=0.360  Halluc=1.000  Latency=249ms
+2026-06-29 06:15:58,550 [INFO] 
+[102/115] 樣本 ID=102
+2026-06-29 06:15:58,550 [INFO]   問題：這款 RGB 的背光可以自己用軟體改特效嗎？還是它只能切換內建的閃爍模式？...
+2026-06-29 06:15:59,353 [INFO]   Hit@5=1.00  MRR=0.500  NDCG@5=0.387  Cosine=0.324  Halluc=1.000  Latency=246ms
+2026-06-29 06:15:59,353 [INFO] 
+[103/115] 樣本 ID=103
+2026-06-29 06:15:59,353 [INFO]   問題：現在下單有超商免運費嗎？隨機出貨有送防塵蓋跟拔鍵器嗎？...
+2026-06-29 06:16:00,168 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.377  Halluc=1.000  Latency=255ms
+2026-06-29 06:16:00,169 [INFO] 
+[104/115] 樣本 ID=104
+2026-06-29 06:16:00,169 [INFO]   問題：這款鍵盤有相容 Mac 系統嗎？鍵盤上的 Windows 鍵在蘋果電腦上按出來是什麼？...
+2026-06-29 06:16:01,052 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.356  Halluc=1.000  Latency=268ms
+2026-06-29 06:16:01,052 [INFO] 
+[105/115] 樣本 ID=105
+2026-06-29 06:16:01,052 [INFO]   問題：內建的 battery 電池容量是多少？如果完全不開 RGB 燈的話，充飽電可以用幾個月？...
+2026-06-29 06:16:01,827 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.313  Halluc=1.000  Latency=219ms
+2026-06-29 06:16:01,828 [INFO] 
+[106/115] 樣本 ID=106
+2026-06-29 06:16:01,828 [INFO]   問題：這款電競滑鼠的 DPI 最高是多少？我打 FPS 遊戲需要轉身甩槍，它反應夠快嗎？...
+2026-06-29 06:16:02,657 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.358  Halluc=1.000  Latency=231ms
+2026-06-29 06:16:02,658 [INFO] 
+[107/115] 樣本 ID=107
+2026-06-29 06:16:02,658 [INFO]   問題：請問這隻微動開關是用光學的還是傳統機械式的？點久了會不會發生連點雙擊的壞掉問題？...
+2026-06-29 06:16:03,510 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.412  Halluc=1.000  Latency=268ms
+2026-06-29 06:16:03,510 [INFO] 
+[108/115] 樣本 ID=108
+2026-06-29 06:16:03,511 [INFO]   問題：我是大手抓握的人，這隻滑鼠的 size 會不會太小？它的重量是多少公克？...
+2026-06-29 06:16:04,312 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.343  Halluc=1.000  Latency=242ms
+2026-06-29 06:16:04,312 [INFO] 
+[109/115] 樣本 ID=109
+2026-06-29 06:16:04,312 [INFO]   問題：這款無線滑鼠可以用藍牙接 iPad 平板嗎？還是它一定要插那個 USB 接收器（Dongle）？...
+2026-06-29 06:16:05,143 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.354  Halluc=1.000  Latency=243ms
+2026-06-29 06:16:05,144 [INFO] 
+[110/115] 樣本 ID=110
+2026-06-29 06:16:05,144 [INFO]   問題：滑鼠側邊是用一般塑膠還是環保橡膠？用久了表面會不會變得黏黏的、很難清？...
+2026-06-29 06:16:05,988 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.373  Halluc=1.000  Latency=249ms
+2026-06-29 06:16:05,988 [INFO] 
+[111/115] 樣本 ID=111
+2026-06-29 06:16:05,989 [INFO]   問題：請問這款垂直滑鼠真的可以改善滑鼠手嗎？我天天剪片手腕痛，用這個習慣嗎？...
+2026-06-29 06:16:06,822 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.346  Halluc=1.000  Latency=211ms
+2026-06-29 06:16:06,823 [INFO] 
+[112/115] 樣本 ID=112
+2026-06-29 06:16:06,823 [INFO]   問題：這款無線滑鼠的 battery 蓄電量可以用多久？如果打電動打到一半沒電，可以直接邊充邊玩嗎？...
+2026-06-29 06:16:07,721 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.346  Halluc=1.000  Latency=264ms
+2026-06-29 06:16:07,721 [INFO] 
+[113/115] 樣本 ID=113
+2026-06-29 06:16:07,721 [INFO]   問題：滑鼠底部的鼠腳墊是什麼材質？在一般的木頭電腦桌面上滑會不會刮傷桌子？...
+2026-06-29 06:16:08,609 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.365  Halluc=1.000  Latency=260ms
+2026-06-29 06:16:08,609 [INFO] 
+[114/115] 樣本 ID=114
+2026-06-29 06:16:08,609 [INFO]   問題：現在買這隻有現貨免運費嗎？原廠保固是幾年？要是滾輪滾動沒反應怎麼辦？...
+2026-06-29 06:16:09,477 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.339  Cosine=0.375  Halluc=1.000  Latency=246ms
+2026-06-29 06:16:09,478 [INFO] 
+[115/115] 樣本 ID=115
+2026-06-29 06:16:09,478 [INFO]   問題：這款滑鼠側邊有幾個巨集按鍵？我可以把它設定成 Excel 的複製貼上快捷鍵嗎？...
+2026-06-29 06:16:10,368 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.358  Halluc=1.000  Latency=247ms

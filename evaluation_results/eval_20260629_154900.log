@@ -1,0 +1,104 @@
+2026-06-29 15:49:00,565 [INFO] ============================================================
+2026-06-29 15:49:00,565 [INFO] 🚀  RAG 自動化批量評測啟動
+2026-06-29 15:49:00,565 [INFO] ============================================================
+2026-06-29 15:49:00,577 [INFO] 知識庫載入：226 個 chunks（來源：knowledge_base/docs/product_specs.txt）
+2026-06-29 15:49:00,680 [INFO] 評測資料集：115 筆（來源：knowledge_base/evaluation/電商客服問答集.docx）
+2026-06-29 15:49:00,680 [INFO] 限制評測題數：10 題
+2026-06-29 15:49:00,680 [INFO] 建立 BM25 + BGE 雙層索引...
+2026-06-29 15:49:00,869 [DEBUG] Building prefix dict from the default dictionary ...
+2026-06-29 15:49:00,869 [DEBUG] Loading model from cache C:\Users\CHENQU~1\AppData\Local\Temp\jieba.cache
+2026-06-29 15:49:01,408 [DEBUG] Loading model cost 0.540 seconds.
+2026-06-29 15:49:01,408 [DEBUG] Prefix dict has been built successfully.
+2026-06-29 15:49:01,527 [INFO] BM25 索引建立完成：226 筆
+2026-06-29 15:49:01,527 [INFO] 載入 BGE 模型：BAAI/bge-m3（首次較慢）
+2026-06-29 15:49:09,505 [INFO] No device provided, using cpu
+2026-06-29 15:49:10,246 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:10,247 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-29 15:49:10,280 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:10,523 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:10,555 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:10,559 [INFO] Loading SentenceTransformer model from BAAI/bge-m3.
+2026-06-29 15:49:10,780 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:10,810 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:11,038 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:11,071 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-29 15:49:11,308 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:11,347 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:11,575 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:11,608 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:11,836 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 15:49:12,099 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:12,126 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:12,392 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:12,425 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:12,647 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-29 15:49:12,875 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-29 15:49:13,135 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-06-29 15:49:13,137 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 15:49:13,377 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 15:49:13,386 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-29 15:49:13,605 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 15:49:13,657 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-06-29 15:49:13,827 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-29 15:49:13,887 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-29 15:49:14,070 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:14,103 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:14,126 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-06-29 15:49:14,346 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:14,378 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:14,608 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:14,647 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:14,877 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:14,919 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:15,170 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-29 15:49:15,401 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-29 15:49:19,032 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-29 15:49:19,281 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-29 15:49:19,320 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-29 15:49:19,555 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-29 15:49:19,560 [INFO] BGE 模型載入完成
+2026-06-29 15:49:19,560 [INFO] BGE 向量編碼中（226 筆）...
+2026-06-29 15:50:20,871 [INFO] BGE 向量索引建立完成
+2026-06-29 15:50:20,871 [INFO] 
+開始批量評測（共 10 題）
+────────────────────────────────────────────────────────────
+2026-06-29 15:50:20,871 [INFO] 
+[  1/10] 樣本 ID=1
+2026-06-29 15:50:20,871 [INFO]   問題：這台電視有支援 4K 120Hz 嗎？我接 PS5 玩遊戲會不會有 Delay 的感覺？...
+2026-06-29 15:50:21,493 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.850  Cosine=0.341  Halluc=1.000  Latency=180ms
+2026-06-29 15:50:21,508 [INFO] 
+[  2/10] 樣本 ID=2
+2026-06-29 15:50:21,508 [INFO]   問題：請問這款智慧電視的 OS 是哪一種？可以直接用 AirPlay 把 iPhone 畫面投過去嗎？...
+2026-06-29 15:50:22,092 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.323  Halluc=1.000  Latency=173ms
+2026-06-29 15:50:22,093 [INFO] 
+[  3/10] 樣本 ID=3
+2026-06-29 15:50:22,093 [INFO]   問題：客廳採光很好會反光，這台的面板亮度夠嗎？還有它的 HDR 效果怎麼樣？...
+2026-06-29 15:50:22,759 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.328  Halluc=1.000  Latency=170ms
+2026-06-29 15:50:22,759 [INFO] 
+[  4/10] 樣本 ID=4
+2026-06-29 15:50:22,759 [INFO]   問題：壁掛架是隨機附贈還是要加購？原廠保固是算兩年還是三年？...
+2026-06-29 15:50:23,391 [INFO]   Hit@5=1.00  MRR=0.250  NDCG@5=0.202  Cosine=0.325  Halluc=1.000  Latency=169ms
+2026-06-29 15:50:23,391 [INFO] 
+[  5/10] 樣本 ID=5
+2026-06-29 15:50:23,391 [INFO]   問題：這台有內建 Soundbar 嗎？它的喇叭輸出功率功率瓦數是多少？...
+2026-06-29 15:50:24,095 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.270  Halluc=1.000  Latency=170ms
+2026-06-29 15:50:24,096 [INFO] 
+[  6/10] 樣本 ID=6
+2026-06-29 15:50:24,096 [INFO]   問題：這款升降桌有附安全防撞嗎？萬一降下來壓到椅子會不會卡死？...
+2026-06-29 15:50:24,769 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.334  Halluc=1.000  Latency=168ms
+2026-06-29 15:50:24,770 [INFO] 
+[  7/10] 樣本 ID=7
+2026-06-29 15:50:24,770 [INFO]   問題：請問這張桌子的最大承重是多少？我放兩台 32吋 monitor 外加主機撐得住嗎？...
+2026-06-29 15:50:25,410 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.296  Halluc=1.000  Latency=180ms
+2026-06-29 15:50:25,410 [INFO] 
+[  8/10] 樣本 ID=8
+2026-06-29 15:50:25,410 [INFO]   問題：這款 L型電腦桌有沒有免運送到家？住公寓 4樓沒有電梯可以幫忙搬運上去嗎？...
+2026-06-29 15:50:26,094 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.373  Halluc=1.000  Latency=195ms
+2026-06-29 15:50:26,094 [INFO] 
+[  9/10] 樣本 ID=9
+2026-06-29 15:50:26,094 [INFO]   問題：這張書桌的 size 寬度和深度是多少？120公分有現貨嗎？...
+2026-06-29 15:50:26,812 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=1.000  Cosine=0.348  Halluc=1.000  Latency=189ms
+2026-06-29 15:50:26,812 [INFO] 
+[ 10/10] 樣本 ID=10
+2026-06-29 15:50:26,812 [INFO]   問題：升降桌的馬達保固是算多久？是台灣原廠負責維修嗎？...
+2026-06-29 15:50:27,546 [INFO]   Hit@5=1.00  MRR=1.000  NDCG@5=0.541  Cosine=0.298  Halluc=1.000  Latency=179ms

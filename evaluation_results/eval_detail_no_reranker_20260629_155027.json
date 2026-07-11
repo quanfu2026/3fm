@@ -1,0 +1,367 @@
+{
+  "summary": {
+    "eval_file": "knowledge_base/evaluation/電商客服問答集.docx",
+    "knowledge_file": "knowledge_base/docs/product_specs.txt",
+    "total_questions": 10,
+    "model": "qwen2.5-7b-instruct",
+    "use_reranker": false,
+    "timestamp": "2026-06-29T15:50:27.546389",
+    "metrics_avg": {
+      "hit_at_5": 1.0,
+      "mrr": 0.925,
+      "ndcg_at_5": 0.8594,
+      "bge_cosine": 0.3237,
+      "hallucination": 1.0,
+      "latency_ms_avg": 177.36,
+      "latency_ms_p95": 195.29
+    }
+  },
+  "results": [
+    {
+      "sample_id": 1,
+      "question": "這台電視有支援 4K 120Hz 嗎？我接 PS5 玩遊戲會不會有 Delay 的感覺？",
+      "ground_truth": "本款電視具備 4K 120Hz 高更新率，並配備 HDMI 2.1 介面與 VRR 可變更新率技術，能有效降低畫面延遲與撕裂感，非常適合搭配 PS5 等次世代遊戲主機使用。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.8503,
+        "bge_cosine": 0.3413,
+        "hallucination": 1.0,
+        "latency_ms": 179.91
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0131",
+          "chunk_0068",
+          "chunk_0103",
+          "chunk_0109",
+          "chunk_0130"
+        ],
+        "relevant_ids": [
+          "chunk_0130",
+          "chunk_0131"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 2.15,
+        "bge_ms": 177.7,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 179.91
+      }
+    },
+    {
+      "sample_id": 2,
+      "question": "請問這款智慧電視的 OS 是哪一種？可以直接用 AirPlay 把 iPhone 畫面投過去嗎？",
+      "ground_truth": "本電視搭載最新的 Google TV 作業系統，內建 Chromecast 投放功能。同時它也支援 Apple AirPlay 2，您可以直接將 iPhone 或 iPad 的畫面無線投影至電視大螢幕上。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3232,
+        "hallucination": 1.0,
+        "latency_ms": 173.27
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0157",
+          "chunk_0068",
+          "chunk_0131",
+          "chunk_0141",
+          "chunk_0109"
+        ],
+        "relevant_ids": [
+          "chunk_0157"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.95,
+        "bge_ms": 171.27,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 173.27
+      }
+    },
+    {
+      "sample_id": 3,
+      "question": "客廳採光很好會反光，這台的面板亮度夠嗎？還有它的 HDR 效果怎麼樣？",
+      "ground_truth": "此車款採用 Mini-LED 面板技術，峰值亮度高達 1500 nits，並具備抗眩光霧面塗層，在採光良好的客廳也能清晰呈現。此外，它支援 Dolby Vision IQ 與 HDR10+，能根據環境光線自動優化高動態範圍的畫面細節。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3278,
+        "hallucination": 1.0,
+        "latency_ms": 169.73
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0168",
+          "chunk_0074",
+          "chunk_0070",
+          "chunk_0123",
+          "chunk_0157"
+        ],
+        "relevant_ids": [
+          "chunk_0168"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.76,
+        "bge_ms": 167.91,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 169.73
+      }
+    },
+    {
+      "sample_id": 4,
+      "question": "壁掛架是隨機附贈還是要加購？原廠保固是算兩年還是三年？",
+      "ground_truth": "本商品包裝內僅隨附桌上型底座，專用壁掛架需另外加購。保固部分，自購買發票日起享有台灣原廠全機 3 年完整保固（含面板與主機板）。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 0.25,
+        "ndcg_at_5": 0.2021,
+        "bge_cosine": 0.3253,
+        "hallucination": 1.0,
+        "latency_ms": 168.94
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0218",
+          "chunk_0217",
+          "chunk_0122",
+          "chunk_0088",
+          "chunk_0109"
+        ],
+        "relevant_ids": [
+          "chunk_0088",
+          "chunk_0030",
+          "chunk_0180"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.36,
+        "bge_ms": 167.53,
+        "rrf_ms": 0.04,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 168.94
+      }
+    },
+    {
+      "sample_id": 5,
+      "question": "這台有內建 Soundbar 嗎？它的喇叭輸出功率功率瓦數是多少？",
+      "ground_truth": "本電視並未內建獨立 Soundbar，但機身內部配置了 2.1 聲道喇叭系統，包含雙聲道全音域揚聲器與一個後置重低音單體，總輸出功率為 40W，並支援 Dolby Atmos 杜比全景聲環繞音效。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.2701,
+        "hallucination": 1.0,
+        "latency_ms": 170.47
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0156",
+          "chunk_0104",
+          "chunk_0222",
+          "chunk_0136",
+          "chunk_0168"
+        ],
+        "relevant_ids": [
+          "chunk_0156"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.39,
+        "bge_ms": 169.01,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 170.47
+      }
+    },
+    {
+      "sample_id": 6,
+      "question": "這款升降桌有附安全防撞嗎？萬一降下來壓到椅子會不會卡死？",
+      "ground_truth": "本款電動升降桌內建高靈敏度陀螺儀防撞感應系統（Anti-Collision），在升降過程中若遇到椅子或抽屜等阻礙物，桌子會立即停止並反向回彈約2公分，確保使用安全。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3339,
+        "hallucination": 1.0,
+        "latency_ms": 168.38
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0129",
+          "chunk_0067",
+          "chunk_0085",
+          "chunk_0118",
+          "chunk_0197"
+        ],
+        "relevant_ids": [
+          "chunk_0129"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.6,
+        "bge_ms": 166.71,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 168.38
+      }
+    },
+    {
+      "sample_id": 7,
+      "question": "請問這張桌子的最大承重是多少？我放兩台 32吋 monitor 外加主機撐得住嗎？",
+      "ground_truth": "該電腦桌採用高強度加厚鋼架結構，靜態最大承重可達 100 公斤。放置兩台 32 吋螢幕與一台高階電腦主機完全沒有問題，整體結構依然穩固不搖晃。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.2965,
+        "hallucination": 1.0,
+        "latency_ms": 180.08
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0193",
+          "chunk_0015",
+          "chunk_0120",
+          "chunk_0100",
+          "chunk_0166"
+        ],
+        "relevant_ids": [
+          "chunk_0193"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.77,
+        "bge_ms": 178.25,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 180.08
+      }
+    },
+    {
+      "sample_id": 8,
+      "question": "這款 L型電腦桌有沒有免運送到家？住公寓 4樓沒有電梯可以幫忙搬運上去嗎？",
+      "ground_truth": "目前全館消費滿千元即享免運費送達指定地址。若目的地為無電梯公寓 4 樓，物流公司需酌收樓層搬運費（每層樓約 100-150 元），建議於下單時備註以利安排。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3734,
+        "hallucination": 1.0,
+        "latency_ms": 195.29
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0175",
+          "chunk_0147",
+          "chunk_0159",
+          "chunk_0161",
+          "chunk_0207"
+        ],
+        "relevant_ids": [
+          "chunk_0175"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.8,
+        "bge_ms": 193.43,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 195.29
+      }
+    },
+    {
+      "sample_id": 9,
+      "question": "這張書桌的 size 寬度和深度是多少？120公分有現貨嗎？",
+      "ground_truth": "此款電腦桌共有三種標準尺寸，您詢問的 120 公分款，具體規格為寬度 120 公分、深度 60 公分、高度 75 公分。目前 120 公分極簡黑與橡木色皆有現貨，下單後約 3 個工作天內出貨。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "bge_cosine": 0.3482,
+        "hallucination": 1.0,
+        "latency_ms": 188.62
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0166",
+          "chunk_0120",
+          "chunk_0153",
+          "chunk_0117",
+          "chunk_0127"
+        ],
+        "relevant_ids": [
+          "chunk_0166"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.21,
+        "bge_ms": 187.35,
+        "rrf_ms": 0.05,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 188.62
+      }
+    },
+    {
+      "sample_id": 10,
+      "question": "升降桌的馬達保固是算多久？是台灣原廠負責維修嗎？",
+      "ground_truth": "本公司提供全桌台灣原廠核心保固，其中電動升降桌的雙馬達與控制盒享有 5 年保固，鋼製桌架與桌面板則享有 2 年非人為損壞保固，後續維修皆由台灣本地維修團隊提供到府服務。",
+      "answer": "[SKIP]",
+      "metrics": {
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.5414,
+        "bge_cosine": 0.2975,
+        "hallucination": 1.0,
+        "latency_ms": 178.92
+      },
+      "retrieval": {
+        "retrieved_ids": [
+          "chunk_0085",
+          "chunk_0073",
+          "chunk_0136",
+          "chunk_0088",
+          "chunk_0039"
+        ],
+        "relevant_ids": [
+          "chunk_0039",
+          "chunk_0137",
+          "chunk_0085",
+          "chunk_0038"
+        ]
+      },
+      "latency_breakdown": {
+        "bm25_ms": 1.32,
+        "bge_ms": 177.52,
+        "rrf_ms": 0.06,
+        "rerank_ms": 0.0,
+        "llm_ms": 0.0,
+        "total_ms": 178.92
+      }
+    }
+  ]
+}

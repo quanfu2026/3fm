@@ -1,0 +1,18 @@
+[
+  {
+    "id": "U001",
+    "username": "admin",
+    "password": "admin123",
+    "email": "admin@3fm.com",
+    "role": "admin",
+    "name": "系統管理員"
+  },
+  {
+    "id": "U002",
+    "username": "user1",
+    "password": "user123",
+    "email": "user1@example.com",
+    "role": "user",
+    "name": "測試用戶"
+  }
+]
