@@ -53,29 +53,60 @@ class BGERetriever:
                 "語意嵌入模型未成功載入，無法建立向量索引。"
             )
 
+        # 增量索引：沿用「id 與內容都沒變」的 chunk 既有向量，
+        # 只對新增或內容有變動的 chunk 重新呼叫模型計算 embedding。
+        # 這樣重建索引的耗時只跟「有變動的量」成正比，不會隨著
+        # 知識庫累積的檔案越來越多而每次都全部重算。
+        previous_by_id = {}
+        if self.docs and self.vectors is not None and len(self.docs) == len(self.vectors):
+            for document, vector in zip(self.docs, self.vectors):
+                previous_by_id[document.get("id")] = (
+                    document.get("content"),
+                    vector,
+                )
+
+        reused_vectors: list = [None] * len(docs)
+        pending_indexes = []
+        pending_texts = []
+
+        for index, document in enumerate(docs):
+            content = document.get("content", "")
+            cached = previous_by_id.get(document.get("id"))
+
+            if cached is not None and cached[0] == content:
+                reused_vectors[index] = cached[1]
+            else:
+                pending_indexes.append(index)
+                pending_texts.append(content)
+
+        reused_count = len(docs) - len(pending_texts)
+        logger.info(
+            "增量索引：共 %s 筆，沿用 %s 筆，重新編碼 %s 筆",
+            len(docs), reused_count, len(pending_texts),
+        )
+        print(
+            f"[BGE] 共 {len(docs)} 筆，沿用 {reused_count} 筆，"
+            f"重新編碼 {len(pending_texts)} 筆（增量索引）"
+        )
+
+        if pending_texts:
+            new_vectors = self.model.encode(
+                pending_texts,
+                batch_size=16,
+                show_progress_bar=True,
+                normalize_embeddings=True,
+            )
+
+            for offset, index in enumerate(pending_indexes):
+                reused_vectors[index] = new_vectors[offset]
+
         self.docs = docs
 
-        contents = [
-            document.get("content", "")
-            for document in docs
-        ]
-
-        logger.info(
-            "開始編碼 %s 筆文件",
-            len(contents),
-        )
-
-        self.vectors = self.model.encode(
-            contents,
-            batch_size=16,
-            show_progress_bar=True,
-            normalize_embeddings=True,
-        )
-
-        self.vectors = np.asarray(
-            self.vectors,
-            dtype=np.float32,
-        )
+        if docs:
+            self.vectors = np.asarray(reused_vectors, dtype=np.float32)
+        else:
+            dimension = self.model.get_sentence_embedding_dimension()
+            self.vectors = np.zeros((0, dimension), dtype=np.float32)
 
         self._save()
 

@@ -7,12 +7,13 @@ import pandas as pd
 import streamlit as st
 
 # =========================================================
-# 論文正式版 Streamlit v2
+# 論文正式版 Streamlit v3
 # 修正：
 # 1. 不再呼叫 rag.pipeline.RAGPipeline.query()
 # 2. 直接沿用 test_rag_from_word.py 的正式評測邏輯
 # 3. 修正 reranker 參數：--reranker
 # 4. 移除 use_container_width 警告，改用 width='stretch'
+# 5. 單題延遲分解新增時間占比、表格與進度條
 # =========================================================
 
 st.set_page_config(
@@ -105,6 +106,54 @@ def load_report(json_path: Path):
         return json.load(f)
 
 
+def render_latency_breakdown(latency: dict):
+    """顯示單題延遲分解：時間、占比、進度條，方便口試說明效能瓶頸。"""
+    if not latency:
+        st.info("目前沒有延遲資料。")
+        return
+
+    total = float(latency.get("total_ms", 0) or 0)
+    safe_total = max(total, 0.0001)
+
+    items = [
+        ("BM25 檢索", float(latency.get("bm25_ms", 0) or 0), "傳統關鍵字檢索，速度通常最快"),
+        ("BGE 向量檢索", float(latency.get("bge_ms", 0) or 0), "Transformer 向量編碼與相似度計算，通常是主要瓶頸"),
+        ("RRF 融合", float(latency.get("rrf_ms", 0) or 0), "只做排名融合，成本通常很低"),
+        ("Reranker", float(latency.get("rerank_ms", 0) or 0), "若未啟用則為 0 ms"),
+        ("LLM 生成", float(latency.get("llm_ms", 0) or 0), "skip LLM 模式下為 0 ms"),
+    ]
+
+    rows = []
+    for name, ms, note in items:
+        rows.append({
+            "模組": name,
+            "時間(ms)": round(ms, 2),
+            "占比(%)": round(ms / safe_total * 100, 1),
+            "說明": note,
+        })
+
+    df = pd.DataFrame(rows)
+
+    c1, c2 = st.columns([1, 2])
+    with c1:
+        st.metric("總延遲", f"{total:.2f} ms")
+    with c2:
+        if rows:
+            bottleneck = max(rows, key=lambda r: r["時間(ms)"])
+            st.metric("主要瓶頸", f"{bottleneck['模組']}（{bottleneck['占比(%)']}%）")
+
+    st.dataframe(df, width="stretch", hide_index=True)
+
+    st.markdown("**各模組耗時占比**")
+    for row in rows:
+        pct = max(0.0, min(float(row["占比(%)"]), 100.0))
+        st.write(f"{row['模組']}：{row['時間(ms)']:.2f} ms（{row['占比(%)']:.1f}%）")
+        st.progress(int(round(pct)))
+
+    with st.expander("查看原始 latency JSON"):
+        st.json(latency)
+
+
 st.title("📊 論文正式版 RAG 評測系統")
 st.caption("單題展示 + 批量 Benchmark；評測數據由 test_rag_from_word.py 自動計算，不再使用寫死數值。")
 
@@ -185,8 +234,8 @@ with tab_demo:
                     st.write(doc.get("content", ""))
                     st.json(doc)
 
-            st.subheader("⏱️ 單題延遲分解")
-            st.json(result.get("latency", {}))
+            st.subheader("⏱️ 單題延遲分析（含占比）")
+            render_latency_breakdown(result.get("latency", {}))
 
 with tab_benchmark:
     st.subheader("📊 論文 Benchmark 批量評測")
