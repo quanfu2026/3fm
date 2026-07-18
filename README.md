@@ -1,23 +1,27 @@
-# 🚀 Dual-Stage RAG for E-Commerce Customer Service
+# 🚀 3fm Dual-Stage RAG E-Commerce Customer Service System
 
 > A Dual-Stage Retrieval-Augmented Generation Framework for Chinese E-Commerce Customer Service
 
-**Master Thesis Project**  
-Graduate Institute of Artificial Intelligence  
+**Master Thesis Project**
 Kun Shan University
+Department of Intelligent Robotics Engineering
 
-Author: Quan-Fu Chen
+Author: **Quan-Fu Chen**
+
+---
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Flask](https://img.shields.io/badge/Flask-3.0-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.37-red)
+![BGE-M3](https://img.shields.io/badge/BGE--M3-Retrieval-orange)
+![Qwen2.5](https://img.shields.io/badge/Qwen2.5-LLM-purple)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
 # 📖 Project Overview
 
-This project proposes a Dual-Stage Retrieval-Augmented Generation (RAG) framework designed for Chinese E-Commerce Customer Service scenarios.
+This project implements a complete E-Commerce Customer Service Platform integrated with a Dual-Stage Retrieval-Augmented Generation (RAG) architecture.
 
 The system combines:
 
@@ -25,61 +29,79 @@ The system combines:
 - BGE-M3 Dense Retrieval
 - Reciprocal Rank Fusion (RRF)
 - BGE-Reranker-v2-m3
-- Qwen2.5 Large Language Model
-- Flask E-Commerce Website
-- Streamlit Evaluation Dashboard
-
-The objective is to improve retrieval accuracy, answer reliability, and reduce hallucinations in customer service environments.
+- Qwen2.5 Local LLM
+- Flask E-Commerce Platform
+- Streamlit Benchmark Dashboard
 
 ---
 
-# 🏪 E-Commerce System Architecture
+# 🏗 System Architecture
 
-<p align="center">
-  <img src="docs/images/ecommerce_architecture.png" width="1200">
-</p>
+Three-layer architecture integrating Web System and AI Customer Service.
 
-The platform integrates product management, shopping cart, order management and AI customer service modules into a unified e-commerce environment.
+<img src="docs/images/system_architecture.png" width="100%">
 
 ---
 
-# 🔍 Dual-Stage RAG Architecture
+# 🔄 Dual-Stage RAG Pipeline
 
-<p align="center">
-  <img src="docs/images/dual_stage_rag_architecture.png" width="1200">
-</p>
+The core contribution of this research.
 
-## Stage 1 — Retrieval
+### Stage 1 Retrieval
 
-- BM25 Lexical Retriever
-- BGE-M3 Dense Retriever
+- BM25 Lexical Retrieval
+- BGE-M3 Dense Retrieval
 
-## Stage 2 — Ranking
+### Stage 2 Ranking
 
 - RRF Fusion
 - BGE-Reranker-v2-m3
 
-## Generation
+### Generation
 
-- Top-K Context Construction
 - Qwen2.5 LLM
-- Final Answer Generation
+
+<img src="docs/images/dual_stage_rag_architecture.png" width="100%">
 
 ---
 
-# 🏗️ Three-Layer System Architecture
+# 🛒 E-Commerce Architecture
 
-<p align="center">
-  <img src="docs/images/system_architecture.png" width="1200">
-</p>
+Complete E-Commerce Platform Architecture.
 
-The system adopts a three-layer architecture:
+<img src="docs/images/ecommerce_architecture.png" width="100%">
 
-- Client Layer
-- Service Layer
-- Data Layer
+---
 
-This design improves scalability, maintainability and deployment flexibility.
+# 📸 Demo Screenshots
+
+## Home Page
+
+<img src="docs/screenshots/home.png" width="100%">
+
+---
+
+## Product Catalog
+
+<img src="docs/screenshots/shop.png" width="100%">
+
+---
+
+## AI Customer Service
+
+<img src="docs/screenshots/chat.png" width="100%">
+
+---
+
+## Benchmark Dashboard
+
+<img src="docs/screenshots/dashboard.png" width="100%">
+
+---
+
+## System Demonstration
+
+<img src="docs/screenshots/admin.png" width="100%">
 
 ---
 
@@ -96,7 +118,34 @@ This design improves scalability, maintainability and deployment flexibility.
 
 ---
 
-# ⚙️ Technology Stack
+# ✨ Features
+
+## AI Customer Service
+
+- Chinese Q&A
+- Local LLM
+- Multi-document Retrieval
+- Source Citation
+- RAG Pipeline
+
+## E-Commerce Functions
+
+- User Login
+- Product Search
+- Product Detail
+- Shopping Cart
+- Order Management
+- Knowledge Base Management
+
+---
+
+# 💻 Technology Stack
+
+### Backend
+
+- Python
+- Flask
+- Jinja2
 
 ### Retrieval
 
@@ -109,39 +158,100 @@ This design improves scalability, maintainability and deployment flexibility.
 - RRF
 - BGE-Reranker-v2-m3
 
-### Generation
+### LLM
 
-- Qwen2.5
 - Ollama
-
-### Web Framework
-
-- Flask
-- Jinja2
+- Qwen2.5
 
 ### Dashboard
 
 - Streamlit
-- Plotly
 
 ---
 
-# 📂 Project Structure
+# 🚀 Quick Start
+
+## Clone Repository
+
+```bash
+git clone https://github.com/quanfu2026/3fm.git
+
+cd 3fm
+```
+
+## Create Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+Install Packages
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run Flask Web
+
+```bash
+python run_web.py
+```
+
+Open:
 
 ```text
-3fm
-├── app.py
-├── run_web.py
-├── app_streamlit.py
-├── knowledge_base
-├── rag
-│   ├── retrieval
-│   ├── reranker
-│   ├── generator
-│   └── pipeline.py
-├── routes
-├── templates
-├── static
-├── docs
-│   └── images
-└── evaluation_results
+http://127.0.0.1:5000
+```
+
+## Run Dashboard
+
+```bash
+streamlit run app_streamlit_thesis_v3.py
+```
+
+Open:
+
+```text
+http://localhost:8501
+```
+
+---
+
+# 🎓 Research Contributions
+
+- Dual-Stage Retrieval Architecture
+- BM25 Sparse Retrieval
+- BGE-M3 Dense Retrieval
+- Reciprocal Rank Fusion
+- BGE-Reranker-v2-m3
+- Qwen2.5 Local LLM
+- Flask E-Commerce Integration
+- Streamlit Benchmark Dashboard
+- Chinese E-Commerce Customer Service Dataset
+- Reproducible Evaluation Framework
+
+---
+
+# 📜 License
+
+MIT License
+
+---
+
+# 👨‍💻 Author
+
+Quan-Fu Chen
+
+GitHub:
+
+https://github.com/quanfu2026
+
+---
+
+⭐ If this project helps you, please consider giving it a Star.
