@@ -1,170 +1,12 @@
-# 3fm 電商智能客服系統
+# 🚀 Dual-Stage RAG for E-Commerce Customer Service
 
-> 論文實作：**基於任務分解之雙階段檢索增強生成架構：應用於電子商務客服系統**
-> 崑山科技大學 智慧機器人工程系 碩士論文 — 陳銓富
+> A Dual-Stage Retrieval-Augmented Generation Framework for Chinese E-Commerce Customer Service
 
----
+**Master Thesis Project**  
+Graduate Institute of Artificial Intelligence  
+Kun Shan University
 
-## 系統架構
-
-```
-用戶查詢
-    ↓
-【第一階段】BM25（求準）
-    ↓
-【第二階段】BGE-M3（求廣）
-    ↓
-RRF 排序融合
-    ↓
-BGE-Reranker-v2-m3（可選）
-    ↓
-Qwen2.5 生成回答
-    ↓
-Streamlit 儀表板監控
-```
-
----
-
-## 快速啟動
-
-### 1. 環境設定
-
-```bash
-cd 3fm
-cp .env.example .env
-# 編輯 .env 填入你的 API Key
-pip install -r requirements.txt
-```
-
-### 2. 建立知識庫索引
-
-```bash
-python -c "
-from rag.pipeline import RAGPipeline
-rag = RAGPipeline()
-rag.rebuild_index()
-print('索引建立完成')
-"
-```
-
-### 3. 啟動 Flask 電商網站
-
-```bash
-python app.py
-# 開啟瀏覽器：http://localhost:5000
-```
-
-### 4. 啟動 Streamlit 監控儀表板
-
-```bash
-streamlit run dashboard.py
-# 開啟瀏覽器：http://localhost:8501
-```
-
----
-
-## 目錄結構
-
-```
-3fm/
-├── app.py                  # Flask 主程式入口
-├── dashboard.py            # Streamlit 監控儀表板
-├── requirements.txt        # 套件需求
-├── .env.example            # 環境變數範本
-│
-├── rag/                    # RAG 核心模組
-│   ├── pipeline.py         # 完整 RAG 處理流程
-│   ├── retrieval/
-│   │   ├── bm25_retriever.py   # BM25 第一階段（求準）
-│   │   ├── bge_retriever.py    # BGE-M3 第二階段（求廣）
-│   │   └── rrf_fusion.py       # RRF 排序融合
-│   ├── reranker/
-│   │   └── bge_reranker.py     # BGE-Reranker 重排序
-│   ├── generator/
-│   │   └── llm_interface.py    # 統一 LLM 介面（Qwen/GPT/Claude）
-│   └── utils/
-│       └── knowledge_builder.py # 多模態知識庫建置
-│
-├── routes/                 # Flask Blueprint 路由
-│   ├── main.py             # 首頁
-│   ├── auth.py             # 登入/登出
-│   ├── shop.py             # 商品館
-│   ├── cart.py             # 購物車
-│   ├── chat.py             # AI 客服 API
-│   └── admin.py            # 管理後台
-│
-├── templates/              # Jinja2 HTML 模板
-│   ├── base.html           # 基礎模板（含 AI 客服浮動視窗）
-│   ├── main/
-│   ├── auth/
-│   ├── shop/
-│   ├── cart/
-│   └── admin/
-│
-├── static/
-│   ├── css/main.css        # 主樣式
-│   ├── css/chat.css        # 客服視窗樣式
-│   └── js/chat.js          # 客服視窗邏輯
-│
-├── knowledge_base/
-│   └── docs/               # 放入知識文件（MD/PDF/DOCX/XLSX/PPTX/圖片）
-│
-└── data/
-    ├── users_db.json       # 使用者資料
-    └── products_db.json    # 商品資料
-```
-
----
-
-## 環境變數說明
-
-| 變數 | 說明 | 預設值 |
-|------|------|--------|
-| `LLM_PROVIDER` | LLM 供應商 | `qwen` |
-| `QWEN_API_KEY` | Qwen API Key | — |
-| `RERANKER_ENABLED` | 是否啟用 Reranker | `true` |
-| `BM25_TOP_K` | BM25 候選數量 | `10` |
-| `BGE_MODEL` | BGE 嵌入模型 | `BAAI/bge-m3` |
-| `RERANKER_MODEL` | Reranker 模型 | `BAAI/bge-reranker-v2-m3` |
-| `FINAL_TOP_K` | 最終送入 LLM 的文件數 | `5` |
-
----
-
-## 新增知識文件
-
-1. 將文件放入 `knowledge_base/docs/`
-2. 支援格式：`.md` `.txt` `.pdf` `.docx` `.xlsx` `.pptx` `.jpg` `.png`
-3. 進入管理後台（/admin）點選「重建索引」，或執行：
-
-```bash
-python -c "from rag.pipeline import RAGPipeline; RAGPipeline().rebuild_index()"
-```
-
----
-
-## 測試帳號
-
-| 帳號 | 密碼 | 角色 |
-|------|------|------|
-| admin | admin123 | 管理員 |
-| user1 | user123 | 一般用戶 |
-
----
-
-## 論文核心對比實驗
-
-透過 Streamlit 儀表板可視覺化對比：
-
-| 方法 | Hit@5 | MRR | 幻覺率 | 延遲 |
-|------|-------|-----|--------|------|
-| Baseline | — | — | 0.25 | 380ms |
-| 單層 BM25 | 0.72 | 0.71 | 0.18 | 395ms |
-| 雙階段（無Reranker）| 0.80 | 0.79 | 0.12 | 487ms |
-| **雙階段（有Reranker）** | **0.87** | **0.86** | **0.07** | **623ms** |
----------
-# Dual-Stage RAG E-Commerce Customer Service System
-
-> A Dual-Stage Retrieval-Augmented Generation (RAG) E-Commerce Customer Service System Based on BM25, BGE-M3, RRF, BGE-Reranker and Qwen2.5
+Author: Quan-Fu Chen
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Flask](https://img.shields.io/badge/Flask-3.0-green)
@@ -175,370 +17,131 @@ python -c "from rag.pipeline import RAGPipeline; RAGPipeline().rebuild_index()"
 
 # 📖 Project Overview
 
-This project implements a **Dual-Stage Retrieval-Augmented Generation (RAG)** intelligent customer service system for e-commerce applications.
+This project proposes a Dual-Stage Retrieval-Augmented Generation (RAG) framework designed for Chinese E-Commerce Customer Service scenarios.
 
-The system integrates:
+The system combines:
 
-- BM25 Sparse Retrieval
+- BM25 Lexical Retrieval
 - BGE-M3 Dense Retrieval
 - Reciprocal Rank Fusion (RRF)
 - BGE-Reranker-v2-m3
-- Ollama Local LLM (Qwen2.5)
-- Flask Web System
-- Streamlit Benchmark Dashboard
+- Qwen2.5 Large Language Model
+- Flask E-Commerce Website
+- Streamlit Evaluation Dashboard
 
-The goal is to improve retrieval accuracy, response quality, and reduce LLM hallucinations under Chinese e-commerce customer service scenarios.
-
----
-
-# ✨ Features
-
-## Intelligent Customer Service
-
-- Local LLM (Ollama)
-- Chinese Q&A
-- Multi-document retrieval
-- Top-K Retrieval
-- Optional Reranker
-- Source Citation
+The objective is to improve retrieval accuracy, answer reliability, and reduce hallucinations in customer service environments.
 
 ---
 
-## Dual-Stage Retrieval Pipeline
+# 🏪 E-Commerce System Architecture
 
-```
-User Query
-      │
-      ▼
- BM25 Retrieval
-      │
-      ▼
- BGE-M3 Retrieval
-      │
-      ▼
- RRF Fusion
-      │
-      ▼
- Duplicate Removal
-      │
-      ▼
- BGE-Reranker
-      │
-      ▼
- Context Construction
-      │
-      ▼
- Qwen2.5 (Ollama)
-      │
-      ▼
- Final Answer
-```
+<p align="center">
+  <img src="docs/images/ecommerce_architecture.png" width="1200">
+</p>
+
+The platform integrates product management, shopping cart, order management and AI customer service modules into a unified e-commerce environment.
 
 ---
 
-# 🏗 System Architecture
+# 🔍 Dual-Stage RAG Architecture
 
-```
-                +-------------------+
-                |     Web Browser   |
-                +---------+---------+
-                          |
-                    HTTP Request
-                          |
-                +---------v---------+
-                |      Flask App    |
-                +---------+---------+
-                          |
-         +----------------+----------------+
-         |                                 |
-         |                                 |
-   Shopping System                  AI Customer Service
-         |                                 |
-         +---------------+-----------------+
-                         |
-                  RAG Pipeline
-                         |
-         +---------------+----------------+
-         |                                |
-      BM25                        BGE-M3
-         |                                |
-         +------------ RRF Fusion --------+
-                         |
-                   Duplicate Removal
-                         |
-                   BGE-Reranker
-                         |
-                    Ollama Qwen2.5
-                         |
-                    Final Response
-```
+<p align="center">
+  <img src="docs/images/dual_stage_rag_architecture.png" width="1200">
+</p>
+
+## Stage 1 — Retrieval
+
+- BM25 Lexical Retriever
+- BGE-M3 Dense Retriever
+
+## Stage 2 — Ranking
+
+- RRF Fusion
+- BGE-Reranker-v2-m3
+
+## Generation
+
+- Top-K Context Construction
+- Qwen2.5 LLM
+- Final Answer Generation
+
+---
+
+# 🏗️ Three-Layer System Architecture
+
+<p align="center">
+  <img src="docs/images/system_architecture.png" width="1200">
+</p>
+
+The system adopts a three-layer architecture:
+
+- Client Layer
+- Service Layer
+- Data Layer
+
+This design improves scalability, maintainability and deployment flexibility.
+
+---
+
+# 📊 Benchmark Results
+
+| Metric | Result |
+|----------|----------|
+| Hit@5 | 1.0000 |
+| MRR | 0.9401 |
+| NDCG@5 | 0.9125 |
+| Coverage Proxy | 1.0000 |
+| Average Latency | 188.66 ms |
+| P95 Latency | 217.64 ms |
+
+---
+
+# ⚙️ Technology Stack
+
+### Retrieval
+
+- BM25
+- BGE-M3
+- FAISS
+
+### Ranking
+
+- RRF
+- BGE-Reranker-v2-m3
+
+### Generation
+
+- Qwen2.5
+- Ollama
+
+### Web Framework
+
+- Flask
+- Jinja2
+
+### Dashboard
+
+- Streamlit
+- Plotly
 
 ---
 
 # 📂 Project Structure
 
-```
-3fm/
-
+```text
+3fm
 ├── app.py
+├── run_web.py
 ├── app_streamlit.py
-├── requirements.txt
-├── README.md
-
-├── rag/
-│   ├── retrieval/
-│   ├── reranker/
-│   ├── generator/
-│   ├── utils/
+├── knowledge_base
+├── rag
+│   ├── retrieval
+│   ├── reranker
+│   ├── generator
 │   └── pipeline.py
-
-├── routes/
-│   ├── auth.py
-│   ├── shop.py
-│   ├── cart.py
-│   ├── checkout.py
-│   ├── chat.py
-│   └── admin.py
-
-├── templates/
-
-├── static/
-
-├── knowledge_base/
-
-├── evaluation_results/
-
-└── data/
-```
-https://chatgpt.com/s/m_6a52e86dab9c8191b4346f8b3ded1bee
----
-
-# 🚀 Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/quanfu2026/3fm.git
-
-cd 3fm
-```
-
----
-
-## Create Virtual Environment
-
-```bash
-python -m venv .venv
-```
-
-Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-Linux
-
-```bash
-source .venv/bin/activate
-```
-
----
-
-## Install Packages
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# 🤖 Install Ollama
-
-Download
-
-https://ollama.com
-
-Install model
-
-```bash
-ollama pull qwen2.5:3b
-```
-
-Run
-
-```bash
-ollama serve
-```
-
----
-
-# ▶ Run Flask Web
-
-```bash
-python run_web.py
-```
-
-Open browser
-
-```
-http://127.0.0.1:5000
-```
-
----
-
-# 📊 Run Streamlit
-
-```bash
-streamlit run app_streamlit.py
-```
-
----
-
-# 📚 Knowledge Base
-
-Supported formats
-
-- Markdown
-- TXT
-- DOCX
-- PDF
-- PPTX
-- XLSX
-
-After adding documents
-
-```
-Admin Panel
-
-↓
-
-Rebuild Index
-```
-
----
-
-# 📈 Benchmark Evaluation
-
-Quick Test
-
-```bash
-python test_rag_from_word.py --skip-llm --max-q 20
-```
-
-Full Evaluation
-
-```bash
-python test_rag_from_word.py
-```
-
-Enable Reranker
-
-```bash
-python test_rag_from_word.py --reranker
-```
-
-Run All Experiments
-
-```bash
-python run_experiments.py
-```
-
----
-
-# 📊 Evaluation Metrics
-
-| Metric | Description |
-|----------|-------------|
-| Hit@5 | Retrieval Accuracy |
-| MRR | Mean Reciprocal Rank |
-| NDCG@5 | Ranking Quality |
-| BGE Cosine | Semantic Similarity |
-| Hallucination | Hallucination Ratio |
-| Latency | End-to-End Response Time |
-
----
-
-# 🛒 Web Functions
-
-- User Login
-- Product Search
-- Product Detail
-- Shopping Cart
-- Checkout
-- Order Inquiry
-- AI Customer Service
-- Knowledge Base Management
-
----
-
-# 💻 Technologies
-
-- Python
-- Flask
-- Streamlit
-- BM25
-- SentenceTransformers
-- BGE-M3
-- BGE-Reranker
-- Ollama
-- Qwen2.5
-- Jinja2
-- FAISS
-- JSON
-
----
-
-# 📷 Demo
-
-Recommended screenshots
-
-```
-docs/
-
-home.png
-
-shop.png
-
-chat.png
-
-benchmark.png
-
-admin.png
-```
-
----
-
-# 📄 Research
-
-This project is developed for the master's thesis:
-
-**A Dual-Stage Retrieval-Augmented Generation Framework for Chinese E-Commerce Customer Service**
-
-Core Technologies
-
-- BM25
-- BGE-M3
-- RRF
-- BGE-Reranker
-- Qwen2.5
-
----
-
-# 📜 License
-
-MIT License
-
----
-
-# 👨‍💻 Author
-
-Quan-Fu Chen
-
-GitHub
-
-https://github.com/quanfu2026
-
----
-
-⭐ If this project helps you, please consider giving it a Star.
+├── routes
+├── templates
+├── static
+├── docs
+│   └── images
+└── evaluation_results
