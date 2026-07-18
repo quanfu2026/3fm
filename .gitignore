@@ -16,3 +16,20 @@ outputs/
 Thumbs.db
 
 projects.lnk
+
+# Secrets
+.env
+
+# Editor
+.vscode/
+
+# Old backups
+old/
+
+# Generated knowledge indexes
+knowledge_base/bge_index.pkl
+knowledge_base/bm25_index.pkl
+
+# Generated knowledge indexes
+knowledge_base/bge_index.pkl
+knowledge_base/bm25_index.pkl
