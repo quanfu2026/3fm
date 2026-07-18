@@ -1,50 +1,18 @@
-﻿# Python 虛擬環境
+﻿venv/
 .venv/
-venv/
-env/
 
-# Python 快取
 __pycache__/
-*.py[cod]
-*.pyo
-*.pyd
+*.pyc
 
-# 環境變數與機密資料
-.env
-.env.local
+evaluation_results/
+outputs/
 
-# IDE
-.vscode/
-.idea/
+.streamlit/secrets.toml
 
-# 系統檔案
+*.log
+*.tmp
+
 .DS_Store
 Thumbs.db
 
-# Flask Session
-data/flask_session/
-flask_session/
-
-# 模型與大型生成檔
-*.pt
-*.pth
-*.bin
-*.onnx
-*.safetensors
-*.dll
-*.whl
-
-# 本機建立的檢索索引
-knowledge_base/*_index.pkl
-knowledge_base/bge_index.pkl
-knowledge_base/bm25_index.pkl
-
-# 暫存與輸出
-outputs/
-*.log
-files.zip
-*.mp4
-
-# 暫存備份
-*_before_*.py
-*_before_*.html
+projects.lnk
