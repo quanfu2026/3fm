@@ -33,3 +33,5 @@ knowledge_base/bm25_index.pkl
 # Generated knowledge indexes
 knowledge_base/bge_index.pkl
 knowledge_base/bm25_index.pkl
+
+git_status_before_upload.txt
