@@ -30,6 +30,16 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional
 
+# Windows 主控台預設編碼（cp950/Big5）無法印出本檔案中使用的 emoji 字元
+# （例如 📊），會直接讓 print() 拋出 UnicodeEncodeError 中斷整個評測流程。
+# 強制標準輸出/錯誤改用 UTF-8，不論是直接執行、或被 Streamlit 以子行程
+# 呼叫，都能正常印出。
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 # ══════════════════════════════════════════
 # 0.  設定區（在這裡改就好）
 # ══════════════════════════════════════════
@@ -234,6 +244,8 @@ class BGERetriever:
         if self.model:
             return
         log.info(f"載入 BGE 模型：{self.model_name}（首次較慢）")
+        from rag.utils.env_patch import ensure_datasets_importable
+        ensure_datasets_importable()
         from sentence_transformers import SentenceTransformer
         self.model = SentenceTransformer(self.model_name)
         log.info("BGE 模型載入完成")
@@ -483,7 +495,7 @@ def run_single_query(
     t_rerank = 0.0
     if cfg["use_reranker"]:
         try:
-            from bge_reranker import BGEReranker
+            from rag.reranker.bge_reranker import BGEReranker
             reranker = BGEReranker()
             t0 = time.perf_counter()
             reranked = reranker.rerank(query, fused, top_k=cfg["rerank_top_k"])

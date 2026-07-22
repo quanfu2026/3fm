@@ -1,4 +1,5 @@
-﻿from pathlib import Path
+﻿import logging
+from pathlib import Path
 
 from flask import Flask
 from flask_session import Session
@@ -14,6 +15,14 @@ from routes.shop import shop_bp
 
 
 def create_app():
+    # 專案原本從未設定過 logging 層級，預設只會印出 WARNING 以上的訊息，
+    # 導致所有 logger.info(...)（例如「Reranker 模型載入成功」「索引載入成功」）
+    # 從來沒有真正輸出到終端機過。這裡明確設定成 INFO，讓這些訊息可以被看到。
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    )
+
     root = Path(__file__).resolve().parent.parent
 
     app = Flask(
@@ -45,4 +54,3 @@ def create_app():
     app.register_blueprint(admin_bp, url_prefix="/admin")
 
     return app
-

@@ -29,6 +29,9 @@ class BGERetriever:
             return
 
         try:
+            from rag.utils.env_patch import ensure_datasets_importable
+            ensure_datasets_importable()
+
             from sentence_transformers import SentenceTransformer
 
             self.model = SentenceTransformer(MODEL_NAME)
