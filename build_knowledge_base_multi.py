@@ -72,7 +72,7 @@ def extract_from_multiple_files(file_list, output_txt_path):
 
 if __name__ == "__main__":
     my_5_subsets = [
-        "knowledge_base/evaluation/3C科技類客服問答集_100筆.docx",
+        "knowledge_base/evaluation/智慧家電與廚房電器類客服問答集_100筆.docx",
         "knowledge_base/evaluation/智慧家電類客服問答集_100筆.docx",
         "knowledge_base/evaluation/服飾類客服問答集_100筆.docx",
         "knowledge_base/evaluation/汽車百貨類客服問答集_100筆.docx",

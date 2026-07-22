@@ -56,16 +56,36 @@ def clear_history():
 def evaluate_rag():
     import json
     import os
+    from pathlib import Path
 
-    # ===== 固定讀取論文正式 115 題結果 =====
-    latest_file = r"evaluation_results\eval_detail_no_reranker_20260629_091539.json"
+    results_dir = Path("evaluation_results")
 
-    if not os.path.exists(latest_file):
-        return jsonify({
-            "error": f"找不到檔案：{latest_file}"
-        }), 404
+    # 預設固定顯示論文正式引用的那組結果，避免之後隨手跑的非正式測試
+    # 不小心把儀表板上顯示的數字換掉。若要更新成新的正式結果，改
+    # .env 的 EVAL_OFFICIAL_RESULT_FILE 即可，不需要動程式碼。
+    official_filename = os.getenv(
+        "EVAL_OFFICIAL_RESULT_FILE",
+        "eval_detail_no_reranker_20260629_091539.json",
+    )
+    target_file = results_dir / official_filename
 
-    with open(latest_file, "r", encoding="utf-8") as f:
+    used_fallback = False
+
+    if not target_file.exists():
+        # 官方結果檔案找不到（例如換了一台機器、檔案被搬動），
+        # 才退回使用資料夾中最新的一份，而不是直接回傳 404。
+        candidates = sorted(
+            results_dir.glob("eval_detail_no_reranker_*.json")
+        )
+        if not candidates:
+            return jsonify({
+                "error": f"找不到檔案：{target_file}，且 {results_dir} 內也沒有任何可用的評測結果"
+            }), 404
+
+        target_file = candidates[-1]
+        used_fallback = True
+
+    with open(target_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     summary = data["summary"]
@@ -75,7 +95,8 @@ def evaluate_rag():
         "total_questions": summary.get("total_questions", 0),
         "model": summary.get("model", ""),
         "use_reranker": summary.get("use_reranker", False),
-        "source_file": latest_file,
+        "source_file": str(target_file),
+        "used_fallback": used_fallback,
 
         "Hit@5": round(metrics.get("hit_at_5", 0), 4),
         "MRR": round(metrics.get("mrr", 0), 4),
