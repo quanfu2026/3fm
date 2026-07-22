@@ -12,7 +12,9 @@ import streamlit as st
 # 1. 不再呼叫 rag.pipeline.RAGPipeline.query()
 # 2. 直接沿用 test_rag_from_word.py 的正式評測邏輯
 # 3. 修正 reranker 參數：--reranker
-# 4. 移除 use_container_width 警告，改用 width='stretch'
+# 4. st.dataframe 統一使用 use_container_width=True（width="stretch" 需
+#    較新版 Streamlit 才支援，本專案鎖定 streamlit==1.37.0 尚不支援，
+#    使用該字串會導致 TypeError: 'str' object cannot be interpreted as an integer）
 # 5. 單題延遲分解新增時間占比、表格與進度條
 # =========================================================
 
@@ -75,6 +77,7 @@ def run_benchmark(docx_path: str, knowledge_path: str, max_q: int | None, skip_l
     # 透過環境變數指定 BGE 模型
     env = dict(**__import__("os").environ)
     env["BGE_MODEL"] = bge_model
+    env["PYTHONIOENCODING"] = "utf-8"
 
     before_json = set(EVAL_DIR.glob("eval_detail_*.json"))
     before_csv = set(EVAL_DIR.glob("eval_summary_*.csv"))
@@ -142,7 +145,7 @@ def render_latency_breakdown(latency: dict):
             bottleneck = max(rows, key=lambda r: r["時間(ms)"])
             st.metric("主要瓶頸", f"{bottleneck['模組']}（{bottleneck['占比(%)']}%）")
 
-    st.dataframe(df, width="stretch", hide_index=True)
+    st.dataframe(df, use_container_width=True, hide_index=True)
 
     st.markdown("**各模組耗時占比**")
     for row in rows:
@@ -306,7 +309,7 @@ with tab_benchmark:
                         "Hallucination": m.get("hallucination"),
                         "Latency ms": m.get("latency_ms"),
                     })
-                st.dataframe(pd.DataFrame(rows), width="stretch")
+                st.dataframe(pd.DataFrame(rows), use_container_width=True)
 
             with st.expander("查看完整終端輸出"):
                 st.code(process.stdout)
@@ -349,7 +352,7 @@ with tab_reports:
                     "Hallucination": m.get("hallucination"),
                     "Latency ms": m.get("latency_ms"),
                 })
-            st.dataframe(pd.DataFrame(rows), width="stretch")
+            st.dataframe(pd.DataFrame(rows), use_container_width=True)
 
 with tab_explain:
     st.subheader("🧠 口試可用說明")
