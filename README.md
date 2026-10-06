@@ -3,7 +3,7 @@
 > A Dual-Stage Retrieval-Augmented Generation Framework for Chinese E-Commerce Customer Service
 
 **Master Thesis Project**
-Kun Shan University
+崑山科技大學（Kun Shan University）
 Department of Intelligent Robotics Engineering
 
 Author: **Quan-Fu Chen**
