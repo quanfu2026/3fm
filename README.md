@@ -4,7 +4,7 @@
 
 **Master Thesis Project**
 崑山科技大學（Kun Shan University）
-Department of Intelligent Robotics Engineering
+智慧機器人工程系
 
 Author: **Quan-Fu Chen**
 
